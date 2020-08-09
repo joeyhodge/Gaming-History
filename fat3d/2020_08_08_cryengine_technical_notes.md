@@ -11,6 +11,10 @@
  * 2007年，CryENGINE 2 和 Crysis
  * 2004年，CryENGINE 1 和 Far Cry。版权纠纷，FarCry 后来给了 Ubisoft
 
+### Crysis 2 截图
+
+![](images/2020_08_08_cryengine_technical_notes/crysis2.png)
+
 
 ## Presentations & Papers
 
