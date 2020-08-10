@@ -118,6 +118,7 @@
  * Nvidia 继续发展 SVOGI，改了个名字叫 VXGI
  * [Voxel Cone Tracing and Sparse Voxel Octree for Real-time Global Illumination][23]
  * [https://developer.nvidia.com/vxgi][24]
+ * [About LPV, SVOGI and VXGI][25]
 
 
 ## Tools
@@ -153,3 +154,4 @@
 [22]:http://kaplanyan.com/
 [23]:https://on-demand.gputechconf.com/gtc/2012/presentations/SB134-Voxel-Cone-Tracing-Octree-Real-Time-Illumination.pdf
 [24]:https://developer.nvidia.com/vxgi
+[25]:https://www.zhihu.com/question/28295455
