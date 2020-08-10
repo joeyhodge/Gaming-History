@@ -107,18 +107,25 @@
 
 ### GI - Global Illumination
 
+ * [About LPV, SVOGI and VXGI][25]
+
 #### LPV
 
+ * 作者 Anton Kaplanyan
  * [SIGGRAPH2009 - Light Propagation Volumes in CryENGINE 3][5]
 
-#### SVOGI / VXGI
+#### SVOGI
 
- * LPV 的继任者，目前 CRYENGINE 5 用了 SVOGI
- * UE4 实现了 SVOGI，但因为 xboxone & PS4 的性能不足，最终从引擎中删除了这部分的实现
- * Nvidia 继续发展 SVOGI，改了个名字叫 VXGI
+ * 作者 Andrew Scheidecker，[https://www.scheidecker.net/][26]
+ * 在 UE4 Elemental Tech Demo 中实现了 SVOGI
+ * 但因为 XBOXONE & PS4 的性能不足，最终从引擎中删除了这部分的实现
+ * 目前 CRYENGINE 5 中也实现了 SVOGI
+
+#### VXGI
+
+ * Nvidia 设计的，和 SVOGI 同类的技术
  * [Voxel Cone Tracing and Sparse Voxel Octree for Real-time Global Illumination][23]
  * [https://developer.nvidia.com/vxgi][24]
- * [About LPV, SVOGI and VXGI][25]
 
 
 ## Tools
@@ -155,3 +162,4 @@
 [23]:https://on-demand.gputechconf.com/gtc/2012/presentations/SB134-Voxel-Cone-Tracing-Octree-Real-Time-Illumination.pdf
 [24]:https://developer.nvidia.com/vxgi
 [25]:https://www.zhihu.com/question/28295455
+[26]:https://www.scheidecker.net/
