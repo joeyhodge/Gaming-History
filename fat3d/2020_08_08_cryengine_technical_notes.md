@@ -103,6 +103,23 @@
  * [LPV实现解读][21]
 
 
+## Rendering Technique
+
+### GI - Global Illumination
+
+#### LPV
+
+ * [SIGGRAPH2009 - Light Propagation Volumes in CryENGINE 3][5]
+
+#### SVOGI / VXGI
+
+ * LPV 的继任者，目前 CRYENGINE 5 用了 SVOGI
+ * UE4 实现了 SVOGI，但因为 xboxone & PS4 的性能不足，最终从引擎中删除了这部分的实现
+ * Nvidia 继续发展 SVOGI，改了个名字叫 VXGI
+ * [Voxel Cone Tracing and Sparse Voxel Octree for Real-time Global Illumination][23]
+ * [https://developer.nvidia.com/vxgi][24]
+
+
 ## Tools
 
 ### QuickBMS
@@ -134,3 +151,5 @@
 [20]:https://www.realtimeshadows.com/sites/default/files/Playing%20with%20Real-Time%20Shadows_0.pdf
 [21]:https://ericpolman.com/2016/06/28/light-propagation-volumes/
 [22]:http://kaplanyan.com/
+[23]:https://on-demand.gputechconf.com/gtc/2012/presentations/SB134-Voxel-Cone-Tracing-Octree-Real-Time-Illumination.pdf
+[24]:https://developer.nvidia.com/vxgi
