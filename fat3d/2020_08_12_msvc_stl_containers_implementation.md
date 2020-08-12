@@ -21,16 +21,16 @@
 ```C++
 class _Vector_val
 {
-	pointer _Myfirst; // pointer to beginning of array
-	pointer _Mylast;  // pointer to current end of sequence
-	pointer _Myend;   // pointer to end of array
+    pointer _Myfirst; // pointer to beginning of array
+    pointer _Mylast;  // pointer to current end of sequence
+    pointer _Myend;   // pointer to end of array
 };
 
 class _Vector_alloc
 {
-	// _Alty = type allocator, sizeof(_Alty) == 0
-	// 实际数据结构由 _Vector_val 决定
-	_Compressed_pair<_Alty, _Vector_val<_Val_types>> _Mypair;
+    // _Alty = type allocator, sizeof(_Alty) == 0
+    // 实际数据结构由 _Vector_val 决定
+    _Compressed_pair<_Alty, _Vector_val<_Val_types>> _Mypair;
 };
 
 class vector : public _Vector_alloc
@@ -61,30 +61,30 @@ class vector : public _Vector_alloc
 ```C++
 class _List_node
 {
-	_Nodeptr _Next;
-	_Nodeptr _Prev;
-	_Value_type _Myval;
+    _Nodeptr _Next;
+    _Nodeptr _Prev;
+    _Value_type _Myval;
 };
 
 class _List_val
 {
-	_Nodeptr _Myhead;  // pointer to head node
-	size_type _Mysize; // number of elements
+    _Nodeptr _Myhead;  // pointer to head node
+    size_type _Mysize; // number of elements
 };
 
 class _List_alloc
 {
-	// _Alnode = node allocator
-	_Compressed_pair<_Alnode, _List_val<_Val_types>> _Mypair;
+    // _Alnode = node allocator
+    _Compressed_pair<_Alnode, _List_val<_Val_types>> _Mypair;
 };
 
 class _List_buy : public _List_alloc
 {
-	// just add some functions
+    // just add some functions
 };
 
 class list : public _List_buy
-{	
+{    
 };
 ```
  * 标准的双向链表实现
@@ -111,24 +111,24 @@ last one <-- | prev | <-- | prev | <-- | prev | <-- | prev |
 ## std::deque<T>
 
 ```C++
-#define _DEQUEMAPSIZ	8	/* minimum map size, at least 1 */
-#define _DEQUESIZ	(sizeof (value_type) <= 1 ? 16 \
-	: sizeof (value_type) <= 2 ? 8 \
-	: sizeof (value_type) <= 4 ? 4 \
-	: sizeof (value_type) <= 8 ? 2 \
-	: 1)	/* elements per block (a power of 2) */
+#define _DEQUEMAPSIZ    8    /* minimum map size, at least 1 */
+#define _DEQUESIZ    (sizeof (value_type) <= 1 ? 16 \
+    : sizeof (value_type) <= 2 ? 8 \
+    : sizeof (value_type) <= 4 ? 4 \
+    : sizeof (value_type) <= 8 ? 2 \
+    : 1)    /* elements per block (a power of 2) */
 
 class _Deque_val
 {
-	_Mapptr   _Map;     // pointer to array of pointers to blocks
-	size_type _Mapsize; // size of map array, zero or 2^N
-	size_type _Myoff;   // offset of initial element
-	size_type _Mysize;  // current length of sequence
+    _Mapptr   _Map;     // pointer to array of pointers to blocks
+    size_type _Mapsize; // size of map array, zero or 2^N
+    size_type _Myoff;   // offset of initial element
+    size_type _Mysize;  // current length of sequence
 };
 
 class _Deque_alloc
 {
-	_Compressed_pair<_Alty, _Deque_val<_Val_types>> _Mypair;
+    _Compressed_pair<_Alty, _Deque_val<_Val_types>> _Mypair;
 };
 
 class deque : public _Deque_alloc
@@ -138,8 +138,8 @@ class deque : public _Deque_alloc
 // extra bytes
 struct _Container_proxy
 {
-	const _Container_base12* _Mycont;
-	_Iterator_based12* _Myfirstiter;
+    const _Container_base12* _Mycont;
+    _Iterator_based12* _Myfirstiter;
 };
 ```
 
@@ -183,29 +183,29 @@ _Map
 ```C++
 struct _Tree_node
 {
-	_Nodeptr _Left;     // left subtree, or smallest element if head
-	_Nodeptr _Parent;   // parent, or root of tree if head
-	_Nodeptr _Right;    // right subtree, or largest element if head
-	char _Color;        // _Red or _Black, _Black if head
-	char _Isnil;        // true only if head (also nil) node
-	_Value_type _Myval; // the stored value, unused if head
+    _Nodeptr _Left;     // left subtree, or smallest element if head
+    _Nodeptr _Parent;   // parent, or root of tree if head
+    _Nodeptr _Right;    // right subtree, or largest element if head
+    char _Color;        // _Red or _Black, _Black if head
+    char _Isnil;        // true only if head (also nil) node
+    _Value_type _Myval; // the stored value, unused if head
 };
 
 class _Tree_val
 {
-	_Nodeptr _Myhead;  // pointer to head node
-	size_type _Mysize; // number of elements
+    _Nodeptr _Myhead;  // pointer to head node
+    size_type _Mysize; // number of elements
 };
 
 class _Tree_comp_alloc
 {
-	_Compressed_pair<key_compare,
-		_Compressed_pair<_Alnode, _Tree_val<_Val_types>>> _Mypair;
+    _Compressed_pair<key_compare,
+        _Compressed_pair<_Alnode, _Tree_val<_Val_types>>> _Mypair;
 };
 
 class _Tree : public _Tree_comp_alloc
 {
-	// ordered red-black tree for map/multimap/set/multiset
+    // ordered red-black tree for map/multimap/set/multiset
 };
 
 class map : public _Tree
@@ -231,13 +231,13 @@ class map : public _Tree
 ```C++
 class _Hash
 {
-	// hash table -- list with vector of iterators for quick access
+    // hash table -- list with vector of iterators for quick access
 
-	_Traits _Traitsobj; // traits to customize behavior
-	_Mylist _List;      // list of elements, must initialize before _Vec
-	_Myvec _Vec;        // vector of list iterators, begin() then end()-1
-	size_type _Mask;    // the key mask
-	size_type _Maxidx;  // current maximum key value
+    _Traits _Traitsobj; // traits to customize behavior
+    _Mylist _List;      // list of elements, must initialize before _Vec
+    _Myvec _Vec;        // vector of list iterators, begin() then end()-1
+    size_type _Mask;    // the key mask
+    size_type _Maxidx;  // current maximum key value
 };
 
 class unordered_map : public _Hash
