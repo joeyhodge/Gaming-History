@@ -316,6 +316,44 @@ sizeof(_List::iterator) * (map.bucket_count()*2)
 ```
 
 
+## std::basic_string<T>
+
+ * std::string = basic_string<char, char_trais<char>, allocator<char>>
+
+```C++
+_BUF_SIZE = 16 / sizeof (value_type) < 1 ? 1 : 16 / sizeof (value_type)};
+
+class _String_val
+{
+	union _Bxty {
+		value_type _Buf[_BUF_SIZE];
+		pointer _Ptr;
+	} _Bx;
+	size_type _Mysize; // current length of string
+	size_type _Myres;  // current storage reserved for string
+};
+
+class _String_alloc
+{
+	_Compressed_pair<_Alty, _String_val<_Val_types>> _Mypair;
+};
+
+class basic_string : public _String_alloc
+{
+};
+```
+
+ * _BUF_SIZE = [1, 16]，由 sizeof(T) 大小决定
+ * 利用 Bx，对于短字符串，不进行内存申请
+ * capacity() 返回的值，减去了 '\0' 的空间
+ * 注意：不做 shrink_to_fit()，永远不释放内存
+
+内存消耗
+
+```C++
+sizeof(T) * (s.capacity()+1) > 16 ? sizeof(T) * (s.capacity()+1) : 0;
+```
+
 [1]:https://en.cppreference.com/w/cpp/container/vector/shrink_to_fit
 [2]:https://en.cppreference.com/w/cpp/container/vector
 [3]:https://en.cppreference.com/w/cpp/container/list
@@ -324,3 +362,4 @@ sizeof(_List::iterator) * (map.bucket_count()*2)
 [6]:https://en.cppreference.com/w/cpp/container/set
 [7]:https://en.cppreference.com/w/cpp/container/unordered_map
 [8]:https://en.cppreference.com/w/cpp/container/unordered_set
+[9]:https://en.cppreference.com/w/cpp/string/basic_string/shrink_to_fit
