@@ -12,6 +12,7 @@
  * [std::unordered_map][7]
  * [std::unordered_set][8]
 
+
 ## std::vector<T>
 
  * container, _Container_alloc, _Container_val
@@ -40,7 +41,6 @@ class vector : public _Vector_alloc
 
  * vector 很简单，array of T，动态扩容
  * 扩容策略：newCapacity = oldCapacity + oldCapacity/2
- * 内存消耗：sizeof(T) * vector::capacity()
  * 注意：不做 [shrink_to_fit()][1]，永远不释放内存
  * 
  * _Myfirst = T0
@@ -51,6 +51,12 @@ class vector : public _Vector_alloc
 +----+----+----+----+-----+----+
 | T0 | T1 | T2 | T3 | ... | Tn |
 +----+----+----+----+-----+----+
+```
+
+内存消耗
+
+```C++
+sizeof(T) * vector::capacity()
 ```
 
 
@@ -89,7 +95,6 @@ class list : public _List_buy
 ```
  * 标准的双向链表实现
  * 利用 _Myhead 多一个 dummy node 的额外开销，来实现 list::end()
- * 内存消耗：sizeof(_List_node) * (list::size() + 1)
  * 
  * list._Myhead->_Next = first element
  * list._Myhead->_Prev = last element
@@ -105,6 +110,12 @@ last one <-- | prev | <-- | prev | <-- | prev | <-- | prev |
              +------+     +------+     +------+     +------+
              |  val |     |  val |     |  val |     |  val |
              +------+     +------+     +------+     +------+
+```
+
+内存消耗
+
+```C++
+sizeof(_List_node) * (list::size() + 1)
 ```
 
 
@@ -146,9 +157,6 @@ struct _Container_proxy
  * _Map 一个 block 的数组
  * 一个 block 保存 1 ~ 16 个元素 (_DEQUESIZ)
  * 根据 _DEQUESIZ 的设计，deque 不适合保存 sizeof 过大的数据
- * 内存消耗：sizeof(void*) * _Mapsize
- *             + num_of_not_null_map_slots * (sizeof(T) * _DEQUESIZ)
- *             + sizeof(_Container_proxy)
  * 
  * deque 还额外有一个 _Container_proxy。其他容器 debug build 也会有 _Container_proxy
  * 但 deque 的 release build 也会有（怀疑是bug）
@@ -177,6 +185,15 @@ _Map
 | T1 |     | .. |
 +----+     +----+
 ```
+
+内存消耗
+
+```C++
+sizeof(void*) * _Mapsize
+  + num_of_not_null_map_slots * (sizeof(T) * _DEQUESIZ)
+  + sizeof(_Container_proxy)
+```
+
 
 ## std::map<K, V>
 
@@ -216,14 +233,24 @@ class map : public _Tree
  * 标准的 red-black tree 实现
  * 多一个 dummy head node
  * _Tree_node._Myval = std::pair<K,V>
- * 内存消耗：sizeof(_Tree_node) * (map.size() + 1)
+
+内存消耗
+
+```C++
+sizeof(_Tree_node) * (map.size() + 1)
+```
 
 
 ## std::set<T>
 
  * 结构和 map 类似
  *  _Tree_node._Myval = K
- * 内存消耗：sizeof(_Tree_node) * (set.size() + 1)
+
+内存消耗
+
+```C++
+sizeof(_Tree_node) * (set.size() + 1)
+```
 
 
 ## std::unordered_map<K, V>
@@ -267,18 +294,26 @@ _List V                  V
     +----+    +----+    +----+    +----+
 ```
 
- * _List_node = { void* prev; void* next; std::pair<K,V> elem; }
- * 内存消耗：sizeof(_List::iterator) * (map.bucket_count()*2)
- *            + sizeof(_List_node) * (map.size() + 1)
+内存消耗
+
+```C++
+// _List_node = { void* prev; void* next; std::pair<K,V> elem; }
+sizeof(_List::iterator) * (map.bucket_count()*2)
+  + sizeof(_List_node) * (map.size() + 1)
+```
 
 
 ## std::unordered_set<T>
 
  * 结构和 unordered_map 类似
- * 
- * _List_node = { void* prev; void* next; T elem; }
- * 内存消耗：sizeof(_List::iterator) * (map.bucket_count()*2)
- *            + sizeof(_List_node) * (map.size() + 1)
+
+内存消耗
+
+```C++
+// _List_node = { void* prev; void* next; T elem; }
+sizeof(_List::iterator) * (map.bucket_count()*2)
+  + sizeof(_List_node) * (map.size() + 1)
+```
 
 
 [1]:https://en.cppreference.com/w/cpp/container/vector/shrink_to_fit
