@@ -325,17 +325,17 @@ _BUF_SIZE = 16 / sizeof (value_type) < 1 ? 1 : 16 / sizeof (value_type)};
 
 class _String_val
 {
-	union _Bxty {
-		value_type _Buf[_BUF_SIZE];
-		pointer _Ptr;
-	} _Bx;
-	size_type _Mysize; // current length of string
-	size_type _Myres;  // current storage reserved for string
+    union _Bxty {
+        value_type _Buf[_BUF_SIZE];
+        pointer _Ptr;
+    } _Bx;
+    size_type _Mysize; // current length of string
+    size_type _Myres;  // current storage reserved for string
 };
 
 class _String_alloc
 {
-	_Compressed_pair<_Alty, _String_val<_Val_types>> _Mypair;
+    _Compressed_pair<_Alty, _String_val<_Val_types>> _Mypair;
 };
 
 class basic_string : public _String_alloc
