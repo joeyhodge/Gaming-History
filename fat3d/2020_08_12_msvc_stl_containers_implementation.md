@@ -56,7 +56,7 @@ class vector : public _Vector_alloc
 内存消耗
 
 ```C++
-sizeof(T) * vector::capacity()
+sizeof(T) * vector.capacity()
 ```
 
 
@@ -93,6 +93,7 @@ class list : public _List_buy
 {    
 };
 ```
+
  * 标准的双向链表实现
  * 利用 _Myhead 多一个 dummy node 的额外开销，来实现 list::end()
  * 
@@ -101,8 +102,8 @@ class list : public _List_buy
 
 ```
        list._Myhead
-             \
-              V
+             \                                        last one
+              V                                         /
              +------+     +------+     +------+     +------+
 last one <-- | prev | <-- | prev | <-- | prev | <-- | prev |
              +------+     +------+     +------+     +------+
@@ -115,7 +116,7 @@ last one <-- | prev | <-- | prev | <-- | prev | <-- | prev |
 内存消耗
 
 ```C++
-sizeof(_List_node) * (list::size() + 1)
+sizeof(_List_node) * (list.size() + 1)
 ```
 
 
@@ -346,7 +347,7 @@ class basic_string : public _String_alloc
  * _BUF_SIZE = [1, 16]，由 sizeof(T) 大小决定
  * 利用 Bx，对于短字符串，不进行内存申请
  * capacity() 返回的值，减去了 '\0' 的空间
- * 注意：不做 shrink_to_fit()，永远不释放内存
+ * 注意：不做 [shrink_to_fit()][9]，永远不释放内存
 
 内存消耗
 
