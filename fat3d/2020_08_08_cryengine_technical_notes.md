@@ -67,7 +67,7 @@
  * [all Crytek free-talks on GDC][7]
 
 
-## Core Graphics Developers
+## Core Developers
 
 ### Martin Mittring
 
@@ -101,6 +101,14 @@
  * SIGGRAPH2010 - Real-time Diffuse Global Illumination in CryENGINE 3
  * [SIGGRAPH2010 - CryENGINE 3: Reaching the Speed of Light][9]
  * [LPV实现解读][21]
+
+### Sergiy Migdalskiy
+
+ * 待过 Crytek, Naughty Dog(Sony), Valve
+ * 他设计的 ISizer, ZipDir
+ * [https://github.com/migdalskiy][27]
+ * [Valve's Physics for Game Programmers][28]
+ * [Performance - Physics Optimization Strategies][29]
 
 
 ## Rendering Technique
@@ -163,3 +171,6 @@
 [24]:https://developer.nvidia.com/vxgi
 [25]:https://www.zhihu.com/question/28295455
 [26]:https://www.scheidecker.net/
+[27]:https://github.com/migdalskiy
+[28]:https://www.youtube.com/watch?v=1RphLzpQiJY
+[29]:http://media.steampowered.com/apps/valve/2015/Migdalskiy_Sergiy_Physics_Optimization_Strategies.pdf
