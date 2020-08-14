@@ -1,6 +1,9 @@
-# VS2017 C++ STL Containers Implementation
+# MSVC C++ STL Containers Implementation
 
-为了精确统计 stl containers 的内存占用，把 msvc 中常用的容器都研究了一下。文章中的"内存消耗"，都是容器动态分配的内存。
+为了精确统计 stl containers 的内存占用，把 msvc 中常用的容器都研究了一下。
+
+ * 代码参考 VS2017，在 VS2012 & VS2017 中测试通过
+ * 文章中的"内存消耗"，都是容器动态分配的内存
 
 常用容器
 
@@ -12,6 +15,19 @@
  * [std::unordered_map][7]
  * [std::unordered_set][8]
 
+
+## _Container_proxy
+
+ * debug build 每个容器还会额外申请一个 _Container_proxy
+ * 注意：sizeof(_Container_proxy) 32/64-bit 大小不一样
+
+```C++
+struct _Container_proxy
+{
+    const _Container_base12* _Mycont;
+    _Iterator_base12* _Myfirstiter;
+};
+```
 
 ## std::vector<T>
 
@@ -132,7 +148,7 @@ sizeof(_List_node) * (list.size() + 1)
 
 class _Deque_val
 {
-    _Mapptr   _Map;     // pointer to array of pointers to blocks
+    T**       _Map;     // pointer to array of pointers to blocks
     size_type _Mapsize; // size of map array, zero or 2^N
     size_type _Myoff;   // offset of initial element
     size_type _Mysize;  // current length of sequence
@@ -278,6 +294,8 @@ class unordered_map : public _Hash
  * _Vec 作为 HashTable 的 buckets，保存着 _List 的 iterator
  * _Vec[i] 和 _Vec[i+1] 为一组，对应 _List 中的一段数据
  * Hash(key) 找到 i，然后遍历 _List 中 _Vec[i] ~ _Vec[i+1] 所有的元素即可
+ * 
+ * 留意：_List & _Vec，有两个 _Container_proxy
 
 ```
         one bucket
