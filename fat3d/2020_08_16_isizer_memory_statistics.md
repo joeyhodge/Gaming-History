@@ -254,10 +254,16 @@ Pros
 Cons
 
  * 每一个类需要实现 GetMemoryUsage() 函数
- * 使用者需要理解 stack & heap 在内存申请上的区别，否则容易写错统计代码，导致结果出错
+ * 使用者需要理解 C++ 在内存申请上的细节，否则容易写出错误的统计代码
+
+
+## 参考资料
+
+ * [ICrySizer][5]
 
 
 [1]:https://github.com/gperftools/gperftools
 [2]:https://github.com/kasicass/blog/blob/master/fat3d/2020_08_12_msvc_stl_containers_implementation.md
 [3]:https://github.com/kasicass/blog/blob/master/fat3d/2020_08_13_clang_stl_containers_implementation.md
 [4]:https://github.com/kasicass/blog/blob/master/fat3d/2020_08_13_gcc_stl_containers_implementation.md
+[5]:https://github.com/CRYTEK/CRYENGINE/blob/release/Code/CryEngine/CryCommon/CryMemory/CrySizer.h
