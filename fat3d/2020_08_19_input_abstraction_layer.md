@@ -41,9 +41,9 @@ Linux
          |                |                 |
     DXInputDevice    XInputDevice      LinuxInput
          |
-    +--------+
-    |        |
-Keyboard   Mouse
+    +----+----+
+    |         |
+Keyboard    Mouse
 ```
 
 ### Usage
