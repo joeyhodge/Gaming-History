@@ -103,11 +103,11 @@ OSNAME=`uname | tr '[:upper:]' '[:lower:]'`
 BUILD_CONF=`echo $1 | tr '[:upper:]' '[:lower:]'`
 
 if [ "$BUILD_CONF" == "debug" ] || [ "$BUILD_CONF" == "profile" ] || [ "$BUILD_CONF" == "release" ] ; then
-	BUILD_INI="${OSNAME}_${BUILD_CONF}.ini"
+    BUILD_INI="${OSNAME}_${BUILD_CONF}.ini"
 else
-	echo "Usage:"
-	echo "  build.sh <debug|profile|release>"
-	exit
+    echo "Usage:"
+    echo "  build.sh <debug|profile|release>"
+    exit
 fi
 
 emake --ini=$BUILD_INI zlib.mak 
