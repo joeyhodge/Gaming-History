@@ -3,7 +3,8 @@
 
 ## Architecture
 
- * [FATENGINE Architecture][1]
+ * [Architecture][1]
+ * [Build System][6]
 
 
 ## FatInput
@@ -27,3 +28,4 @@
 [3]:https://github.com/kasicass/blog/blob/master/cryengine/2020_08_08_cryengine_technical_notes.md
 [4]:https://github.com/kasicass/blog/blob/master/cryengine/2020_08_14_cryengine_tutorial.md
 [5]:https://github.com/kasicass/blog/blob/master/fat3d/2020_08_16_isizer_memory_statistics.md
+[6]:https://github.com/kasicass/blog/blob/master/fat3d/2020_08_21_fatengine_build_system.md
