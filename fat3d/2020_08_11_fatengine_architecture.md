@@ -94,5 +94,5 @@
  * Android
 
 [1]:https://github.com/CRYTEK/CRYENGINE
-[2]:https://github.com/kasicass/blog/blob/master/fat3d/2020_08_08_cryengine_technical_notes.md
+[2]:https://github.com/kasicass/blog/blob/master/cryengine/2020_08_08_cryengine_technical_notes.md
 [3]:https://github.com/skywind3000/emake
