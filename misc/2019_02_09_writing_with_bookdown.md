@@ -77,7 +77,7 @@ install.packages("rmd")
 require("rmd")
 ```
 
-![](2019_02_09_writing_with_bookdown/require_rmd.png)
+![](images/2019_02_09_writing_with_bookdown/require_rmd.png)
 
 
 ### Quick Start
@@ -106,7 +106,7 @@ R Markdown Cheat Sheet，下载
  * [https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf][10]
  * R Studio 做的 Cheat Sheet 好漂亮，Orz
 
-![](2019_02_09_writing_with_bookdown/rmarkdown_cheat_sheet.png)
+![](images/2019_02_09_writing_with_bookdown/rmarkdown_cheat_sheet.png)
 
 
 ## 另类发现
