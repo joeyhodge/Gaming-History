@@ -4,7 +4,7 @@ mips构架的简化版，其中 Register File 就是一堆 registers。
 
 5-bit Rs, Rt，用来指定使用 Register File 中的哪个 register。因为只有 32 个 registers，所以 5-bit 足已。
 
-![](2010_09_18_mips_architecture_image_01.png)
+![](images/2010_09_18_mips_architecture/arch.png)
 
 Register File 都有哪些呢？自然，不同的 register 功用不同。习惯性用法：
 
@@ -13,6 +13,6 @@ Register File 都有哪些呢？自然，不同的 register 功用不同。习�
  * $a0 - $a3, used to pass arguments to functions
  * $v0 - $v1, used to return values from functions
 
-![](2010_09_18_mips_architecture_image_02.png)
+![](images/2010_09_18_mips_architecture/registers.png)
 
 相比 x86，mips is goddam simple.
