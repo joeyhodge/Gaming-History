@@ -15,11 +15,13 @@
 Debug 状态下，pure call、invalid parameter会出现提示框（下面一一说明）。Release 下程序直接挂掉。
 
 * _set_purecall_handler, 如果调用了一个 pure virtual function，则触发此 handler
+
 ![](2012_07_21_crash_report_1_image_01.png)
 
 * _set_invalid_parameter_handler, 一个 crt 函数传参不正确出发此handler，比如：printf(NULL)
 * _set_purecall_handler_m, 用于 mixed mode。mixed mode CRT，与.net库链接时所用的crt。
-![](2012_07_21_crash_report_1_image_01.png)
+
+![](2012_07_21_crash_report_1_image_02.png)
 
 看一下 _set_invalid_parameter_handler/_set_purecall_handler 的具体例子。
 
