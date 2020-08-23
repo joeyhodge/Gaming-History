@@ -63,16 +63,16 @@
 
 [1]:http://www.zeromq.org/
 [2]:http://zguide.zeromq.org/chapter:all
-[3]:https://github.com/kasicass/blog/blob/master/zeromq/2010_08_31_hello_world_zmq.md
-[4]:https://github.com/kasicass/blog/blob/master/zeromq/2010_09_01_multipart_message.md
-[5]:https://github.com/kasicass/blog/blob/master/zeromq/2010_11_03_pub_sub.md
-[6]:https://github.com/kasicass/blog/blob/master/zeromq/2010_11_25_pipeline.md
-[7]:https://github.com/kasicass/blog/blob/master/zeromq/2010_12_02_dance_with_libevent.md
-[8]:https://github.com/kasicass/blog/blob/master/zeromq/2010_12_16_dance_with_libevent_bug.md
-[9]:https://github.com/kasicass/blog/blob/master/zeromq/2010_12_20_inproc_performance.md
-[10]:https://github.com/kasicass/blog/blob/master/zeromq/2010_12_09_zmq_internals_01.md
-[11]:https://github.com/kasicass/blog/blob/master/zeromq/2010_12_17_zmq_internals_02.md
-[12]:https://github.com/kasicass/blog/blob/master/zeromq/2010_12_18_zmq_internals_03.md
+[3]:https://github.com/kasicass/blog/blob/master/net-zeromq/2010_08_31_hello_world_zmq.md
+[4]:https://github.com/kasicass/blog/blob/master/net-zeromq/2010_09_01_multipart_message.md
+[5]:https://github.com/kasicass/blog/blob/master/net-zeromq/2010_11_03_pub_sub.md
+[6]:https://github.com/kasicass/blog/blob/master/net-zeromq/2010_11_25_pipeline.md
+[7]:https://github.com/kasicass/blog/blob/master/net-zeromq/2010_12_02_dance_with_libevent.md
+[8]:https://github.com/kasicass/blog/blob/master/net-zeromq/2010_12_16_dance_with_libevent_bug.md
+[9]:https://github.com/kasicass/blog/blob/master/net-zeromq/2010_12_20_inproc_performance.md
+[10]:https://github.com/kasicass/blog/blob/master/net-zeromq/2010_12_09_zmq_internals_01.md
+[11]:https://github.com/kasicass/blog/blob/master/net-zeromq/2010_12_17_zmq_internals_02.md
+[12]:https://github.com/kasicass/blog/blob/master/net-zeromq/2010_12_18_zmq_internals_03.md
 [13]:https://github.com/kasicass/kasicass/tree/master/zmq/intro
 [14]:http://lists.zeromq.org/pipermail/zeromq-dev/2010-July/004238.html
 [15]:http://nanomsg.org/
