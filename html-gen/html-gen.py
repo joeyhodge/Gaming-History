@@ -49,7 +49,7 @@ def genIndexFile(markdownFiles):
 	mds   = {}
 	hrefs = {}
 
-	# [(tag, file), ('freebsd', '2018_09_23_name.md')...]
+	# [(tag, file), ('os-freebsd', '2018_09_23_name.md')...]
 	tag_files = [filePath.split(os.sep)[-2:] for filePath in markdownFiles]
 
 	lastTag = None
@@ -103,6 +103,7 @@ def genIndexFile(markdownFiles):
 		result.append('## ' + tag)
 		for f in mds[tag]:
 			display_f = f.replace('_', ' ') # '2018_12_02' => '2018 12 02'
+			display_f = f.replace('.md', '')
 			result.append('* [' + display_f + '][' + str(i) + ']')
 			i += 1
 	
