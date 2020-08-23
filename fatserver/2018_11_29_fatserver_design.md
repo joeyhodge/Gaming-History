@@ -41,7 +41,7 @@ fatserver 的第一个目标，对 Akka.NET 做一次全面 clone，看看有多
 
 有人做了个 [pykka][8]。不过既不支持分布式，网络库又不能直接跑在 pypy 上。和 [Akka.NET][5] 相比，只是个玩具。
 
-![](2018_11_29_fatserver_design_image_01.png)
+![](images/2018_11_29_fatserver_design/pykka.png)
 
 
 ### 2018.10.20

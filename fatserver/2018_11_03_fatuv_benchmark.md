@@ -15,7 +15,7 @@ Linux 4.9.0-4-amd64 #1 SMP Debian 4.9.51-1 (2017-09-28) x86_64 GNU/Linux
 
 ## 结果汇总
 
-![](2018_11_03_fatuv_benchmark_image_01.png)
+![](images/2018_11_03_fatuv_benchmark/benchmark.png)
 
 
 
