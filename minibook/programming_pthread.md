@@ -59,25 +59,25 @@ pthread 函数返回值的规则，请先看此文。
  * [libthr 分析 (1) -- libthr 如何与 libc 合作][20]
  * [libthr 分析 (2) -- thread 的生与死][21]
 
-[1]:https://github.com/kasicass/blog/blob/master/pthread/2009_12_30_func_return_value.md
-[2]:https://github.com/kasicass/blog/blob/master/pthread/2009_12_25_thread_create_and_exit.md
-[3]:https://github.com/kasicass/blog/blob/master/pthread/2009_12_28_detach_state.md
-[4]:https://github.com/kasicass/blog/blob/master/pthread/2009_12_28_thread_self_and_equal.md
-[5]:https://github.com/kasicass/blog/blob/master/pthread/2009_12_29_thread_specific_data.md
-[6]:https://github.com/kasicass/blog/blob/master/pthread/2009_12_29_thread_cancel.md
-[7]:https://github.com/kasicass/blog/blob/master/pthread/2009_12_30_mutex.md
-[8]:https://github.com/kasicass/blog/blob/master/pthread/2010_01_06_rwlock.md
-[9]:https://github.com/kasicass/blog/blob/master/pthread/2010_01_06_cond.md
-[10]:https://github.com/kasicass/blog/blob/master/pthread/2010_01_13_FIFO_queue.md
-[11]:https://github.com/kasicass/blog/blob/master/pthread/2010_08_11_thread_sleep_code.md
-[12]:https://github.com/kasicass/blog/blob/master/pthread/2009_12_28_user_defined_thread_stack.md
-[13]:https://github.com/kasicass/blog/blob/master/pthread/2009_12_28_sched_policy_and_priority.md
-[14]:https://github.com/kasicass/blog/blob/master/pthread/2009_12_28_scope_and_inherit_sched.md
-[15]:https://github.com/kasicass/blog/blob/master/pthread/2009_12_29_thread_concurrency.md
-[16]:https://github.com/kasicass/blog/blob/master/pthread/2010_01_06_barrier.md
-[17]:https://github.com/kasicass/blog/blob/master/pthread/2010_01_08_spin_lock.md
+[1]:https://github.com/kasicass/blog/blob/master/lib-pthread/2009_12_30_func_return_value.md
+[2]:https://github.com/kasicass/blog/blob/master/lib-pthread/2009_12_25_thread_create_and_exit.md
+[3]:https://github.com/kasicass/blog/blob/master/lib-pthread/2009_12_28_detach_state.md
+[4]:https://github.com/kasicass/blog/blob/master/lib-pthread/2009_12_28_thread_self_and_equal.md
+[5]:https://github.com/kasicass/blog/blob/master/lib-pthread/2009_12_29_thread_specific_data.md
+[6]:https://github.com/kasicass/blog/blob/master/lib-pthread/2009_12_29_thread_cancel.md
+[7]:https://github.com/kasicass/blog/blob/master/lib-pthread/2009_12_30_mutex.md
+[8]:https://github.com/kasicass/blog/blob/master/lib-pthread/2010_01_06_rwlock.md
+[9]:https://github.com/kasicass/blog/blob/master/lib-pthread/2010_01_06_cond.md
+[10]:https://github.com/kasicass/blog/blob/master/lib-pthread/2010_01_13_FIFO_queue.md
+[11]:https://github.com/kasicass/blog/blob/master/lib-pthread/2010_08_11_thread_sleep_code.md
+[12]:https://github.com/kasicass/blog/blob/master/lib-pthread/2009_12_28_user_defined_thread_stack.md
+[13]:https://github.com/kasicass/blog/blob/master/lib-pthread/2009_12_28_sched_policy_and_priority.md
+[14]:https://github.com/kasicass/blog/blob/master/lib-pthread/2009_12_28_scope_and_inherit_sched.md
+[15]:https://github.com/kasicass/blog/blob/master/lib-pthread/2009_12_29_thread_concurrency.md
+[16]:https://github.com/kasicass/blog/blob/master/lib-pthread/2010_01_06_barrier.md
+[17]:https://github.com/kasicass/blog/blob/master/lib-pthread/2010_01_08_spin_lock.md
 [18]:https://github.com/kasicass/blog/blob/master/freebsd/2009_10_24_gcc_pthread.md
 [19]:https://github.com/kasicass/blog/blob/master/freebsd/2009_12_15_freebsd8_remove_KSE.md
 [20]:https://github.com/kasicass/blog/blob/master/freebsd/2010_12_03_how_libthr_work_with_libc.md
 [21]:https://github.com/kasicass/blog/blob/master/freebsd/2010_12_03_libthr_thread_lifecycle.md
-[22]:https://github.com/kasicass/blog/blob/master/pthread/2012_03_15_tls_on_mac.md
+[22]:https://github.com/kasicass/blog/blob/master/lib-pthread/2012_03_15_tls_on_mac.md
