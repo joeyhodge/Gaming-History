@@ -7,7 +7,7 @@
  * 只保存一份数据
  * 快速 compare，快速 copy
 
-典型用例。美术资源所互相索引的资源路径，比如：
+典型用例。美术资源中互相索引的资源路径，比如：
 
  * Textures/maps/block.dds
  * Objects/maps/valley/rock.model
@@ -41,29 +41,29 @@ if (b.Empty())
 ```C++
 enum ENameFlag
 {
-	eNameFlag_OnlyFind,
+    eNameFlag_OnlyFind,
 };
 
 class Name
 {
 public:
-	Name();
-	Name(const Name& rhs);
-	Name(const char* s);
-	Name(const char* s, ENameFlag onlyFind);
-	~Name();
+    Name();
+    Name(const Name& rhs);
+    Name(const char* s);
+    Name(const char* s, ENameFlag onlyFind);
+    ~Name();
 
     ...
 
 public:
-	// std::unordered_map helpers
-	struct hash
-	{
-		size_t operator()(const Name& key) const;
-	};
+    // std::unordered_map helpers
+    struct hash
+    {
+        size_t operator()(const Name& key) const;
+    };
 
 private:
-	const char* str_;
+    const char* str_;
 };
 ```
 
@@ -73,11 +73,11 @@ private:
 ```C++
 struct INameTable
 {
-	struct SNameEntry
-	{
-		int refcount;           // Reference count of this string.
-		int length;             // Current length of string.
-		// char data[length+1]  // Here in memory starts character buffer of size length+1.
+    struct SNameEntry
+    {
+        int refcount;           // Reference count of this string.
+        int length;             // Current length of string.
+        // char data[length+1]  // Here in memory starts character buffer of size length+1.
     };
     ...
 };
@@ -86,8 +86,8 @@ class NameTable : public INameTable
 {
     ...
 private:
-	typedef std::unordered_map<const char*, SNameEntry*, stl::hash_cstring<const char*>, stl::equal_stricmp<const char*>> NameMap;
-	NameMap nameMap_;
+    typedef std::unordered_map<const char*, SNameEntry*, stl::hash_cstring<const char*>, stl::equal_stricmp<const char*>> NameMap;
+    NameMap nameMap_;
 };
 ```
 
@@ -123,11 +123,11 @@ private:
 class Texture
 {
 public:
-	static const Name& ClassName();
-	static void InitNames();
+    static const Name& ClassName();
+    static void InitNames();
 
 private:
-	static Name s_texClassName;
+    static Name s_texClassName;
     ...
 };
 
@@ -136,12 +136,12 @@ Name Texture::s_texClassName; // = Name("Texture");
 
 const Name& Texture::ClassName()
 {
-	return s_texClassName;
+    return s_texClassName;
 }
 
 void Texture::InitNames()
 {
-	s_texClassName = "Texture";
+    s_texClassName = "Texture";
 }
 ```
 
@@ -150,12 +150,12 @@ void Texture::InitNames()
 ```C++
 Name::~Name()
 {
-	// for static var, NameTable maybe have been destroyed before ~Name()
-	// e.g. "static Name Texture::s_texClassName"
-	//
-	// we make gEnv->pNameTable = NULL, meaning NameTable has been destroyed.
-	INameTable* pNameTable = GetNameTableNoCheck();
-	if (pNameTable)
-		pNameTable->StringRelease(str_);
+    // for static var, NameTable maybe have been destroyed before ~Name()
+    // e.g. "static Name Texture::s_texClassName"
+    //
+    // we make gEnv->pNameTable = NULL, meaning NameTable has been destroyed.
+    INameTable* pNameTable = GetNameTableNoCheck();
+    if (pNameTable)
+        pNameTable->StringRelease(str_);
 }
 ```
