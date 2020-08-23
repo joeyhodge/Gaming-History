@@ -145,7 +145,7 @@ void Texture::InitNames()
 }
 ```
 
- * static Name var 的析构，由 Name::~Name() 中来保证
+ * static Name var 的析构，由 Name::~Name() 来保证
 
 ```C++
 Name::~Name()
