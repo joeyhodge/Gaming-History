@@ -25,6 +25,7 @@
  * [SIGGRAPH - Rendering Techniques in Ryse][45]
  * [SIGGRAPH - Asset Production in Ryse][44]
  * [SIGGRAPH - Character Creation and Pipeline in Ryse][46]
+ * [SIGGRAPH - Real-time Geometry Caches][49]
 
 ### 2013
 
@@ -221,3 +222,4 @@
 [46]:https://archive.org/download/crytek_presentations/Ryse_SIGGRAPH_2014_Lars%20Martinsson_Character%20Creation%20and%20Pipeline.pdf
 [47]:https://archive.org/download/crytek_presentations/Crafting%20the%20World%20of%20Crysis.pptx
 [48]:https://archive.org/download/crytek_presentations/Project%20Phoenix.pptx
+[49]:https://slideplayer.com/slide/3432122/
