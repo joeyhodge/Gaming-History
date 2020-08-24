@@ -20,15 +20,22 @@
 
 ## Presentations & Papers
 
+### 2014
+
+ * [SIGGRAPH - Rendering Techniques in Ryse][45]
+ * [SIGGRAPH - Asset Production in Ryse][44]
+ * [SIGGRAPH - Character Creation and Pipeline in Ryse][46]
+
 ### 2013
 
  * [FMX - The Art and Technology behind Crysis 3][14]
- * GDC - How CryENGINE 3 and AMD GCN Architecture Gave Birth to a Red Gem - Project Phoenix
+ * [GDC - How CryENGINE 3 and AMD GCN Architecture Gave Birth to a Red Gem - Project Phoenix][48]
  * [GDC - Moving to the Next Generation - The Rendering Technology of Ryse][15]
  * [GDC - Advanced Visual Effects with DirectX 11: The Rendering Technologies of Crysis 3][16], [GDC Video][17]
  * [GDC Europe - Shining the Light on Crysis 3][18]
+ * [GDC Europe - Crafting the World of Crysis][47]
  * [SIGGRAPH - CryENGINE 3 Graphic Gems][19]
- * SIGGRAPH - Defining the Next Next-Gen
+ * [SIGGRAPH - Defining the Next Next-Gen][31]
  * [SIGGRAPH - Playing with Real-Time Shadows][20]
 
 ### 2012
@@ -49,19 +56,38 @@
  * GDC China - The Future of Game Engines - Towards Real-time Photo-realistic Rendering and Natural Character Animation
  * GDC Europe - AAA Stereo-3D in CryENGINE 3
  * GDC Europe - Bringing Stereo to Consoles
- * HPGC - Future Graphics in Games
+ * [HPGC - Future Graphics in Games][34]
  * [I3D - Cascaded Light Propagation Volumes for Real Time Indirect Illumination][8]
- * SIGGRAPH - Real-time Diffuse Global Illumination in CryENGINE 3
+ * [SIGGRAPH - Real-time Diffuse Global Illumination in CryENGINE 3][33]
  * [SIGGRAPH - CryENGINE 3: Reaching the Speed of Light][9]
 
 ### 2009
 
+ * [GDC Europe - AAA Automated Testing for AAA Games][41]
  * [SIGGRAPH - Light Propagation Volumes in CryENGINE 3][5]
  * [TGC - A Bit More Deferred CryENGINE 3][6]
 
+### 2008
+
+ * [GDC - Crysis Next Gen Effects][36]
+ * [GDC - Transition to Scrum Midway through a AAA Development Cycle][40]
+ * [SIGGRAPH - Advanced Virtual Texture Topics][32]
+
 ### 2007
 
+ * [GDC - Real-time Atmospheric Effects in Games Revisited][42]
+ * [SIGGRAPH - Porting Game Engines to Direct3D 10: Crysis / CryEngine2][35]
  * [SIGGRAPH - Finding Next Gen - CryENGINE 2][3]
+ * [GamingISV - Go Parallel - Multicore Programming and Game Development][39]
+
+### 2006
+
+ * [SIGGRAPH - Real-time Atmospheric Effects in Games][38]
+
+### 2005
+
+ * [GDC - Far Cry and DirectX9][37]
+
 
 ### Documentation
 
@@ -100,7 +126,7 @@
  * 研究员，an ex-R&D at Crytek，实现了 CryENGINE 3 LPV
  * [个人网页][22]
  * [SIGGRAPH2009 - Light Propagation Volumes in CryENGINE 3][5]
- * SIGGRAPH2010 - Real-time Diffuse Global Illumination in CryENGINE 3
+ * [SIGGRAPH2010 - Real-time Diffuse Global Illumination in CryENGINE 3][33]
  * [SIGGRAPH2010 - CryENGINE 3: Reaching the Speed of Light][9]
  * [LPV实现解读][21]
 
@@ -177,3 +203,21 @@
 [28]:https://www.youtube.com/watch?v=1RphLzpQiJY
 [29]:http://media.steampowered.com/apps/valve/2015/Migdalskiy_Sergiy_Physics_Optimization_Strategies.pdf
 [30]:https://www.youtube.com/watch?v=wGQWGAuNx6M
+[31]:https://ia800902.us.archive.org/25/items/crytek_presentations/Ryse_ChrisEvans_Sigg.pdf
+[32]:https://ia600902.us.archive.org/25/items/crytek_presentations/AdvVirtualTexTopics.ppt
+[33]:https://ia800902.us.archive.org/25/items/crytek_presentations/GI_crytek.ppt
+[34]:https://ia800902.us.archive.org/25/items/crytek_presentations/Notes.ppt
+[35]:https://ia800902.us.archive.org/25/items/crytek_presentations/SIGGRAPH2007_CrysisDX10.ppt
+[36]:https://ia800902.us.archive.org/25/items/crytek_presentations/GDC08_SousaT_CrysisEffects.ppt
+[37]:https://ia800902.us.archive.org/25/items/crytek_presentations/GDC2005_FarCryAndDX9.ppt
+[38]:https://ia800902.us.archive.org/25/items/crytek_presentations/SIGGRAPH2006_RealtimeAtmoFxInGames.ppt
+[39]:https://ia800902.us.archive.org/25/items/crytek_presentations/MunichIntel_eng.ppt
+[40]:https://ia600902.us.archive.org/25/items/crytek_presentations/ASoendergaardGDC08.ppt
+[41]:https://ia800902.us.archive.org/25/items/crytek_presentations/AAA_Automated_testing.ppt
+[42]:https://ia600902.us.archive.org/25/items/crytek_presentations/GDC2007_RealtimeAtmoFxInGamesRev.ppt
+[43]:https://ia800902.us.archive.org/25/items/crytek_presentations/Ryse_SIGGRAPH_2014_Christopher%20Evans_Asset%20Production.pdf
+[44]:https://ia800902.us.archive.org/25/items/crytek_presentations/Ryse_SIGGRAPH_2014_Christopher%20Evans_Asset%20Production.pdf
+[45]:http://advances.realtimerendering.com/s2014/crytek/Sigg14_Schulz_Mader_Ryse_Rendering_Techniques.pptx
+[46]:https://archive.org/download/crytek_presentations/Ryse_SIGGRAPH_2014_Lars%20Martinsson_Character%20Creation%20and%20Pipeline.pdf
+[47]:https://archive.org/download/crytek_presentations/Crafting%20the%20World%20of%20Crysis.pptx
+[48]:https://archive.org/download/crytek_presentations/Project%20Phoenix.pptx
