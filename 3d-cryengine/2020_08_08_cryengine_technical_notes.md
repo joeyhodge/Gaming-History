@@ -89,7 +89,6 @@
 
  * [GDC - Far Cry and DirectX9][37]
 
-
 ### Documentation
 
  * [https://docs.cryengine.com/][4]
@@ -147,7 +146,14 @@
  * [SIGGRAPH2007 - Porting Game Engines to Direct3D 10: Crysis / CryEngine2][35]
  * [GDC2005 - Far Cry and DirectX9][37]
 
+
 ## Rendering Technique
+
+### HDR - High Dynamic Range Rendering
+
+ * [GDC2010 - Uncharted 2: HDR Lighting][52]
+ * [GDC2005 - Far Cry and DirectX9][37]
+ * GDC2003 - Frame Buffer Postprocessing Effects in DOUBLE-S.T.E.A.L（ppt、[voice][53]）
 
 ### GI - Global Illumination
 
@@ -232,3 +238,5 @@
 [49]:https://slideplayer.com/slide/3432122/
 [50]:https://cloudimperiumgames.com/
 [51]:https://en.wikipedia.org/wiki/Star_Citizen
+[52]:https://www.gdcvault.com/play/1012351/Uncharted-2-HDR
+[53]:https://www.gdcvault.com/play/1022664/Frame-Buffer-Postprocessing-Effects-in
