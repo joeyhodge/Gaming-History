@@ -139,6 +139,13 @@
  * [Valve's Physics for Game Programmers][28]
  * [Performance - Physics Optimization Strategies][29]
 
+### Carsten Wenzel
+
+ * 负责 Atmospheric 相关的内容
+ * 目前在 [Cloud Imperium Games][50] 做 [Star Citizen][51]
+ * [GDC2007 - Real-time Atmospheric Effects in Games Revisited][42]
+ * [SIGGRAPH2007 - Porting Game Engines to Direct3D 10: Crysis / CryEngine2][35]
+ * [GDC2005 - Far Cry and DirectX9][37]
 
 ## Rendering Technique
 
@@ -223,3 +230,5 @@
 [47]:https://archive.org/download/crytek_presentations/Crafting%20the%20World%20of%20Crysis.pptx
 [48]:https://archive.org/download/crytek_presentations/Project%20Phoenix.pptx
 [49]:https://slideplayer.com/slide/3432122/
+[50]:https://cloudimperiumgames.com/
+[51]:https://en.wikipedia.org/wiki/Star_Citizen
