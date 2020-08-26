@@ -24,11 +24,11 @@
 
 ![](images/2020_08_25_uncharted_2_hdr_lighting/gamma05.png)
 
- * 理想情况
+ * 假设相机不对图片做 gamma 处理，则显示到显示器上就错了
 
 ![](images/2020_08_25_uncharted_2_hdr_lighting/gamma06.png)
 
- * 实际情况，硬盘中保存的是非线性数据
+ * 实际情况，相机都先做了 gamma 修正，硬盘中保存的是非线性数据
 
 ![](images/2020_08_25_uncharted_2_hdr_lighting/gamma07.png)
 
