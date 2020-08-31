@@ -67,6 +67,7 @@
  * [GDC Europe - AAA Automated Testing for AAA Games][41]
  * [SIGGRAPH - Light Propagation Volumes in CryENGINE 3][5]
  * [TGC - A Bit More Deferred CryENGINE 3][6]
+ * ShaderX7 - Screen-Space Ambient Occlusion
 
 ### 2008
 
@@ -146,6 +147,10 @@
  * [SIGGRAPH2007 - Porting Game Engines to Direct3D 10: Crysis / CryEngine2][35]
  * [GDC2005 - Far Cry and DirectX9][37]
 
+### Vladimir Kajalin
+
+ * SSAO 作者，目前 CRYENGINE V 的 Technical Director
+
 
 ## Rendering Technique
 
@@ -157,23 +162,34 @@
 
 ### GI - Global Illumination
 
+#### SSAO - Screen Space Ambient Occlusion
+
+ * 2011 - GEMS8 - Principles and Practice of Screen Space Ambient Occlusion (Starcraft II)
+ * [2009 - SIGGRAPH - Multi-Layer Dual-Resolution Screen-Space Ambient Occlusion][57]
+ * 2009 - ShaderX7 - Variance Methods for Screen-Space Ambient Occlusion
+ * 2009 - ShaderX7 - Screen-Space Ambient Occlusion (Crysis)
+ * [2008 - SIGGRAPH - Image-Space Horizon-Based Ambient Occlusion][58]
+ * [2008 - NVidia - Screen Space Ambient Occlusion][56]
+ * [LearnOpenGL - SSAO][55]
+ * [NVIDIA ShadowWorks][59]，有 HBAO+ 的实现
+
+#### SSDO - Screen Space Directional Occlusion
+
+ * 2009 - Approximating Dynamic Global Illumination in Image Space
+
+#### LPV & SVOGI & VXGI
+
  * [About LPV, SVOGI and VXGI][25]
-
-#### LPV
-
- * 作者 Anton Kaplanyan
- * [SIGGRAPH2009 - Light Propagation Volumes in CryENGINE 3][5]
-
-#### SVOGI
-
- * 作者 Andrew Scheidecker，[https://www.scheidecker.net/][26]
+ * 
+ * LPV - 作者 Anton Kaplanyan
+ * [2009 - SIGGRAPH - Light Propagation Volumes in CryENGINE 3][5]
+ * 
+ * SVOGI - 作者 Andrew Scheidecker，[https://www.scheidecker.net/][26]
  * 在 UE4 Elemental Tech Demo 中实现了 SVOGI
  * 但因为 XBOXONE & PS4 的性能不足，最终从引擎中删除了这部分的实现
  * 目前 CRYENGINE 5 中也实现了 SVOGI
-
-#### VXGI
-
- * Nvidia 设计的，和 SVOGI 同类的技术
+ * 
+ * VXGI - Nvidia 设计的，和 SVOGI 同类的技术
  * [Voxel Cone Tracing and Sparse Voxel Octree for Real-time Global Illumination][23]
  * [https://developer.nvidia.com/vxgi][24]
 
@@ -241,3 +257,8 @@
 [52]:https://www.gdcvault.com/play/1012351/Uncharted-2-HDR
 [53]:https://www.gdcvault.com/play/1022664/Frame-Buffer-Postprocessing-Effects-in
 [54]:https://docs.unrealengine.com/udk/Three/ContentBlog.html
+[55]:https://learnopengl.com/Advanced-Lighting/SSAO
+[56]:https://developer.download.nvidia.cn/SDK/10.5/direct3d/Source/ScreenSpaceAO/doc/ScreenSpaceAO.pdf
+[57]:https://developer.download.nvidia.cn/presentations/2009/SIGGRAPH/Bavoil_MultiLayerDualResolutionSSAO.pdf
+[58]:https://developer.download.nvidia.com/presentations/2008/SIGGRAPH/HBAO_SIG08b.pdf
+[59]:https://developer.nvidia.com/shadowworks
