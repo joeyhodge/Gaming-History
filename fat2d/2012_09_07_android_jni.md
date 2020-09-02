@@ -87,7 +87,7 @@ ProjectDir> adb install -r bin/HelloJNI-debug.apk    # -r, reinstall
 
 OK，可以通过 java 访问 C 函数啦。
 
-![](2012_09_07_android_jni_image_01.png)
+![](images/2012_09_07_android_jni/hello_jni.png)
 
 清理
 

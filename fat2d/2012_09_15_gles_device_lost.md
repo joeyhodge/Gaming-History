@@ -115,9 +115,9 @@ D/LifeCycleActivity(  721): onResume
 
 来看看模拟器的按钮
 
-![](2012_09_15_gles_device_lost_image_01.png)
+![](images/2012_09_15_gles_device_lost/keyboard.png)
 
-点 ![](2012_09_15_gles_device_lost_image_02.png) 表示回到桌面，但当前进程 activity 并不退出，可以收到消息：
+点 ![](images/2012_09_15_gles_device_lost/button_home.png) 表示回到桌面，但当前进程 activity 并不退出，可以收到消息：
 
 ```
 D/LifeCycleActivity(  646): onPause
@@ -132,7 +132,7 @@ D/LifeCycleActivity(  594): onStart
 D/LifeCycleActivity(  594): onResume
 ```
 
-如果 ![](2012_09_15_gles_device_lost_image_03.png) 表示退出当前的 activity，可以收到消息：
+如果 ![](images/2012_09_15_gles_device_lost/button_prev.png) 表示退出当前的 activity，可以收到消息：
 
 ```
 D/LifeCycleActivity(  721): onPause
@@ -150,7 +150,7 @@ D/LifeCycleActivity(  788): onResume
 
 如何确定一个进程是否退出？android 是尽量不让进程退出的，除非整个系统 low memory 了，系统会主动 kill app（参考上面的 lifecycle 流程图）
 
-可以通过长按 ![](2012_09_15_gles_device_lost_image_01.png) 看进程列表，在进程列表中向右拖这个进程，将其退出。
+可以通过长按 ![](images/2012_09_15_gles_device_lost/button_home.png) 看进程列表，在进程列表中向右拖这个进程，将其退出。
 
 或者通过 shell 进入 android 的机器上
 
@@ -162,7 +162,7 @@ u0_a47    788   37    173128 32952 ffffffff 40033a40 S com.kcoder.lifecycle
 # kill 788
 ```
 
-按 ![](2012_09_15_gles_device_lost_image_04.png) 可以打开 System Settings，设置如下选项，则按下 ![](2012_09_15_gles_device_lost_image_02.png) 的行为就和 ![](2012_09_15_gles_device_lost_image_03.png) 一样了（删除了activity）。
+按 ![](images/2012_09_15_gles_device_lost/button_menu.png) 可以打开 System Settings，设置如下选项，则按下 ![](images/2012_09_15_gles_device_lost/button_home.png) 的行为就和 ![](images/2012_09_15_gles_device_lost/button_prev.png) 一样了（删除了activity）。
 
  * System Settings => Developer options => Don't keep activities [X]
 
