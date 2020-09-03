@@ -59,6 +59,13 @@ gradlew.bat assembleDebug
  * 参考 ndk-samples，依样画葫芦，[Hello Triangle][1] 编译通过
 
 
+## See FatDemo runs~
+
+ * 整合到自己的项目 [FatDemo][8] 中，嘿嘿。UnitTest 跑起来了。
+
+![](images/2020_09_02_play_with_android_ndk/fatdemo-runs.png)
+
+
 ## 后记
 
 本想用 [emake][1] 来做 apk 生成的，不使用 cmake & gradle。[编译没问题][7]，设置好 cross-platform toolchain 即可。
@@ -107,3 +114,4 @@ src: E:\AndroidSdk\ndk-bundle\sources\android\native_app_glue\android_native_app
 [5]:https://gradle.org/
 [6]:https://ant.apache.org/
 [7]:https://github.com/kasicass/opengles3-book/tree/master/Emake
+[8]:https://github.com/kasicass/fatdemo/tree/master/Solutions/Android
