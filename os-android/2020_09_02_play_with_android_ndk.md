@@ -107,6 +107,12 @@ src: E:\AndroidSdk\ndk-bundle\sources\android\native_app_glue\android_native_app
 但生成 apk 还需要管理很多资源打包的功能，不用 gradle 看起来不大可能。有待继续研究。
 
 
+## 参考资料
+
+ * [The New Android SDK Build System][9]
+ * [Android Studio Docs][10]
+
+
 [1]:https://github.com/kasicass/opengles3-book/tree/master/Chapter_2/Hello_Triangle/Android
 [2]:https://developer.android.com/ndk
 [3]:https://github.com/android/ndk-samples
@@ -115,3 +121,5 @@ src: E:\AndroidSdk\ndk-bundle\sources\android\native_app_glue\android_native_app
 [6]:https://ant.apache.org/
 [7]:https://github.com/kasicass/opengles3-book/tree/master/Emake
 [8]:https://github.com/kasicass/fatdemo/tree/master/Solutions/Android
+[9]:https://www.youtube.com/watch?v=LCJAgPkpmR0
+[10]:https://developer.android.com/studio/intro
