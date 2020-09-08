@@ -108,6 +108,7 @@
  * [d3d12book][16], "Introduction to 3D Game Programming with DirectX 12" sample code
  * [neun-auf-zwoelf][19], D3D9 wrapper library using Microsoft's D3D9On12 implementation
  * [d912pxy][20], DirectX9 to DirectX12 API proxy for Guild Wars 2
+ * [ShaderConductor][63], HLSL => GLSL/ELSL
  * [DirectX ShaderCompiler][35], HLSL => DXIL(DirectX Intermediate Language) compiler
  * [DirectX-Graphics-Samples][55], for D3D12
 
@@ -204,3 +205,4 @@
 [60]:https://github.com/dotnet/runtime
 [61]:https://github.com/baldurk/renderdoc
 [62]:https://github.com/nothings/stb
+[63]:https://github.com/microsoft/ShaderConductor
