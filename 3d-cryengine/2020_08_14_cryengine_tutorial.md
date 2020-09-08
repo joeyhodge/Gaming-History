@@ -7,6 +7,17 @@
  * [PBR Texture Mapping 2/2 - Achieving Photorealism][2]
 
 
+## Game & Level Design
+
+### Schematyc
+
+ * [Introduction to Schematyc][11]
+ * [How to create sensor volumes in Schematyc][12]
+ * [How to use signal graphs in Schematyc][15]
+ * [How to manipulate inputs and cameras in Schematyc][13]
+ * [How to use state machines in Schematyc][14]
+
+
 ## Graphics
 
  * [Graphics Tutorials Docs][9]
@@ -35,3 +46,8 @@
 [8]:https://docs.cryengine.com/display/CEMANUAL/Environment+Tutorials
 [9]:https://docs.cryengine.com/display/CEMANUAL/Graphics+Tutorials
 [10]:https://docs.cryengine.com/display/CEMANUAL/Lighting+Tutorials
+[11]:https://www.youtube.com/watch?v=k8vC0j23nu4
+[12]:https://www.youtube.com/watch?v=iyjMuO7YqT8
+[13]:https://www.youtube.com/watch?v=rGDmJ5dgXx0
+[14]:https://www.youtube.com/watch?v=IBdUAMGKLRM
+[15]:https://www.youtube.com/watch?v=0DS1YYpX2l8
