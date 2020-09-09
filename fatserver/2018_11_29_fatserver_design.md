@@ -16,9 +16,9 @@
 core
 
  * [fatuv][7]，最底层的网络库，[cffi][13] + python/pypy
- * fatkernel，一个 single process/multi threading 的轻量级 game server
- * fatskynet，一个 distributed multi-process game servers
- * kernel & skynet，对于业务来说，都是 entity-based，统一行为。
+ * fathippo，a single-process multi-threading lightweight game server (hippo is single and so fat)
+ * fatoctopus，a distributed multi-process game server (octopus has so many hands)
+ * fathippo & fatoctopus，对于业务来说，都是 entity-based，统一行为。
 
 tools
 
