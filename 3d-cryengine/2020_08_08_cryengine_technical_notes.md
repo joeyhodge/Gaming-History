@@ -20,6 +20,10 @@
 
 ## Presentations & Papers
 
+### 2018
+
+ * [CRYENGINE port to Android (Android Game Developer Summit 2018)][60]
+
 ### 2014
 
  * [SIGGRAPH - Rendering Techniques in Ryse][45]
@@ -262,3 +266,4 @@
 [57]:https://developer.download.nvidia.cn/presentations/2009/SIGGRAPH/Bavoil_MultiLayerDualResolutionSSAO.pdf
 [58]:https://developer.download.nvidia.com/presentations/2008/SIGGRAPH/HBAO_SIG08b.pdf
 [59]:https://developer.nvidia.com/shadowworks
+[60]:https://www.youtube.com/watch?v=ahd_N3r7P7k

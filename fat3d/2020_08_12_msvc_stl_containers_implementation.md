@@ -14,6 +14,8 @@
  * [std::set][6]
  * [std::unordered_map][7]
  * [std::unordered_set][8]
+ * [std::shared_ptr][10]
+ * [std::function][11]
 
 
 ## _Container_proxy
@@ -373,6 +375,55 @@ class basic_string : public _String_alloc
 sizeof(T) * (s.capacity()+1) > 16 ? sizeof(T) * (s.capacity()+1) : 0;
 ```
 
+
+## std::shared_ptr<T>
+
+```C++
+template <class _Ty>
+class _Ref_count : public _Ref_count_base
+{
+    _Ty* _Ptr;
+};
+
+class _Ptr_base
+{
+    T* _Ptr;
+    _Ref_count_base* _Rep;
+};
+
+class shared_ptr : public _Ptr_base {};
+```
+
+ * class _Ref_count_del, class _Ref_count_del_alloc 也继承 _Ref_count_base
+ * 不过内存占用都是 "_Ty* _Ptr"，直接统计 sizeof(std::_Ref_count<T>) 即可
+
+内存消耗
+
+```C++
+sizeof(std::_Ref_count<T>)
+```
+
+
+## std::function
+
+```C++
+#define _CLASS_FUNC_CLASS_END_0X( \
+    ...\
+	typedef void (*_Pfnty)(); \
+	union \
+		{	/* storage for small wrappers */ \
+		_Pfnty _Pfn[3]; \
+		void *_Pobj[3]; \
+		long double _Ldbl;	/* for maximum alignment */ \
+		char _Alias[3 * sizeof (void *)];	/* to permit aliasing */ \
+		} _Space; \
+	_Ptrt *_Impl; \
+	};
+```
+
+ * 没有动态内存分配，函数指针保存于 _Space
+
+
 [1]:https://en.cppreference.com/w/cpp/container/vector/shrink_to_fit
 [2]:https://en.cppreference.com/w/cpp/container/vector
 [3]:https://en.cppreference.com/w/cpp/container/list
@@ -382,3 +433,5 @@ sizeof(T) * (s.capacity()+1) > 16 ? sizeof(T) * (s.capacity()+1) : 0;
 [7]:https://en.cppreference.com/w/cpp/container/unordered_map
 [8]:https://en.cppreference.com/w/cpp/container/unordered_set
 [9]:https://en.cppreference.com/w/cpp/string/basic_string/shrink_to_fit
+[10]:https://en.cppreference.com/w/cpp/memory/shared_ptr
+[11]:https://en.cppreference.com/w/cpp/utility/functional/function
