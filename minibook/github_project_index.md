@@ -67,6 +67,7 @@
  * [Prism][67], Prism is a framework for building loosely coupled, maintainable, and testable XAML applications in WPF, Xamarin Forms, and Uno / Win UI Applications
  * [XamlBehaviors][68], an easy-to-use means of adding common and reusable interactivity to your WPF applications with minimal code
  * [Avalonia][69], A cross platform XAML Framework for .NET Framework, .NET Core and Mono
+ * [SkiaSharp][70], a cross-platform 2D graphics API for .NET platforms based on Google's Skia Graphics Library
 
 ### Installion
 
@@ -218,3 +219,4 @@
 [67]:https://github.com/PrismLibrary/Prism
 [68]:https://github.com/microsoft/XamlBehaviorsWpf
 [69]:http://avaloniaui.net/
+[70]:https://github.com/mono/SkiaSharp
