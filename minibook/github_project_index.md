@@ -61,6 +61,11 @@
  * [MahApps.Metro][43], A framework that allows developers to cobble together a better UI for their own WPF applications with minimal effort
  * [wpftoolkit][44], All the controls missing in WPF
  * [MetroRadiance][50], Modern WPF Themes (like Visual Studio 2012 or later)
+ * [SharpDevelop][64], a free IDE for .NET programming languages
+ * [AvalonEdit][65], the WPF-based text editor component used in SharpDevelop
+ * [XamlViewer][66], a lightweight XAML editor
+ * [Prism][67], Prism is a framework for building loosely coupled, maintainable, and testable XAML applications in WPF, Xamarin Forms, and Uno / Win UI Applications
+ * [XamlBehaviors][68], an easy-to-use means of adding common and reusable interactivity to your WPF applications with minimal code
 
 ### Installion
 
@@ -206,3 +211,8 @@
 [61]:https://github.com/baldurk/renderdoc
 [62]:https://github.com/nothings/stb
 [63]:https://github.com/microsoft/ShaderConductor
+[64]:https://github.com/icsharpcode/SharpDevelop
+[65]:https://github.com/icsharpcode/AvalonEdit
+[66]:https://github.com/huangjia2107/XamlViewer
+[67]:https://github.com/PrismLibrary/Prism
+[68]:https://github.com/microsoft/XamlBehaviorsWpf
