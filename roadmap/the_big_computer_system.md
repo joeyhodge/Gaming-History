@@ -31,7 +31,7 @@
 ## Compiler & Linker & Debugger (L3)
 
  * clang / llvm
- * [fatc], a experimental C compiler implementation
+ * [fatcc], a experimental C compiler implementation
  * [fatjvm], a experimental Java VM implementation
  * [fatclr], a experimental CLR & C# implementation
 
@@ -70,7 +70,7 @@
 
  * [fatdemo][12], a simple render framework for algorithm testing
  * [fatengine][11], a product-ready 3dengine
- * [fatserver][8], a hand-made game server from scratch
+ * [fatserver][8], a distribute multi-process game server
 
 
 ## Language Zoo (L3/L9)
@@ -103,8 +103,14 @@
 
  * 目标：所有依赖技术，自我打造
  * [fatengine][11], 用来做做小游戏、小demo
- * [fatwpf], 绑定到平台原生的 C# 和 Java，用来写 GUI app（游戏编辑器、Profile工具等等）
- * [fatclr], 实现一个 dotnet core lite，用来对接 [fatwpf]，让 WPF 变成 "Write once and run everywhere"
+ * [fatwpf], 跨平台 WPF 实现，绑定到 .net core，用来写 GUI app（游戏编辑器、Profile工具等等）
+ * [fatengine][11] 中的 in-game GUI 会用 xaml 来做布局，内嵌一个 [fatwpf-lite]
+
+实验性质的项目，不知啥时候会启动
+
+ * [fatcc], 一个简单的 c compiler, just for fun~
+ * [fatjvm], 参考 android ART vm, just for fun~
+ * [fatclr], 参考 Shared Source CLI, just for fun~
 
 
 **2018.11.26**
