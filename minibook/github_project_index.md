@@ -66,6 +66,7 @@
  * [XamlViewer][66], a lightweight XAML editor
  * [Prism][67], Prism is a framework for building loosely coupled, maintainable, and testable XAML applications in WPF, Xamarin Forms, and Uno / Win UI Applications
  * [XamlBehaviors][68], an easy-to-use means of adding common and reusable interactivity to your WPF applications with minimal code
+ * [Avalonia][69], A cross platform XAML Framework for .NET Framework, .NET Core and Mono
 
 ### Installion
 
@@ -216,3 +217,4 @@
 [66]:https://github.com/huangjia2107/XamlViewer
 [67]:https://github.com/PrismLibrary/Prism
 [68]:https://github.com/microsoft/XamlBehaviorsWpf
+[69]:http://avaloniaui.net/
