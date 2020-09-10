@@ -13,17 +13,34 @@
 
 ## ARCHITECTURE
 
+ * 支持 Python / Pypy / Lua / Luajit，两套 scripting language stack
+
+```
+  |     Python stack      |        Lua stack        |      |  Tools   |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  +-----------------------+-------------------------+      +----------+
+  | fathippo / fatoctopus | tinyhippo / tinyoctopus |      | fatbench |
+  +-----------------------+-------------------------+      +----------+
+  |        fatuv          |         tinyuv          |      | fatprof  |
+  +-----------------------+-------------------------+      +----------+
+  |                     libuv                       |
+  +-------------------------------------------------+
+  |                Operating System                 |
+  +-------------------------------------------------+
+```
+
 core
 
- * [fatuv][7]，最底层的网络库，[cffi][13] + python/pypy
- * fathippo，a single-process multi-threading lightweight game server (hippo is single and so fat)
- * fatoctopus，a distributed multi-process game server (octopus has so many hands)
+ * [fatuv][7]，libuv python binding, [cffi][13] + python/pypy
+ * [tinyuv], libuv lua binding
+ * fathippo/tinyhippo，a single-process multi-threading lightweight game server (hippo is single and so fat)
+ * fatoctopus/tinyoctopus，a distributed multi-process game server (octopus has so many hands)
  * fathippo & fatoctopus，对于业务来说，都是 entity-based，统一行为。
 
 tools
 
  * fatbench，一个简单的性能测试工具
-
+ * fatprof, 一个 profile 工具，看 C++/Sript 的 trackback
 
 ## NOTES
 
