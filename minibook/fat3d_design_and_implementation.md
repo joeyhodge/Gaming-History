@@ -18,6 +18,11 @@
  * [ISizer - Memory Statistics][5]
 
 
+## FatPlatform
+
+ * [Memory Leak Detection][8]
+
+
 ## Reference
 
  * [CRYENGINE Technical Notes][3]
@@ -31,3 +36,4 @@
 [5]:https://github.com/kasicass/blog/blob/master/fat3d/2020_08_16_isizer_memory_statistics.md
 [6]:https://github.com/kasicass/blog/blob/master/fat3d/2020_08_21_fatengine_build_system.md
 [7]:https://github.com/kasicass/blog/blob/master/fat3d/2020_08_23_name_and_nametable.md
+[8]:https://github.com/kasicass/blog/blob/master/fat3d/2020_09_11_memory_leak_detection.md
