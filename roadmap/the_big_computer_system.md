@@ -71,6 +71,8 @@
  * [fatdemo][12], a simple render framework for algorithm testing
  * [fatengine][11], a product-ready 3dengine
  * [fatserver][8], a distribute multi-process game server
+ * [fatmonkey], a RenderMonkey implemtation using [fatwpf]
+ * [fatterminal], a SecureCRT-like terminal manager
 
 
 ## Language Zoo (L3/L9)
@@ -111,7 +113,8 @@
  * [fatcc], 一个简单的 c compiler, just for fun~
  * [fatjvm], 参考 android ART vm, just for fun~
  * [fatclr], 参考 Shared Source CLI, just for fun~
-
+ * [fatmonkey], AMD 经典的 RenderMonkey
+ * [fatterminal], 实现自己的 terminal manager, using WPF
 
 **2018.11.26**
 
