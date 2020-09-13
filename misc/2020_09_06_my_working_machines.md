@@ -1,4 +1,4 @@
-# Android Smartphone for OpenGL ES Testing
+# My Working Machines (PC/Laptop/Smartphone)
 
 ## PC
 
