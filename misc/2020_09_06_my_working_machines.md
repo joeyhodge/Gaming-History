@@ -9,8 +9,12 @@ TODO
 
 ### Huawei Matebook Pro 2019
 
-### Macbook air 2018
+### Macbook air 2017
 
+ * CPU: Intel Core i7-5650U @ 2.2GHz
+ * GPU: Intel HD Graphics 6000
+ * Memory: 8GB of 1600MHz LPDDR3 onboard memory
+ * [Specifiation][10]
 
 ### Macbook pro 2010
 
@@ -57,3 +61,4 @@ TODO
 [7]:https://www.qualcomm.com/products/snapdragon-processors-616
 [8]:https://www.notebookcheck.net/Qualcomm-Adreno-405.146752.0.html
 [9]:https://support.apple.com/kb/SP583?viewlocale=en_US&locale=zh_CN
+[10]:https://support.apple.com/kb/SP753?viewlocale=en_US&locale=zh_CN
