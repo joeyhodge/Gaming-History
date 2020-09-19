@@ -18,7 +18,7 @@
  * CPU: Comet Lake i7-10710U
  * GPU: GTX 1650 Max-Q with GDDR5 4GB
  * Memory: LPDDR3 16GB (2133MHz)
- * [Specification]
+ * [Specification][14]
 
 三个模式
 
@@ -83,3 +83,4 @@
 [11]:https://www.chiphell.com/forum.php?mod=viewthread&tid=2162364&mobile=2
 [12]:https://ark.intel.com/content/www/us/en/ark/products/120496/intel-xeon-platinum-8180-processor-38-5m-cache-2-50-ghz.html
 [13]:https://www.nvidia.com/content/PDF/data-sheet/NV_DS_Quadro_K6000_OCT13_NV_US_LR.pdf
+[14]:https://www.msi.com/Laptop/Prestige-14-A10X/Specification
