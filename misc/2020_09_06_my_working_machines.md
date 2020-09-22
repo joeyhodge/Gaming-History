@@ -1,27 +1,45 @@
-# My Working Machines (PC/Laptop/Smartphone)
+# My Working Machines
 
 ## PC
 
-TODO
+### Performance Monster
+
+ * CPU: Two of [Intel Xeon Platinum 8180 (28 cores / 56 threads)][12]
+ * GPU: [NVidia Quadro K6000 with GDDR5 12GB][13]
+ * Memory: 128GB
+
+![](images/2020_09_06_my_working_machines/k6000.png)
 
 
 ## Laptop
 
-### Huawei Matebook Pro 2019
+### MSI Prestige 14 - 2020
 
-### Macbook air 2017
+ * CPU: Comet Lake i7-10710U
+ * GPU: GTX 1650 Max-Q with GDDR5 4GB
+ * Memory: LPDDR3 16GB (2133MHz)
+ * [Specification][14]
+
+三个模式
+
+ * ECO: low battery consuming
+ * Comfort: CPU/GPU balance，玩游戏用
+ * Sport: CPU-bound，工作用
+ * [参考资料][11]
+
+### Macbook Air - 2017
 
  * CPU: Intel Core i7-5650U @ 2.2GHz
  * GPU: Intel HD Graphics 6000
  * Memory: 8GB of 1600MHz LPDDR3 onboard memory
  * [Specifiation][10]
 
-### Macbook pro 2010
+### Macbook Pro - 2010
 
  * CPU: Intel Core 2 Duo P8600 @ 2.4GHz
  * GPU: NVIDIA GeForce 320M graphics processor with 256MB of DDR3 SDRAM shared with main memory
  * Memory: 4GB of 1066MHz DDR3 SDRAM
- * [Specifiation][9]
+ * [Specification][9]
 
 
 ## Smartphone
@@ -34,7 +52,7 @@ TODO
 
 ### 低端机 - 红米 3
 
- * [硬件参数][2]
+ * [硬件参数][10]
  * Chipset: [Snapdragon 616][5]
  * GPU: [Adreno 405][6]
 
@@ -46,6 +64,10 @@ TODO
 
 
 ## History
+
+**2020-09-20**
+
+将 HUAWEI Matebook X Pro 卖了，换了 MSI Prestige 14 作为主力工作本。Matebook 配的 3000x2000 的显示屏，显卡推起来比较吃力，这次 Prestige 14 特意选了只有 1920x1080 的普通屏。
 
 **2020-09-13**
 
@@ -61,4 +83,9 @@ TODO
 [7]:https://www.qualcomm.com/products/snapdragon-processors-616
 [8]:https://www.notebookcheck.net/Qualcomm-Adreno-405.146752.0.html
 [9]:https://support.apple.com/kb/SP583?viewlocale=en_US&locale=zh_CN
-[10]:https://support.apple.com/kb/SP753?viewlocale=en_US&locale=zh_CN
+[10]:https://www.gsmarena.com/xiaomi_redmi_3-7862.php
+[11]:https://www.chiphell.com/forum.php?mod=viewthread&tid=2162364&mobile=2
+[12]:https://ark.intel.com/content/www/us/en/ark/products/120496/intel-xeon-platinum-8180-processor-38-5m-cache-2-50-ghz.html
+[13]:https://www.nvidia.com/content/PDF/data-sheet/NV_DS_Quadro_K6000_OCT13_NV_US_LR.pdf
+[14]:https://www.msi.com/Laptop/Prestige-14-A10X/Specification
+[15]:https://support.apple.com/kb/SP753?viewlocale=en_US&locale=zh_CN
