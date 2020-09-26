@@ -2,7 +2,7 @@
 
 ## PC
 
-### Performance Monster
+### Performance Beast
 
  * CPU: Two of [Intel Xeon Platinum 8180 (28 cores / 56 threads)][12]
  * GPU: [NVidia Quadro K6000 with GDDR5 12GB][13]
