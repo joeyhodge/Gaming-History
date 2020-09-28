@@ -10,6 +10,7 @@
 
 ![](images/2020_09_06_my_working_machines/k6000.png)
 
+![](images/2020_09_06_my_working_machines/cpu.png)
 
 ## Laptop
 
