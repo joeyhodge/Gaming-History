@@ -21,4 +21,11 @@ The sequence of operations that must be serialized with respect to all other con
  * lock, mutex, cirtical section, monitor, binary semaphore, transaction
  * 上述方法，语义上有些许区别，比如：read/write lock 允许 shared reading
 
+A Generalization of the Idea: Semaphore
+
+ * value > 0, threads can enter critical region
+ * value == 0, threads must wait until value > 0
+ * mutex is **binary semaphore** (value can only be 0 or 1)
+ * Semaphores with maximum counts of more than 1 are typically called **counting semaphores**
+
 ## PART II - Mechanisms
