@@ -14,19 +14,12 @@
 
 ## Laptop
 
-### MSI Prestige 14 - 2020
+### ROG Zephyrus S15 - 2020
 
- * CPU: Comet Lake i7-10710U
- * GPU: GTX 1650 Max-Q with GDDR5 4GB
- * Memory: LPDDR3 16GB (2133MHz)
- * [Specification][14]
-
-三个模式
-
- * ECO: low battery consuming
- * Comfort: CPU/GPU balance，玩游戏用
- * Sport: CPU-bound，工作用
- * [参考资料][11]
+ * CPU: Intel Core i7-10875H
+ * GPU: NVIDIA GeForce RTX 2070 SUPER with 8GB GDDR6 VRAM
+ * MEM: DDR4 16GB (3200MHz)
+ * [Specification][15]
 
 ### Macbook Air - 2017
 
@@ -66,6 +59,11 @@
 
 ## History
 
+**2020-09-29**
+
+本来入的是 [MSI Prestige 14 - 2020][14]，但连续送了两台本，都有硬件问题。直接放弃 MSI 了，失望。再次回归 Asus 怀抱，选了 [ROG Zephyrus S15(冰刃4)][15]。直接上了 RTX 的卡，hardware-accelaration ray-tracing is coming~
+
+
 **2020-09-20**
 
 将 HUAWEI Matebook X Pro 卖了，换了 MSI Prestige 14 作为主力工作本。Matebook 配的 3000x2000 的显示屏，显卡推起来比较吃力，这次 Prestige 14 特意选了只有 1920x1080 的普通屏。
@@ -90,3 +88,4 @@
 [13]:https://www.nvidia.com/content/PDF/data-sheet/NV_DS_Quadro_K6000_OCT13_NV_US_LR.pdf
 [14]:https://www.msi.com/Laptop/Prestige-14-A10X/Specification
 [15]:https://support.apple.com/kb/SP753?viewlocale=en_US&locale=zh_CN
+[16]:https://www.asus.com/Laptops/ROG-Zephyrus-S15/Tech-Specs/
