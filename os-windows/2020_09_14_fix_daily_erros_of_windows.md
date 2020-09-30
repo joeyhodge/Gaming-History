@@ -21,6 +21,10 @@
 
  * 运行 "mdsched"
 
+Memtest86+
+
+ * [http://www.memtest.org/][7]
+
 ### Reference
 
  * Youtube: [How to QUICKLY Fix Error IRQL_NOT_LESS_OR_EQUAL - Windows 7/8/10][4]
@@ -73,3 +77,4 @@ Download and install [this Microsoft hotfix][3] to correct errors introduced by 
 [4]:https://www.youtube.com/watch?v=SnRyP-QYs20
 [5]:https://www.minitool.com/backup-tips/irql-not-less-or-equal-windows-10-021.html
 [6]:https://www.thewindowsclub.com/windows-memory-diagnostics-tool-in-windows-7
+[7]:http://www.memtest.org/
