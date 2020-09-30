@@ -19,10 +19,13 @@
 
 启动 Windows Memory Diagnostic 检查之。
 
+ * 运行 "mdsched"
+
 ### Reference
 
  * Youtube: [How to QUICKLY Fix Error IRQL_NOT_LESS_OR_EQUAL - Windows 7/8/10][4]
  * [7 Solutions to Fix IRQL_NOT_LESS_OR_EQUAL Windows 10][5]
+ * [How to run Windows Memory Diagnostics Tool in Windows 10][6]
 
 
 ## Error 997. Overlapped I/O operation is in progress
@@ -69,3 +72,4 @@ Download and install [this Microsoft hotfix][3] to correct errors introduced by 
 [3]:https://support.microsoft.com/en-us/help/3000988/-the-profile-for-the-user-is-a-temporary-profile-error-when-you-instal
 [4]:https://www.youtube.com/watch?v=SnRyP-QYs20
 [5]:https://www.minitool.com/backup-tips/irql-not-less-or-equal-windows-10-021.html
+[6]:https://www.thewindowsclub.com/windows-memory-diagnostics-tool-in-windows-7
