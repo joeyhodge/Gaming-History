@@ -153,7 +153,13 @@
 
 ### Vladimir Kajalin
 
- * SSAO 作者，目前 CRYENGINE V 的 Technical Director
+ * SSAO 作者，Theodor Mader 前任 CRYENGINE V 的 Technical Director
+
+### Theodor Mader
+
+ * 从 Ryse 的 rendering engineer 开始进入 Crytek
+ * [SIGGRAPH - Rendering Techniques in Ryse][45]
+ * 2020年初成为 Technical Director，[Meet the Team: Theodor Mader, Technical Director][]
 
 
 ## Rendering Technique
@@ -267,3 +273,4 @@
 [58]:https://developer.download.nvidia.com/presentations/2008/SIGGRAPH/HBAO_SIG08b.pdf
 [59]:https://developer.nvidia.com/shadowworks
 [60]:https://www.youtube.com/watch?v=ahd_N3r7P7k
+[61]:https://www.cryengine.com/news/view/meet-the-team-theodor-mader-technical-director
