@@ -159,7 +159,7 @@
 
  * 从 Ryse 的 rendering engineer 开始进入 Crytek
  * [SIGGRAPH - Rendering Techniques in Ryse][45]
- * 2020年初成为 Technical Director，[Meet the Team: Theodor Mader, Technical Director][]
+ * 2020年初成为 Technical Director，[Meet the Team: Theodor Mader, Technical Director][61]
 
 
 ## Rendering Technique
