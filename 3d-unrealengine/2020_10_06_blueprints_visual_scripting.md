@@ -150,12 +150,12 @@ class MyBlueprint
 
  * class 之间的函数调用
 
-示例：创建一个开关，触碰，就切换一个 PointLight 的亮灭。（需要 StarterContent）
+示例：创建一个开关，触碰，就切换一个 PointLight 的亮灭。（需要 StarterContent 资源）
 
  * 新建一个 Blueprint，继承 Actor，命名为 "BP_LightSwitch"
  * 双击打开 Blueprint Editor
- * 给其新增一个 **Static Mesh** 组件，用于显示一个模型（设置 StaticMesh = SM_CornerFrame；Collision Presents = OverlapAllDynamic）
- * 给其新增一个 **Variable**，类型为 Point Light，命名为 "Light"（设置 Instance Editable = True）
+ * 新增一个 **Static Mesh** 组件，用于显示一个模型（设置 StaticMesh = SM_CornerFrame；Collision Presents = OverlapAllDynamic）
+ * 新增一个 **Variable**，类型为 Point Light，命名为 "Light"（设置 Instance Editable = True）
  * 构建 **Event Graph** 如下，利用函数 **Toggle Visibility** 去亮灭一个 Point Light
  * Compile Blueprint
 
@@ -184,6 +184,77 @@ class BP_LightSwitch
 ### Casting in Blueprints
 
  * 函数 **Cast To** 尝试将**基类对象**转换为**子类对象**（就是 C++ 中的 dynamic_cast）
+
+示例：场景中散落一些物品，吃掉一个得50分
+
+ * GameScore 保存在 GameMode 中
+ * 触碰物品，调用 GameMode.AddGameScore() 函数，来增加分数
+
+创建 BP_GameModeWithScore
+
+ * 新建一个 Blueprint，继承 Game Mode Base，命名为 "BP_GameModeWithScore"
+ * 双击打开 Blueprint Editor
+ * 新增一个 **Variable**，类型为 Integer，命名为 "GameScore"
+ * 新增一个 **function**，命名为 "AddGameScore"
+ * 构建 **Event Graph** 如下，利用函数 **Toggle Visibility** 去亮灭一个 Point Light
+
+![](images/2020_10_06_blueprints_visual_scripting/bp_gamemode_with_score.png)
+
+ * 红框：函数 ToString(integer)
+ * Compile BP_GameModeWithScore，Settings => World Settings => GameMode Override 设置 BP_GameModeWithScore
+
+```C#
+class BP_GameModeWithScore
+{
+    public int GameScore { get; set; }
+
+    void AddGameScore(int Score)
+    {
+        GameScore += Score;
+        Console.DebugPrint(GameScore.ToString());
+    }
+}
+```
+
+创建物品 BP_Collectable
+
+ * 新建一个 Blueprint，继承 Actor，命名为 "BP_Collectable"
+ * 双击打开 Blueprint Editor
+ * 新增一个 **Static Mesh** 组件，用于显示一个模型（设置 StaticMesh = SM_Statue；Materials.Element0 = M_Metal_Gold；Collision Presents = OverlapAllDynamic）
+ * 构建 **Event Graph** 如下
+
+![](images/2020_10_06_blueprints_visual_scripting/bp_collectable.png)
+
+ * otherActor 是碰到物品的对象，通过 Cast To ThirdPersonCharacter，判断此对象是否是主角
+ * 函数 GetGameMode() 得到 Current GameMode
+ * 然后 Cast To BP_GameModeWithScore，得到 BP_GameModeWithScore 实例
+
+```C#
+class BP_Collectable
+{
+    void ActorBeginOverlap(Actor otherActor)
+    {
+        ThirdPersonCharacter aActor = otherActor as ThirdPersonCharacter
+        if (aActor != null)
+        {
+            GameMode aGameMode = GetGameMode();
+            BP_GameModeWithScore myGameMode = aGameMode as BP_GameModeWithScore;
+            if (myGameMode != null)
+            {
+                myGameMode.AddGameScore(50);
+                Utilities.DestroyActor(this);
+            }
+        }
+    }
+}
+```
+
+ * Compile BP_Collectable，场景中摆几个
+ * Play！
+
+### Level Blueprint Communication
+
+
 
 
 ## Part II - Developing a Game
