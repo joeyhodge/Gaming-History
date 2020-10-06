@@ -19,7 +19,7 @@
  * CPU: Intel Core i7-10875H
  * GPU: NVIDIA GeForce RTX 2070 SUPER with 8GB GDDR6 VRAM
  * MEM: DDR4 16GB (3200MHz)
- * [Specification][15]
+ * [Specification][16]
 
 ### Macbook Air - 2017
 
@@ -88,4 +88,4 @@
 [13]:https://www.nvidia.com/content/PDF/data-sheet/NV_DS_Quadro_K6000_OCT13_NV_US_LR.pdf
 [14]:https://www.msi.com/Laptop/Prestige-14-A10X/Specification
 [15]:https://support.apple.com/kb/SP753?viewlocale=en_US&locale=zh_CN
-[16]:https://www.asus.com/Laptops/ROG-Zephyrus-S15/Tech-Specs/
+[16]:https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-s15-series/spec/
