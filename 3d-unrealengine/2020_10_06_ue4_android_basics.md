@@ -86,7 +86,7 @@ Android 机器要求
 
  * 最后这个就很简单了，选个发布目录，apk 就出来了
 
-![](images/2020_10_06_ue4_android_basics/setup_apk_packaging.png)
+![](images/2020_10_06_ue4_android_basics/build_apk.png)
 
 
 ## 附录1 - "Accept SDK License" 的坑
