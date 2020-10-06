@@ -69,6 +69,13 @@ Android 机器要求
 
 ![](images/2020_10_06_ue4_android_basics/setup_apk_packaging.png)
 
+设置启动设备
+
+ * Launch Settings => 选择 Android 机器
+ * 以后点 Launch 就会直接在设备上启动了
+
+![](images/2020_10_06_ue4_android_basics/launch_on_device.png)
+
 参考资料
 
  * [Android Quick Start][5]，这里有所有基础步骤
