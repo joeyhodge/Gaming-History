@@ -161,6 +161,21 @@ class MyBlueprint
 
 ![](images/2020_10_06_blueprints_visual_scripting/bp_light_switch.png)
 
+```C#
+class BP_LightSwitch
+{
+    public PointLight Light { get; set; }
+
+    void ActorBeginOverlap(Actor otherActor)
+    {
+        if (Light != null)
+        {
+            Rendering.ToggleVisibility(Light.GetComponent<PointLightComponent>());
+        }
+    }
+}
+```
+
  * 回到 Level Editor
  * 场景中拖一个 Point Light，命名为 "Lamp"
  * 场景中拖一个 BP_LightSwitch，将 Light 变量赋值为 Lamp 对象
