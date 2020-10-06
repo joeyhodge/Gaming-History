@@ -1,10 +1,11 @@
 # Blueprints Visual Scripting for Unreal Engine
 
+ * **Unreal Engine Version: 4.25**
  * 一个 Blueprint, 就是一个 C++ 的 class
  * 包含 Functions, Macros, Variables，完整映射 C++ class 中的各种类型
 
 
-## Blueprint Fundamentals
+## Part I - Blueprint Fundamentals
 
 ### Level Blueprint
 
@@ -144,3 +145,31 @@ class MyBlueprint
  * 设置路径：Edit => Project Settings => Maps & Modes => Game Instance
 
 ![](images/2020_10_06_blueprints_visual_scripting/game_instance.png)
+
+### Direct Blueprint Communication
+
+ * class 之间的函数调用
+
+示例：创建一个开关，触碰，就切换一个 PointLight 的亮灭。（需要 StarterContent）
+
+ * 新建一个 Blueprint，继承 Actor，命名为 "BP_LightSwitch"
+ * 双击打开 Blueprint Editor
+ * 给其新增一个 **Static Mesh** 组件，用于显示一个模型（设置 StaticMesh = SM_CornerFrame；Collision Presents = OverlapAllDynamic）
+ * 给其新增一个 **Variable**，类型为 Point Light，命名为 "Light"（设置 Instance Editable = True）
+ * 构建 **Event Graph** 如下，利用函数 **Toggle Visibility** 去亮灭一个 Point Light
+ * Compile Blueprint
+
+![](images/2020_10_06_blueprints_visual_scripting/bp_light_switch.png)
+
+ * 回到 Level Editor
+ * 场景中拖一个 Point Light，命名为 "Lamp"
+ * 场景中拖一个 BP_LightSwitch，将 Light 变量赋值为 Lamp 对象
+ * Play！哈，可以开关灯了
+
+### Casting in Blueprints
+
+ * 函数 **Cast To** 尝试将**基类对象**转换为**子类对象**（就是 C++ 中的 dynamic_cast）
+
+
+## Part II - Developing a Game
+
