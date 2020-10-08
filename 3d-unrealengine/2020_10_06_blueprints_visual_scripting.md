@@ -254,14 +254,31 @@ class BP_Collectable
 
 ### Level Blueprint Communication
 
- * Level Blueprint 可以控制 Level 中的 Object，并触发 Action
+ * Level Blueprint 可以控制 Level 中的 Object，并触发 Event
 
-示例：走到一个位置，然后触发特效播放
+示例：走到一个位置，通过 Trigger 触发特效播放
 
  * 场景中摆放一个 Box Trigger，名字为 "Box Trigger 1"，保持选中状态
- * 打开 Level Blueprint Editor，在 Event Graph 中右键，给 "Box Trigger 1" 添加 Add On Actor Begin Overlap 事件
+ * 打开 Level Blueprint Editor，在 Event Graph 中右键，给 "Box Trigger 1" 添加 **Add On Actor Begin Overlap** 事件
+
+![](images/2020_10_06_blueprints_visual_scripting/level_blueprint_communication_01.png)
+
+ * 回到 Level Editor，找到 StartContent/Blueprints/Blueprint_Effect_Sparks，双击打开
+ * 修改 Sparks Component 的属性 Auto Activate = False，不自动播放
+
+![](images/2020_10_06_blueprints_visual_scripting/level_blueprint_communication_03.png)
+
  * 回到 Level Editor，在场景中摆放一个 StartContent/Blueprints/Blueprint_Effect_Sparks，保持选中状态
- * 回到 Level Blueprint Editor，在 Event Graph 中邮件，选 "Create a Reference to Blueprint_Effect_Sparks"
+ * 回到 Level Blueprint Editor，在 Event Graph 中右键，选 **Create a Reference to Blueprint_Effect_Sparks**
+
+![](images/2020_10_06_blueprints_visual_scripting/level_blueprint_communication_02.png)
+
+ * 然后创建函数 **Activate (Sparks)** 构建如下的 Event Graph
+
+![](images/2020_10_06_blueprints_visual_scripting/level_blueprint_communication_04.png)
+
+ * Compile & Play!
+
 
 ## Part II - Developing a Game
 
