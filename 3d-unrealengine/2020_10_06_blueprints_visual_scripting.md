@@ -273,12 +273,32 @@ class BP_Collectable
 
 ![](images/2020_10_06_blueprints_visual_scripting/level_blueprint_communication_02.png)
 
- * 然后创建函数 **Activate (Sparks)** 构建如下的 Event Graph
+ * 从 Blueprint_Effect_Sparks 拖一条线出来，创建函数 **Activate (Sparks)**
+ * 构建如下的 Event Graph
 
 ![](images/2020_10_06_blueprints_visual_scripting/level_blueprint_communication_04.png)
 
+```C#
+class BP_Level
+{
+    void OnActorBeginOverlap(Actor overlappedActor, Actor otherActor)
+    {
+        Blueprint effectSparks = Level.GetObjectByName("Blueprint_Effect_Sparks 2");
+        effectSparks.GetComponentByName("Sparks").Activate();
+    }
+}
+```
+
  * Compile & Play!
 
+### Event Dispatchers
+
+ * 一个 Blueprint 可以触发一个自定义事件(Event)
+ * 其他 Blueprint 可以监听此事件
+
+示例：当主角碰到 BP_Platform，通知 Level Blueprint 去触发一个爆炸特效
+
+ * 
 
 ## Part II - Developing a Game
 
