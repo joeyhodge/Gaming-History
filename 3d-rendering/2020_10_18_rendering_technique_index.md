@@ -24,6 +24,7 @@ TODO
  * [Forward框架的逆袭：解析Forward+渲染][4]
  * [VFPR - a Vulkan Forward+ Renderer][2]
  * [AMD Forward+ Sample on DirectX 11][3]
+ * [AMD - Leo Demo][26]
 
 ### GPU-Driven
 
@@ -33,6 +34,17 @@ TODO
  * [2016 - GPUOPEN - GCN Shader Extensions for Direct3D and Vulkan][5]
  * [2015 - SIGGRAPH - GPU-Driven Rendering Pipelines][6]
  * [2008 - SIGGRAPH - GPU-Based Scene Management Large Crowds][7]
+
+
+## Textures
+
+### ptex (Per-Face Texture Mapping)
+
+ * 电影行业用的技术，没看到现有引擎用于游戏
+ * [http://ptex.us/][23]
+ * [2011 - SIGGRAPH - Per-Face Texture Mapping for Realtime Rendering][24]
+ * [Eliminating Texture Waste: Borderless Ptex][25]
+ * [Ptex and PRT Technology Preview][26]
 
 
 ## HDR - High Dynamic Range Rendering
@@ -101,3 +113,7 @@ TODO
 [20]:https://www.scheidecker.net/
 [21]:https://on-demand.gputechconf.com/gtc/2012/presentations/SB134-Voxel-Cone-Tracing-Octree-Real-Time-Illumination.pdf
 [22]:https://developer.nvidia.com/vxgi
+[23]:http://ptex.us/
+[24]:https://developer.download.nvidia.cn/assets/gamedev/docs/RealtimePtex-siggraph2011.pdf
+[25]:https://developer.nvidia.com/sites/default/files/akamai/gamedev/docs/Borderless%20Ptex.pdf
+[26]:https://gpuopen.com/archived/radeon-hd-7900-series-graphics-real-time-demos/
