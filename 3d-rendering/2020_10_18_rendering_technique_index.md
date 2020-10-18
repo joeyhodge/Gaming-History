@@ -43,7 +43,7 @@ TODO
  * 电影行业用的技术，没看到现有引擎用于游戏
  * [http://ptex.us/][23]
  * [2011 - SIGGRAPH - Per-Face Texture Mapping for Realtime Rendering][24]
- * [Eliminating Texture Waste: Borderless Ptex][25]
+ * [2013 - NVIDIA - Eliminating Texture Waste: Borderless Ptex][25]
  * [Ptex and PRT Technology Preview][26]
 
 
