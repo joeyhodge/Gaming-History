@@ -39,9 +39,11 @@ TODO
 ## Particle System
 
  * [2018 - GDC - Frostbite GPU Emitter Graph System][29]
+ * [2018 - GDC - Beyond Emitters: Shader and Surface Driven GPU Particle FX Techniques][34]
  * [2014 - GDC - the inFAMOUS: Second Son Particle System Architecture][28]
- * [2014 - AMD - GPU Particles Sample based on DirectX11][30]
  * [2014 - GDC - Compute-Based GPU Particle Systems][27]
+ * [2014 - AMD - GPU Particles Sample based on DirectX11][30]
+
 
 ## Textures
 
@@ -138,3 +140,4 @@ TODO
 [31]:https://knarkowicz.wordpress.com/2018/03/22/gdc-2018-presentations/
 [32]:https://knarkowicz.wordpress.com/2017/03/01/gdc-2017-presentations/
 [33]:https://knarkowicz.wordpress.com/2016/03/21/gdc-2016-presentations/
+[34]:https://www.dropbox.com/s/guyvljewxhjssyr/ccoffin_GDC18_Version030_final.pptx?dl=0
