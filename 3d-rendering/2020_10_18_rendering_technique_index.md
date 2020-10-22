@@ -36,6 +36,13 @@ TODO
  * [2008 - SIGGRAPH - GPU-Based Scene Management Large Crowds][7]
 
 
+## Particle System
+
+ * [2018 - GDC - Frostbite GPU Emitter Graph System][29]
+ * [2014 - GDC - the inFAMOUS: Second Son Particle System Architecture][28]
+ * [2014 - AMD - GPU Particles Sample based on DirectX11][30]
+ * [2014 - GDC - Compute-Based GPU Particle Systems][27]
+
 ## Textures
 
 ### ptex (Per-Face Texture Mapping)
@@ -91,6 +98,13 @@ TODO
  * [https://developer.nvidia.com/vxgi][22]
 
 
+## Reference
+
+ * [2018 - GDC Presentations][31]
+ * [2017 - GDC Presentations][32]
+ * [2016 - GDC Presentations][33]
+
+
 [1]:https://takahiroharada.files.wordpress.com/2015/04/forward_plus.pdf
 [2]:https://github.com/WindyDarian/Vulkan-Forward-Plus-Renderer
 [3]:https://github.com/GPUOpen-LibrariesAndSDKs/ForwardPlus11/
@@ -117,3 +131,10 @@ TODO
 [24]:https://developer.download.nvidia.cn/assets/gamedev/docs/RealtimePtex-siggraph2011.pdf
 [25]:https://developer.nvidia.com/sites/default/files/akamai/gamedev/docs/Borderless%20Ptex.pdf
 [26]:https://gpuopen.com/archived/radeon-hd-7900-series-graphics-real-time-demos/
+[27]:http://twvideo01.ubm-us.net/o1/vault/GDC2014/Presentations/Gareth_Thomas_Compute-based_GPU_Particle.pdf
+[28]:https://www.suckerpunch.com/iss-particles-gdc2014/
+[29]:https://www.ea.com/frostbite/news/frostbite-gpu-emitter-graph-system
+[30]:https://github.com/GPUOpen-LibrariesAndSDKs/GPUParticles11
+[31]:https://knarkowicz.wordpress.com/2018/03/22/gdc-2018-presentations/
+[32]:https://knarkowicz.wordpress.com/2017/03/01/gdc-2017-presentations/
+[33]:https://knarkowicz.wordpress.com/2016/03/21/gdc-2016-presentations/
