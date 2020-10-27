@@ -9,6 +9,7 @@
  * Defered Lighting
  * Forward+ Rendering
  * GPU-Driven
+ * FrameGraph
 
 ### Forword Rendering
 
@@ -34,6 +35,10 @@ TODO
  * [2016 - GPUOPEN - GCN Shader Extensions for Direct3D and Vulkan][5]
  * [2015 - SIGGRAPH - GPU-Driven Rendering Pipelines][6]
  * [2008 - SIGGRAPH - GPU-Based Scene Management Large Crowds][7]
+
+### FrameGraph
+
+ * [FrameGraph: Extensible Rendering Architecture in Frostbite][35]
 
 
 ## Particle System
@@ -141,3 +146,4 @@ TODO
 [32]:https://knarkowicz.wordpress.com/2017/03/01/gdc-2017-presentations/
 [33]:https://knarkowicz.wordpress.com/2016/03/21/gdc-2016-presentations/
 [34]:https://www.dropbox.com/s/guyvljewxhjssyr/ccoffin_GDC18_Version030_final.pptx?dl=0
+[35]:https://www.gdcvault.com/play/1024612/FrameGraph-Extensible-Rendering-Architecture-in
