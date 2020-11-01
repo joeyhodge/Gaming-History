@@ -10,6 +10,7 @@
  * Forward+ Rendering
  * GPU-Driven
  * FrameGraph
+ * Stingray Renderer Walkthrough
 
 ### Forword Rendering
 
@@ -39,6 +40,30 @@ TODO
 ### FrameGraph
 
  * [FrameGraph: Extensible Rendering Architecture in Frostbite][35]
+
+### Stingray Renderer Walkthrough
+
+ * bitsquid, 被 autodesk 买了之后，改名为 stingray
+ * blog: [http://bitsquid.blogspot.com/][46]
+ * 两位核心开发者：Niklas & Tobias
+ * 离开 autodesk 后，他们最新搞的引擎：[Our Machinery][37]
+
+Stringray Engine Code Walkthrough
+
+ * Youtube Video by Niklas
+ * [Stingray Engine Code Walkthrough][36]
+
+Stringray Renderer Walkthrough
+
+ * Blog by Tobias
+ * [Overview][38]
+ * [Resources & Resource Contexts][39]
+ * [Render Contexts][40]
+ * [Sorting][41]
+ * [RenderDevice][42]
+ * [RenderInterface][43]
+ * [Data-driven rendering][44]
+ * [stingray-renderer & mini-renderer][45]
 
 
 ## Particle System
@@ -147,3 +172,14 @@ TODO
 [33]:https://knarkowicz.wordpress.com/2016/03/21/gdc-2016-presentations/
 [34]:https://www.dropbox.com/s/guyvljewxhjssyr/ccoffin_GDC18_Version030_final.pptx?dl=0
 [35]:https://www.gdcvault.com/play/1024612/FrameGraph-Extensible-Rendering-Architecture-in
+[36]:https://www.youtube.com/playlist?list=PLUxuJBZBzEdxzVpoBQY9agA8JUgNkeYSV
+[37]:https://ourmachinery.com/post/
+[38]:http://bitsquid.blogspot.com/2017/02/stingray-renderer-walkthrough-1-overview.html
+[39]:http://bitsquid.blogspot.com/2017/02/stingray-renderer-walkthrough-2.html
+[40]:http://bitsquid.blogspot.com/2017/02/stingray-renderer-walkthrough-3-render.html
+[41]:http://bitsquid.blogspot.com/2017/02/stingray-renderer-walkthrough-4-sorting.html
+[42]:http://bitsquid.blogspot.com/2017/02/stingray-renderer-walkthrough-5.html
+[43]:http://bitsquid.blogspot.com/2017/02/stingray-renderer-walkthrough-6.html
+[44]:http://bitsquid.blogspot.com/2017/03/stingray-renderer-walkthrough-7-data.html
+[45]:http://bitsquid.blogspot.com/2017/03/stingray-renderer-walkthrough-8.html
+[46]:http://bitsquid.blogspot.com/
