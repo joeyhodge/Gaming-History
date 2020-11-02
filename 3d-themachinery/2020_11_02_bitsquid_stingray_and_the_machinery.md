@@ -1,5 +1,7 @@
 # Bitsquid, Stringray and the Machinery
 
+![](images/2020_11_02_bitsquid_stingray_and_the_machinery/editor.png)
+
 ## History
 
  * 两位主创：Niklas Frykholm, Tobias Persson
