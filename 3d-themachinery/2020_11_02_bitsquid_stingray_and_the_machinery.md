@@ -19,6 +19,7 @@
 ### Presentations
 
  * [2020 - GDC - Writing Tools Faster - Design Decisions to Accelerate Tool Development][8]
+ * [The Machinery - An Incredibly Unique New Game Engine][25]
 
 
 ## Bitsquid & Stingray
@@ -77,3 +78,4 @@
 [22]:https://www.gdcvault.com/play/1020380/Scripting-Particles-Getting-Native-Speed
 [23]:https://www.gdcvault.com/play/1015508/Advanced-Visual-Effects-with-DirectX
 [24]:https://www.kth.se/social/upload/5289cb3ff276542440dd668c/bitsquid-behind-the-scenes.pdf
+[25]:https://www.youtube.com/watch?v=fK8HeXMAziw
