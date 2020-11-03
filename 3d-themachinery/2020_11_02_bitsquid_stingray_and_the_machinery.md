@@ -18,6 +18,40 @@
  * [Podcast][5]
  * Blog & Podcast 中有很多优秀的设计思想
 
+### Blog
+
+Development Philosophy
+
+ * [Our Development Methodology][27]
+ * [Physical Design of The Machinery][26]
+ * [One-button Source Code Builds][28]
+ * [Defaulting to Zero][42]
+
+Engine Architecture
+
+ * [Fiber-based Job System][29]
+ * [Little Machines Working Together (Part 1)][34]
+ * [Little Machines Working Together (Part 2)][37]
+
+Rendering Pipeline
+
+ * [A Modern Rendering Architecture][33]
+ * [Efficient Binding of Shader Resources][36]
+
+GUI
+
+ * [UI Rendering using Primitive Buffers][38]
+ * [One Draw-call UI][40]
+ * [DPI-aware IMGUI][41]
+
+Story
+
+ * [Day 1 Blog][30]
+ * [Our Origin Story][31]
+ * [Quality Life, Quality Work][32]
+ * [Finding Alignment][35]
+ * [The Importance of Diversity][39]
+
 ### Presentations
 
  * [2020 - GDC - Writing Tools Faster - Design Decisions to Accelerate Tool Development][8]
@@ -81,3 +115,20 @@
 [23]:https://www.gdcvault.com/play/1015508/Advanced-Visual-Effects-with-DirectX
 [24]:https://www.kth.se/social/upload/5289cb3ff276542440dd668c/bitsquid-behind-the-scenes.pdf
 [25]:https://www.youtube.com/watch?v=fK8HeXMAziw
+[26]:https://ourmachinery.com/post/physical-design/
+[27]:https://ourmachinery.com/post/our-development-methodology/
+[28]:https://ourmachinery.com/post/one-button-source-code-builds/
+[29]:https://ourmachinery.com/post/fiber-based-job-system/
+[30]:https://ourmachinery.com/post/day-1-blog/
+[31]:https://ourmachinery.com/post/our-origin-story/
+[32]:https://ourmachinery.com/post/quality-life-quality-work/
+[33]:https://ourmachinery.com/post/a-modern-rendering-architecture/
+[34]:https://ourmachinery.com/post/little-machines-working-together-part-1/
+[35]:https://ourmachinery.com/post/finding-alignment/
+[36]:https://ourmachinery.com/post/efficient-binding-of-shader-resources/
+[37]:https://ourmachinery.com/post/little-machines-working-together-part-2/
+[38]:https://ourmachinery.com/post/ui-rendering-using-primitive-buffers/
+[39]:https://ourmachinery.com/post/the-importance-of-diversity/
+[40]:https://ourmachinery.com/post/one-draw-call-ui/
+[41]:https://ourmachinery.com/post/dpi-aware-imgui/
+[42]:https://ourmachinery.com/post/defaulting-to-zero/
