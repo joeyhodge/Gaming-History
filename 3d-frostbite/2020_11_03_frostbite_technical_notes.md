@@ -5,6 +5,7 @@
 
 ![](images/2020_11_03_frostbite_technical_notes/dragon-age.png)
 
+
 ## "Move to One Engine"
 
 EA is moving its games, including Mass Effect and FIFA, [onto a single graphics engine][5]. Frostbite has evolved to become the cornerstone of these titles:
@@ -52,6 +53,12 @@ Year | Title                                                                    
 2011 | [DirectX 11 Rendering in Battlefield 3][27]                                                  |
 
 
+## Misc
+
+ * [Frostbite3 Editor (unofficial)][28]
+ * [Frostbite3 Editor (unofficial) - github][29]
+
+
 [1]:https://en.wikipedia.org/wiki/Frostbite_(game_engine)
 [2]:http://www.dice.se/
 [3]:https://www.ea.com/frostbite
@@ -79,3 +86,5 @@ Year | Title                                                                    
 [25]:https://www.ea.com/frostbite/news/culling-the-battlefield-data-oriented-design-in-practice
 [26]:https://www.ea.com/frostbite/news/lighting-you-up-in-battlefield-3
 [27]:https://www.ea.com/frostbite/news/directx-11-rendering-in-battlefield-3
+[28]:https://greydynamics.github.io/Frostbite3_Editor/
+[29]:https://github.com/GreyDynamics/FrostBite3_Editor
