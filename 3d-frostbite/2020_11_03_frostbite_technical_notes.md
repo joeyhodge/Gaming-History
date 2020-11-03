@@ -52,6 +52,60 @@ Year | Title                                                                    
 2011 | [Lighting you up in Battlefield 3][26]                                                       | Lighting
 2011 | [DirectX 11 Rendering in Battlefield 3][27]                                                  |
 
+## TODO VVVVV
+
+### Rendering & Visual Effects
+
+- [(2007) #siggraph07 Terrain Rendering in Frostbite using Procedural Shader Splatting](http://www.dice.se/news/terrain-rendering-frostbite-using-procedural-shader-splatting/)
+- [(2007) Real-Time Hair Simulation and Visualisation for Games](http://www.dice.se/news/real-time-hair-simulation-visualisation-games/)
+- [(2008) Procedural deformation and destruction in real-time](http://www.dice.se/news/procedural-deformation-destruction-real-time/)
+- [(2009) Interactive Real Time Cloth Simulation with Adaptive Level of Detail](http://www.dice.se/news/interactive-real-time-cloth-simulation-adaptive-level-detail/)
+- [(2009) Advanced Real-time Post-Processing using GPGPU techniques](http://www.dice.se/news/advanced-real-time-post-processing-using-gpgpu-techniques/)
+- [(2009) Lighting and materials for real-time game engines](http://www.dice.se/news/lighting-materials-real-time-game-engines/)
+- [(2009) #gdc09 The Unique Lighting in Mirror’s Edge](http://www.dice.se/news/unique-lighting-mirrors-edge/)
+- [(2009) #gdc09 Single-pass Stable Cascaded Bounding Box Shadow Maps and Geometry-shader based Decal Generation](http://www.dice.se/news/shadows-decals-d3d10-techniques-frostbite/)
+- [(2010) #siggraph2010 A Real-time Radiosity Architecture](http://www.dice.se/news/real-time-radiosity-architecture/)
+- [(2010) #siggraph2010 Bending the Graphics Pipeline](http://www.dice.se/news/bending-graphics-pipeline/)
+- [(2010) #siggraph2010 5 Major Challenges in Interactive Rendering](http://www.dice.se/news/5-major-challenges-interactive-rendering/)
+- [(2011) #siggraph2011 More Performance - Five Rendering Ideas from Battlefield 3 and Need For Speed The Run](http://www.dice.se/news/performance-five-rendering-ideas-battlefield-3-need-speed-run/)
+- [(2012) #thesis Real-time Interactive Water Waves](http://www.dice.se/news/realtime-interactive-water-waves/)
+- [(2012) 5 major challenges in real-time rendering](http://www.dice.se/news/5-major-challenges-real-time-rendering/)
+- [(2012) Data Oriented Interactive Water - An Interactive Water Simulation For PlayStation 3](http://www.dice.se/news/data-oriented-interactive-water/)
+- [(2012) Adaptive Hardware-accelerated Terrain Tessellation](http://www.dice.se/news/adaptive-hardware-accelerated-terrain-tessellation/)
+- [(2014) #siggraph2014 Moving Frostbite to PBR](https://www.ea.com/frostbite/news/moving-frostbite-to-pb)
+- [(2015) #siggraph2015 Frostbite on mobile](https://www.ea.com/frostbite/news/frostbite-on-mobile)
+- [(2015) #siggraph2015 Stochastic Screen-Space Reflections](https://www.ea.com/frostbite/news/stochastic-screen-space-reflections)
+- [(2015) #siggraph2015 Physically Based and Unified Volumetric Rendering in Frostbite](https://www.ea.com/frostbite/news/physically-based-unified-volumetric-rendering-in-frostbite)
+- [(2016) #gdc2016 Lighting the city of glass - Rendering ‘Mirror’s Edge Catalyst’](https://www.ea.com/frostbite/news/lighting-the-city-of-glass)
+- [(2016) #gdc2016 Photogrammetry and Star Wars Battlefront - Frostbite](https://www.ea.com/frostbite/news/photogrammetry-and-star-wars-battlefront)
+- [(2016) #siggraph2016 Physically Based Sky, Atmosphere & Cloud Rendering](https://www.ea.com/frostbite/news/physically-based-sky-atmosphere-and-cloud-rendering)
+- [(2017) #gdc2017 4K Checkerboard in Battlefield 1 and Mass Effect Andromeda](https://www.ea.com/frostbite/news/4k-checkerboard-in-battlefield-1-and-mass-effect-andromeda)
+- [(2017) #gdc2017 High Dynamic Range color grading and display in Frostbite](https://www.ea.com/frostbite/news/high-dynamic-range-color-grading-and-display-in-frostbite)
+
+### General Programming
+
+- [(2010) DICE Coders Day 2010 - Scope Stack Allocation](http://www.dice.se/news/scope-stack-allocation/)
+- [(2010) DICE Coders Day 2010 - Introduction to Data Oriented Design](http://www.dice.se/news/introduction-data-oriented-design/)
+- [(2010) DICE Coders Day 2010 - A Step Towards Data Orientation](http://www.dice.se/news/step-towards-data-orientation/)
+- [(2011) Executable Bloat – How it happens and how we can fight it](http://www.dice.se/news/executable-bloat-happens-can-fight/)
+- [(2011) Battlelog – Building scalable web sites with tight game integration](http://www.dice.se/news/battlelog-building-scalable-web-sites-tight-game-integration/)
+
+### Gameplay & Input
+
+- [(2009) #gdc2009 Creating First Person Movement for Mirror’s Edge](http://www.dice.se/news/creating-first-person-movement-mirrors-edge/)
+- [(2010) #gdc2010 Mirrors Edge Level Design Challenges & Solutions](http://www.dice.se/news/mirrors-edge-level-design-challenges-solutions/)
+- [(2012) #thesis Motion Controllers for Game Consoles (PlayStation Move and Microsoft’s Kinect)](http://www.dice.se/news/motion-controllers-game-consoles/)
+
+### Papers & Detailed Reports
+
+- [(2014) Per-face parameterization for Texture Mapping of Geometry in Real-Time](https://www.ea.com/frostbite/news/per-face-parameterization-for-texture-mapping-of-geometry-in-real-time)
+- [(2015) Surface Data On Dynamic Topologies](http://www.dice.se/news/master-thesis-surface-data-dynamic-topologies/)
+- [(2017) #i3d2017 Tiled light trees](https://www.ea.com/frostbite/news/tiled-light-trees) ([Paper](http://yuriyodonnell.com/publications/TiledLightTrees-preprint.pdf))
+- [(2017) Matching of geometrically and topologically changing meshes](https://www.ea.com/frostbite/news/matching-of-geometrically-and-topologically-changing-meshes)
+
+
+
+## TODO ^^^^^
 
 ## Misc
 
