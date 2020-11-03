@@ -3,6 +3,7 @@
  * [Frostbite on wikipedia][1]
  * These resources are available on [dice.se][2], [ea.com/frostbite][3] and [slideshare.net][4]
 
+![](images/2020_11_03_frostbite_technical_notes/dragon-age.png)
 
 ## "Move to One Engine"
 
