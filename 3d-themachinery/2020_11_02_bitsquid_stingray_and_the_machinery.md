@@ -1,4 +1,4 @@
-# Bitsquid, Stringray and the Machinery
+# Bitsquid, Stingray and the Machinery
 
 ![](images/2020_11_02_bitsquid_stingray_and_the_machinery/editor.png)
 
@@ -28,12 +28,12 @@
 
  * [Blog][7]
 
-### Stringray Engine Code Walkthrough
+### Stingray Engine Code Walkthrough
 
  * Youtube Video by Niklas
  * [Stingray Engine Code Walkthrough][9]
 
-### Stringray Renderer Walkthrough
+### Stingray Renderer Walkthrough
 
  * Blog by Tobias
  * [Overview][10]
