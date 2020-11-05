@@ -27,6 +27,14 @@ Development Philosophy
  * [One-button Source Code Builds][28]
  * [Defaulting to Zero][42]
 
+Data Structure
+
+ * [Minimalist container library in C (part 1)][46]
+ * [Minimalist container library in C (part 2)][47]
+ * [Data Structures Part 1: Bulk Data][43]
+ * [Data Structures Part 2: Indices][44]
+ * [Data Structures Part 3: Arrays of arrays][45]
+
 Engine Architecture
 
  * [Fiber-based Job System][29]
@@ -44,7 +52,19 @@ GUI
  * [One Draw-call UI][40]
  * [DPI-aware IMGUI][41]
 
-Story
+Marketing
+
+ * [How to Marketing (A 10-Part Mini Series)][48]
+ * [Marketing Miniseries: Part 2 User Groups and User Conferences][49]
+ * [Marketing Mini Series Part 3: Branding][50]
+ * [Marketing Mini Series Part 4: PR (Public Relations)][51]
+ * [Marketing Mini Series Part 5: Demos][52]
+ * [Marketing Mini Series Part 6: Co-Marketing/Partner Efforts][53]
+ * [Marketing Mini Series Part 7: Websites][54]
+ * [Marketing Mini Series Part 8: Online Marketing 101: The Four Pillars][55]
+ * [Marketing Mini Series Part 9: Internal Marketing][56]
+
+Work & Life
 
  * [Day 1 Blog][30]
  * [Our Origin Story][31]
@@ -132,3 +152,17 @@ Story
 [40]:https://ourmachinery.com/post/one-draw-call-ui/
 [41]:https://ourmachinery.com/post/dpi-aware-imgui/
 [42]:https://ourmachinery.com/post/defaulting-to-zero/
+[43]:https://ourmachinery.com/post/data-structures-part-1-bulk-data/
+[44]:https://ourmachinery.com/post/data-structures-part-2-indices/
+[45]:https://ourmachinery.com/post/data-structures-part-3-arrays-of-arrays/
+[46]:https://ourmachinery.com/post/minimalist-container-library-in-c-part-1/
+[47]:https://ourmachinery.com/post/minimalist-container-library-in-c-part-2/
+[48]:https://ourmachinery.com/post/how-to-marketing-events/
+[49]:https://ourmachinery.com/post/marketing-miniseries-part-2-user-groups-and-user-conferences/
+[50]:https://ourmachinery.com/post/marketing-mini-series-part-3-branding/
+[51]:https://ourmachinery.com/post/marketing-mini-series-part-4-pr-public-relations/
+[52]:https://ourmachinery.com/post/marketing-mini-series-part-5-demos/
+[53]:https://ourmachinery.com/post/marketing-mini-series-part-6-co-marketing-partner-efforts/
+[54]:https://ourmachinery.com/post/marketing-mini-series-part-7-websites/
+[55]:https://ourmachinery.com/post/marketing-mini-series-part-8-online-marketing/
+[56]:https://ourmachinery.com/post/marketing-mini-series-part-9-internal-marketing/
