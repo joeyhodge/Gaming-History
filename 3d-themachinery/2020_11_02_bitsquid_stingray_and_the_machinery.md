@@ -22,55 +22,63 @@
 
 Development Philosophy
 
- * [Our Development Methodology][27]
- * [Physical Design of The Machinery][26]
- * [One-button Source Code Builds][28]
- * [Defaulting to Zero][42]
+ * [2017.03.03 - Physical Design of The Machinery][26]
+ * [2017.03.18 - Our Development Methodology][27]
+ * [2017.03.24 - One-button Source Code Builds][28]
+ * [2017.06.26 - Defaulting to Zero][42]
+ * [2017.09.05 - Moving away from GitFlow][63]
 
 Data Structure
 
- * [Minimalist container library in C (part 1)][46]
- * [Minimalist container library in C (part 2)][47]
- * [Data Structures Part 1: Bulk Data][43]
- * [Data Structures Part 2: Indices][44]
- * [Data Structures Part 3: Arrays of arrays][45]
+ * [2018.01.08 - Minimalist container library in C (part 1)][46]
+ * [2018.01.29 - Minimalist container library in C (part 2)][47]
+ * [2019.07.23 - Data Structures Part 1: Bulk Data][43]
+ * [2019.08.14 - Data Structures Part 2: Indices][44]
+ * [2019.09.18 - Data Structures Part 3: Arrays of arrays][45]
 
 Engine Architecture
 
- * [Fiber-based Job System][29]
- * [Little Machines Working Together (Part 1)][34]
- * [Little Machines Working Together (Part 2)][37]
+ * [2017.03.27 - Fiber-based Job System][29]
+ * [2017.05.16 - Little Machines Working Together (Part 1)][34]
+ * [2017.06.05 - Little Machines Working Together (Part 2)][37]
+ * [2017.08.14 - DLL Hot Reloading in Theory and Practice][59]
 
 Rendering Pipeline
 
- * [A Modern Rendering Architecture][33]
- * [Efficient Binding of Shader Resources][36]
+ * [2017.05.09 - A Modern Rendering Architecture][33]
+ * [2017.05.30 - Efficient Binding of Shader Resources][36]
+ * [2017.08.28 - High-Level Rendering Using Render Graphs][61]
+ * [2017.08.18 - Simple Parallel Rendering][62]
 
 GUI
 
- * [UI Rendering using Primitive Buffers][38]
- * [One Draw-call UI][40]
- * [DPI-aware IMGUI][41]
+ * [2017.06.09 - UI Rendering using Primitive Buffers][38]
+ * [2017.07.17 - One Draw-call UI][40]
+ * [2017.08.07 - DPI-aware IMGUI][41]
+ * [2017.09.25 - Keyboard Focus and Event Trickling in Immediate Mode GUIs][64]
 
 Marketing
 
- * [How to Marketing (A 10-Part Mini Series)][48]
- * [Marketing Miniseries: Part 2 User Groups and User Conferences][49]
- * [Marketing Mini Series Part 3: Branding][50]
- * [Marketing Mini Series Part 4: PR (Public Relations)][51]
- * [Marketing Mini Series Part 5: Demos][52]
- * [Marketing Mini Series Part 6: Co-Marketing/Partner Efforts][53]
- * [Marketing Mini Series Part 7: Websites][54]
- * [Marketing Mini Series Part 8: Online Marketing 101: The Four Pillars][55]
- * [Marketing Mini Series Part 9: Internal Marketing][56]
+ * [2017.09.11 - How to Marketing (A 10-Part Mini Series)][48]
+ * [2017.10.24 - Marketing Miniseries: Part 2 User Groups and User Conferences][49]
+ * [2017.11.13 - Marketing Mini Series Part 3: Branding][50]
+ * [2017.12.04 - Marketing Mini Series Part 4: PR (Public Relations)][51]
+ * [2018.01.16 - Marketing Mini Series Part 5: Demos][52]
+ * [2018.02.05 - Marketing Mini Series Part 6: Co-Marketing/Partner Efforts][53]
+ * [2018.02.27 - Marketing Mini Series Part 7: Websites][54]
+ * [2018.05.17 - Marketing Mini Series Part 8: Online Marketing 101: The Four Pillars][55]
+ * [2018.06.28 - Marketing Mini Series Part 9: Internal Marketing][56]
 
 Work & Life
 
- * [Day 1 Blog][30]
- * [Our Origin Story][31]
- * [Quality Life, Quality Work][32]
- * [Finding Alignment][35]
- * [The Importance of Diversity][39]
+ * [2017.03.22 - Day 1 Blog][30]
+ * [2017.04.10 - Our Origin Story][31]
+ * [2017.05.01 - Quality Life, Quality Work][32]
+ * [2017.05.22 - Finding Alignment][35]
+ * [2017.06.12 - The Importance of Diversity][39]
+ * [2017.07.05 - Interviewing Part 1: The Interviewee][57]
+ * [2017.07.24 - Interviewing Part 2: The Interviewer][58]
+ * [2017.08.21 - Let's All Go to the Conference][60]
 
 ### Presentations
 
@@ -166,3 +174,11 @@ Work & Life
 [54]:https://ourmachinery.com/post/marketing-mini-series-part-7-websites/
 [55]:https://ourmachinery.com/post/marketing-mini-series-part-8-online-marketing/
 [56]:https://ourmachinery.com/post/marketing-mini-series-part-9-internal-marketing/
+[57]:https://ourmachinery.com/post/interviewing-part-1-the-interviewee/
+[58]:https://ourmachinery.com/post/interviewing-part-2-the-interviewer/
+[59]:https://ourmachinery.com/post/dll-hot-reloading-in-theory-and-practice/
+[60]:https://ourmachinery.com/post/lets-all-go-to-the-conference/
+[61]:https://ourmachinery.com/post/high-level-rendering-using-render-graphs/
+[62]:https://ourmachinery.com/post/simple-parallel-rendering/
+[63]:https://ourmachinery.com/post/moving-away-from-git-flow/
+[64]:https://ourmachinery.com/post/keyboard-focus-and-event-trickling-in-immediate-mode-guis/
