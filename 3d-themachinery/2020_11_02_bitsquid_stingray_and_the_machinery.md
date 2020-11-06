@@ -42,6 +42,7 @@ Engine Architecture
  * [2017.05.16 - Little Machines Working Together (Part 1)][34]
  * [2017.06.05 - Little Machines Working Together (Part 2)][37]
  * [2017.08.14 - DLL Hot Reloading in Theory and Practice][59]
+ * [2017.10.16 - Multi-Threading The Truth][66]
 
 Rendering Pipeline
 
@@ -49,6 +50,7 @@ Rendering Pipeline
  * [2017.05.30 - Efficient Binding of Shader Resources][36]
  * [2017.08.28 - High-Level Rendering Using Render Graphs][61]
  * [2017.08.18 - Simple Parallel Rendering][62]
+ * [2017.10.08 - It’s All About The Data][65]
 
 GUI
 
@@ -182,3 +184,5 @@ Work & Life
 [62]:https://ourmachinery.com/post/simple-parallel-rendering/
 [63]:https://ourmachinery.com/post/moving-away-from-git-flow/
 [64]:https://ourmachinery.com/post/keyboard-focus-and-event-trickling-in-immediate-mode-guis/
+[65]:https://ourmachinery.com/post/its-all-about-the-data/
+[66]:https://ourmachinery.com/post/multi-threading-the-truth/
