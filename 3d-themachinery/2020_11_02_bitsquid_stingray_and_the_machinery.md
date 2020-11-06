@@ -43,6 +43,7 @@ Engine Architecture
  * [2017.06.05 - Little Machines Working Together (Part 2)][37]
  * [2017.08.14 - DLL Hot Reloading in Theory and Practice][59]
  * [2017.10.16 - Multi-Threading The Truth][66]
+ * [2018.11.07 - The Story behind The Truth: Designing a Data Model][67]
 
 Rendering Pipeline
 
@@ -186,3 +187,4 @@ Work & Life
 [64]:https://ourmachinery.com/post/keyboard-focus-and-event-trickling-in-immediate-mode-guis/
 [65]:https://ourmachinery.com/post/its-all-about-the-data/
 [66]:https://ourmachinery.com/post/multi-threading-the-truth/
+[67]:https://ourmachinery.com/post/the-story-behind-the-truth-designing-a-data-model/
