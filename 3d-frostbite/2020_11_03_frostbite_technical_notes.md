@@ -52,19 +52,24 @@ Year | Title                                                                    
 2011 | [Lighting you up in Battlefield 3][26]                                                       | Lighting
 2011 | [DirectX 11 Rendering in Battlefield 3][27]                                                  |
 
-## TODO VVVVV
-
 ### Rendering & Visual Effects
 
-- [(2007) #siggraph07 Terrain Rendering in Frostbite using Procedural Shader Splatting](http://www.dice.se/news/terrain-rendering-frostbite-using-procedural-shader-splatting/)
-- [(2007) Real-Time Hair Simulation and Visualisation for Games](http://www.dice.se/news/real-time-hair-simulation-visualisation-games/)
-- [(2008) Procedural deformation and destruction in real-time](http://www.dice.se/news/procedural-deformation-destruction-real-time/)
-- [(2009) Interactive Real Time Cloth Simulation with Adaptive Level of Detail](http://www.dice.se/news/interactive-real-time-cloth-simulation-adaptive-level-detail/)
-- [(2009) Advanced Real-time Post-Processing using GPGPU techniques](http://www.dice.se/news/advanced-real-time-post-processing-using-gpgpu-techniques/)
-- [(2009) Lighting and materials for real-time game engines](http://www.dice.se/news/lighting-materials-real-time-game-engines/)
-- [(2009) #gdc09 The Unique Lighting in Mirror’s Edge](http://www.dice.se/news/unique-lighting-mirrors-edge/)
-- [(2009) #gdc09 Single-pass Stable Cascaded Bounding Box Shadow Maps and Geometry-shader based Decal Generation](http://www.dice.se/news/shadows-decals-d3d10-techniques-frostbite/)
-- [(2010) #siggraph2010 A Real-time Radiosity Architecture](http://www.dice.se/news/real-time-radiosity-architecture/)
+Year | Conf       | Title                                                                                           | Note
+---- | ---------- | ----------------------------------------------------------------------------------------------- | ----
+2017 | GDC        | [HDR Color Grading and Display in Frostbite][30]                                                |
+2017 | GDC        | [4K Checkerboard in Battlefield 1 and Mass Effect Andromeda][31]                                |
+
+2010 | SIGGRAPH   | [A Real-time Radiosity Architecture][38]                                                        | Lighting
+2009 | GDC        | [Shadows & Decals: D3D10 Techniques in Frostbite][37]                                           | ShadowMap & Decal
+2009 | GDC        | [The Unique Lighting in Mirror’s Edge][36]                                                      | Lighting
+2009 | ?          | Lighting and Materials for Real-time Game Engines                                               |
+2009 | ?          | [Advanced Real-time Post-Processing using GPGPU techniques][35]                                 | Rendering
+2009 | Paper      | Interactive Real Time Cloth Simulation with Adaptive Level of Detail                            | 
+2008 | Paper      | [Procedural Deformation and Destruction in Real-time][34]                                       | Physics
+2007 | Paper      | [Real-Time Hair Simulation and Visualisation for Games][33]                                     | Physics
+2007 | SIGGRAPH   | [Terrain Rendering in Frostbite using Procedural Shader Splatting][32]                          | Terrain
+
+
 - [(2010) #siggraph2010 Bending the Graphics Pipeline](http://www.dice.se/news/bending-graphics-pipeline/)
 - [(2010) #siggraph2010 5 Major Challenges in Interactive Rendering](http://www.dice.se/news/5-major-challenges-interactive-rendering/)
 - [(2011) #siggraph2011 More Performance - Five Rendering Ideas from Battlefield 3 and Need For Speed The Run](http://www.dice.se/news/performance-five-rendering-ideas-battlefield-3-need-speed-run/)
@@ -79,8 +84,7 @@ Year | Title                                                                    
 - [(2016) #gdc2016 Lighting the city of glass - Rendering ‘Mirror’s Edge Catalyst’](https://www.ea.com/frostbite/news/lighting-the-city-of-glass)
 - [(2016) #gdc2016 Photogrammetry and Star Wars Battlefront - Frostbite](https://www.ea.com/frostbite/news/photogrammetry-and-star-wars-battlefront)
 - [(2016) #siggraph2016 Physically Based Sky, Atmosphere & Cloud Rendering](https://www.ea.com/frostbite/news/physically-based-sky-atmosphere-and-cloud-rendering)
-- [(2017) #gdc2017 4K Checkerboard in Battlefield 1 and Mass Effect Andromeda](https://www.ea.com/frostbite/news/4k-checkerboard-in-battlefield-1-and-mass-effect-andromeda)
-- [(2017) #gdc2017 High Dynamic Range color grading and display in Frostbite](https://www.ea.com/frostbite/news/high-dynamic-range-color-grading-and-display-in-frostbite)
+
 
 ### General Programming
 
@@ -142,3 +146,12 @@ Year | Title                                                                    
 [27]:https://www.ea.com/frostbite/news/directx-11-rendering-in-battlefield-3
 [28]:https://greydynamics.github.io/Frostbite3_Editor/
 [29]:https://github.com/GreyDynamics/FrostBite3_Editor
+[30]:https://www.ea.com/frostbite/news/high-dynamic-range-color-grading-and-display-in-frostbite
+[31]:https://www.ea.com/frostbite/news/4k-checkerboard-in-battlefield-1-and-mass-effect-andromeda
+[32]:https://www.ea.com/frostbite/news/terrain-rendering-in-frostbite-using-procedural-shader-splatting
+[33]:https://pdfs.semanticscholar.org/1fb1/8e39d793a09804f4a6cad92d004dd55248d2.pdf
+[34]:https://www.researchgate.net/profile/Kenneth_Bodin2/publication/265749430_Procedural_deformation_and_destruction_in_real-time/links/555f1ea808ae86c06b60d2a2/Procedural-deformation-and-destruction-in-real-time.pdf
+[35]:https://www.ea.com/frostbite/news/advanced-real-time-post-processing-using-gpgpu-techniques
+[36]:https://www.slideshare.net/DICEStudio/henrikgdc09-compat
+[37]:https://www.ea.com/frostbite/news/shadows-decals-d3d10-techniques-from-frostbite
+[38]:https://www.ea.com/frostbite/news/a-real-time-radiosity-architecture
