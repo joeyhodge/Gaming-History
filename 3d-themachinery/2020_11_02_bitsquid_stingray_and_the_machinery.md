@@ -93,6 +93,7 @@ Work & Life
 
  * [Blog][7]
  * [stingray-plugin sdk][68]
+ * [crown - a stingray-like engine][69]
 
 ### Stingray Engine Code Walkthrough
 
@@ -190,3 +191,4 @@ Work & Life
 [66]:https://ourmachinery.com/post/multi-threading-the-truth/
 [67]:https://ourmachinery.com/post/the-story-behind-the-truth-designing-a-data-model/
 [68]:https://github.com/AutodeskGames/stingray-plugin
+[69]:https://github.com/dbartolini/crown
