@@ -92,6 +92,7 @@ Work & Life
 ## Bitsquid & Stingray
 
  * [Blog][7]
+ * [stingray-plugin sdk][68]
 
 ### Stingray Engine Code Walkthrough
 
@@ -188,3 +189,4 @@ Work & Life
 [65]:https://ourmachinery.com/post/its-all-about-the-data/
 [66]:https://ourmachinery.com/post/multi-threading-the-truth/
 [67]:https://ourmachinery.com/post/the-story-behind-the-truth-designing-a-data-model/
+[68]:https://github.com/AutodeskGames/stingray-plugin
