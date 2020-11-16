@@ -74,8 +74,9 @@ aptitude clean，删除本地下载的所有 .deb 文件
 ## Python & Pip
 
 ```
-# aptitude install python-dev python-pip
+# aptitude install python-dev python-pip python3-dev python3-pip
 # pip install cffi
+# pip3 install cffi
 ```
 
 
