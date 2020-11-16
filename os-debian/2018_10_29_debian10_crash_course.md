@@ -43,6 +43,7 @@ aptitude show <package>，显示packaged的详细信息
 aptitude clean，删除本地下载的所有 .deb 文件
 ```
 
+
 ## 常用软件
 
 ```
@@ -57,6 +58,17 @@ aptitude clean，删除本地下载的所有 .deb 文件
 * locate: locate, updatedb
 * ntpdate: ntpdate pool.ntp.org
 * tmux: terminal multiplexer
+
+
+## 开机&关机
+
+* debian10 改用 systemd
+* 'shutdown -h now' or 'reboot' 失效
+
+```
+# systemctl poweroff
+# systemctl reboot
+```
 
 
 ## 启用 mongodb
