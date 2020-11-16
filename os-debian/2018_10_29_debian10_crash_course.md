@@ -71,6 +71,14 @@ aptitude clean，删除本地下载的所有 .deb 文件
 ```
 
 
+## Python & Pip
+
+```
+# aptitude install python-dev python-pip
+# pip install cffi
+```
+
+
 ## 启用 mongodb
 
 ```
