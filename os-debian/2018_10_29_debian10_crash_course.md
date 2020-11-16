@@ -1,10 +1,11 @@
 # Debian 9.5 Crash Course
 
+
 ## 安装系统
 
 下载 netinst.iso，一路安装即可。
 
-* [http://mirrors.163.com/debian-cd/9.6.0/amd64/iso-cd/][1]
+* [http://mirrors.163.com/debian-cd/10.6.0/amd64/iso-cd/debian-10.6.0-amd64-netinst.iso][1]
 * 版本升级后，上面的链接可能失效，去这下面找找：[http://mirrors.163.com/debian-cd/][9]
 * 使用 netinst版 安装过程中，如果没有找到网络，参考 附录1。
 
@@ -13,6 +14,7 @@
 * [http://mirrors.163.com/debian/][2]
 
 在安装 package 那一步，只选择 SSH Server，其它的 package 都不选。
+
 
 ## 软件安装（使用aptitude）
 
@@ -50,11 +52,12 @@ aptitude clean，删除本地下载的所有 .deb 文件
 ```
 
 * aptitude
-* net-tools, ifconfig、netstat
-* sysstat, sar、iostat、mpstat
-* locate, locate、updatedb
-* ntpdate, ntpdate pool.ntp.org
-* tmux, terminal multiplexer
+* net-tools: ifconfig, netstat
+* sysstat: sar, iostat, mpstat
+* locate: locate, updatedb
+* ntpdate: ntpdate pool.ntp.org
+* tmux: terminal multiplexer
+
 
 ## 启用 mongodb
 
@@ -110,6 +113,7 @@ LimitNPROC=64000
 # systemctl restart mongodb
 ```
 
+
 ## 启用 mysql
 
 ```
@@ -136,6 +140,7 @@ debian9开始，mysql使用系统的认证。让某个 user 可以通过 mysql c
 
 * 参考，[https://wiki.debian.org/MySql][5]
 * 重置密码，[https://www.vultr.com/docs/reset-mysql-root-password-on-debian-ubuntu][6]
+
 
 ## 启用 vsftpd
 
@@ -199,7 +204,6 @@ id: --context (-Z) works only on an SELinux-enabled kernel
 ```
 
 
-
 ## vim & tmux 的基本配置
 
 ```
@@ -223,6 +227,7 @@ bind l select-pan -R
 bind r source ~/.tmux.conf\; display "/.tmux.conf sourced!"
 ```
 
+
 ## 参考资料
 
  * 《[The Debian Administrator's Handbook - Debian 9][12]》
@@ -232,7 +237,7 @@ bind r source ~/.tmux.conf\; display "/.tmux.conf sourced!"
 
 安装过程中，没找到网络，无法 apt 安装各种 packages。万恶的是，ifconfig 这种工具，都不在 basic system 中。
 
-* virtualbox 的 debian9 上，肯定安装了 net-tools
+* virtualbox 的 debian10 上，肯定安装了 net-tools
 * 通过 U盘，将 nettools 的 .deb 复制到目标机器上
 * /var/cache/apt/archives/net-tools_1.60+git20161116.90da8a0-1_amd64.deb
 
@@ -279,7 +284,7 @@ $ lsusb -t
 
 
 
-[1]:http://mirrors.163.com/debian-cd/9.6.0/amd64/iso-cd/
+[1]:http://mirrors.163.com/debian-cd/10.6.0/amd64/iso-cd/debian-10.6.0-amd64-netinst.iso
 [2]:http://mirrors.163.com/debian/
 [3]:http://www.freedesktop.org/wiki/Software/systemd/
 [4]:https://docs.mongodb.com/manual/reference/ulimit/#linux-distributions-using-systemd
