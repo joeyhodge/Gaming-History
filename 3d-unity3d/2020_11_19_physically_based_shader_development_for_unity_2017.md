@@ -77,7 +77,9 @@
 
 ![](images/2020_11_19_physically_based_shader_development_for_unity_2017/rendering_equation.png)
 
-#### 
+#### The Behavior of Light
+
+TODO
 
 #### Bounced Light
 
