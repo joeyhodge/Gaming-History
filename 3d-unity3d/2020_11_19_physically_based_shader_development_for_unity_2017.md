@@ -81,10 +81,37 @@
 
 #### Bounced Light
 
-* Direct light only
+Bouched light will keep bouncing untli the energy is completely used up. That is what `GI (Global Illumination)` simulates.
+
+* Direct light
+  * The light that hits a surface directly.
+* Indirect light
+  * The light that hits the object after bouncing off from another surface.
+
+Direct light only
 
 ![](images/2020_11_19_physically_based_shader_development_for_unity_2017/direct_light_only.png)
 
-* Direct and indirect light
+Direct and indirect light
 
 ![](images/2020_11_19_physically_based_shader_development_for_unity_2017/direct_and_indirect_light.png)
+
+#### Renderer Types
+
+* Forward
+* Deferred
+* Forward+ (Tiled Forward Shading)
+* [URP (Universal Render Pipeline)][2]
+
+#### Shader Visual Graphs
+
+* Unity doesn't include one
+* [ShaderForge][1], a 3rd-party implementation
+
+![](images/2020_11_19_physically_based_shader_development_for_unity_2017/shader_forge.png)
+
+
+
+
+[1]:https://acegikmo.com/shaderforge/
+[2]:https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.1/manual/index.html
