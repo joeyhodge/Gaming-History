@@ -7,9 +7,6 @@
 
 
 
-### Part I - Introduction to Shaders in Unity
-
-
 ## Chapter 1 - How Shader Development Works
 
 
@@ -77,6 +74,10 @@
 
 
 ### The Rendering Equation
+
+![](images/2020_11_19_physically_based_shader_development_for_unity_2017/rendering_equation.png)
+
+#### 
 
 #### Bounced Light
 
