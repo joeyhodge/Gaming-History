@@ -6,6 +6,7 @@
 * 原书用的 Surface Shader，本文改写为 hlsl 版本
 
 
+
 ## Chapter 1 - How Shader Development Works
 
 
@@ -111,6 +112,11 @@ Direct and indirect light
 
 ![](images/2020_11_19_physically_based_shader_development_for_unity_2017/shader_forge.png)
 
+
+
+## Chapter 2 - Your First Unity Shader
+
+TODO
 
 
 
