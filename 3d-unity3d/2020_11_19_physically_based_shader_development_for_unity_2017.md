@@ -1,10 +1,9 @@
-# Physically Based Shader Development for Unit 2017
+# Physically Based Shader Development for Unity 2017
 
 ![](images/2020_11_19_physically_based_shader_development_for_unity_2017/cover.png)
 
-* hlsl 从 unity 2019.3 的 URP 开始启用
-* 之前用的 Cg
-
+* hlsl 从 Unity 2019.3 的 URP 开始启用（之前用的 Cg）
+* 原书用的 Surface Shader，本文改写为 hlsl 版本
 
 
 ## Chapter 1 - How Shader Development Works
