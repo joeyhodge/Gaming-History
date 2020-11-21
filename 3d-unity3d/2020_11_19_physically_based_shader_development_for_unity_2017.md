@@ -116,6 +116,133 @@ Direct and indirect light
 
 ## Chapter 2 - Your First Unity Shader
 
+* 场景中，创建一个 Cube
+* Assets中，创建一个 Material，命名为 "RedMaterial"
+* Assets中，创建一个 Unlit Shader，命名为 "RedShader"
+* 将 "RedMaterial" 的 shader 设置为 "RedShader"
+
+![](images/2020_11_19_physically_based_shader_development_for_unity_2017/set_shader_to_material.png)
+
+* 将 "RedMaterial" 从 Assets 中拖入 Cube 上，赋给它
+* 此时，Cube 是白色。Inspector面板 上可看到 Materials 设置为 "RedMaterial"
+
+![](images/2020_11_19_physically_based_shader_development_for_unity_2017/set_material_to_object.png)
+
+* 双击 "RedShader"，可以看到原始文件内容，如下
+* 把 `_MainTex ("Texture", 2D) = "white" {}` 改为 `= "red" {}` 就变红了
+* 太简单了，没啥好说的
+
+```C
+Shader "Unlit/RedShader"
+{
+    Properties
+    {
+        _MainTex ("Texture", 2D) = "white" {}
+    }
+    SubShader
+    {
+        Tags { "RenderType"="Opaque" }
+        LOD 100
+
+        Pass
+        {
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            // make fog work
+            #pragma multi_compile_fog
+
+            #include "UnityCG.cginc"
+
+            struct appdata
+            {
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+            };
+
+            struct v2f
+            {
+                float2 uv : TEXCOORD0;
+                UNITY_FOG_COORDS(1)
+                float4 vertex : SV_POSITION;
+            };
+
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
+
+            v2f vert (appdata v)
+            {
+                v2f o;
+                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                UNITY_TRANSFER_FOG(o,o.vertex);
+                return o;
+            }
+
+            fixed4 frag (v2f i) : SV_Target
+            {
+                // sample the texture
+                fixed4 col = tex2D(_MainTex, i.uv);
+                // apply fog
+                UNITY_APPLY_FOG(i.fogCoord, col);
+                return col;
+            }
+            ENDCG
+        }
+    }
+}
+```
+
+* CGPROGRAM/ENDCG - Cg Program
+
+```C
+CGPROGRAM
+v2f vert (appdata v)
+{
+    v2f o;
+    o.vertex = UnityObjectToClipPos(v.vertex);
+    o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+    UNITY_TRANSFER_FOG(o,o.vertex);
+    return o;
+}
+
+fixed4 frag (v2f i) : SV_Target
+{
+    // sample the texture
+    fixed4 col = tex2D(_MainTex, i.uv);
+    // apply fog
+    UNITY_APPLY_FOG(i.fogCoord, col);
+    return col;
+}
+ENDCG
+```
+
+* HLSLPROGRAM/ENDHLSL - 2019.3 可以用 hlsl
+
+```C
+HLSLPROGRAM
+#pragma prefer_hlslcc gles
+#pragma exclude_renderers d3d11_9x
+#pragma target 3.5
+#pragma multi_compile_fwdadd
+
+#pragma shader_feature __ _NORMALMAP
+#pragma shader_feature __ _ALPHATEST_ON
+
+#define _TONE_MAPPING 1
+#define BIOUM_ADDPASS
+
+#pragma vertex ForwardAddVert
+#pragma fragment ForwardAddFrag
+
+#include "CharacterCommonPass.hlsl"
+ENDHLSL
+```
+
+
+
+## Chapter 3 - The Graphics Pipeline
+
 TODO
 
 
