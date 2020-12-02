@@ -32,11 +32,12 @@
 
 ### Debug
 
- * [tracy][1], C++ frame profiler
- * [optick][6], C++ Profiler For Games
- * [Remotery][46], Single C file, Realtime CPU/GPU Profiler with Remote Web Viewer
- * [google-sanitizers][23], AddressSanitizer, ThreadSanitizer, MemorySanitizer
- * [DrMemory][51], Memory Debugger for Windows, Linux, Mac, and Android
+* [tracy][1], C++ frame profiler
+* [optick][6], C++ Profiler For Games
+* [Remotery][46], Single C file, Realtime CPU/GPU Profiler with Remote Web Viewer
+* [google-sanitizers][23], AddressSanitizer, ThreadSanitizer, MemorySanitizer
+* [DrMemory][51], Memory Debugger for Windows, Linux, Mac, and Android
+* [RemedyBG][71], A downloadable debugger for Windows written from scratch
 
 
 ## C#
@@ -220,3 +221,4 @@
 [68]:https://github.com/microsoft/XamlBehaviorsWpf
 [69]:http://avaloniaui.net/
 [70]:https://github.com/mono/SkiaSharp
+[71]:https://remedybg.itch.io/remedybg
