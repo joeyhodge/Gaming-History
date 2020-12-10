@@ -38,7 +38,7 @@ pixel_shader : {
         float2 uv = input.position.xy / screen_resolution;
 
         // Time varying pixel color
-        float3 col = 0.5 + 0.5* cos(uv.xyx + float3(0,2,4)); // TODO: iTime
+        float3 col = 0.5 + 0.5* cos(load_time() + uv.xyx + float3(0,2,4));
 
         // Output to screen
         output.color = float4(col, 1.0);
@@ -46,6 +46,25 @@ pixel_shader : {
         return output;
     ]]
 }
+
+compile : {
+    variations : [
+        { systems : [ "frame_system" ] }
+    ]
+}
+```
+
+* frame_system.shader 包含了每帧的一些常量，需要 engine 传递给 shader
+* 有了 frame_system.shader 中的声明，可以通过 `load_time()` 来访问 "time"
+
+```
+imports : [
+    { name: "time" type: "float" }
+    { name: "last_time" type: "float" }
+    { name: "delta_time" type: "float" }
+    { name: "frame_number" type: "uint" }
+    { name: "settings_mask" type: "uint" }
+]
 ```
 
 
