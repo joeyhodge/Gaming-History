@@ -10,7 +10,7 @@
 ## Chapter 1 - How Shader Development Works
 
 
-### Waht Is a Shader?
+### What Is a Shader?
 
 #### Shader Execution
 
