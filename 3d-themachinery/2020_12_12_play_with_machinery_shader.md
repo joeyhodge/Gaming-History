@@ -155,6 +155,112 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 }
 ```
 
+* 依样画葫芦
+
+```hlsl
+common : [[
+    #define screen_resolution float2(800,600)
+
+    #define A 1.0
+    #define B 3.0
+
+    // f(x,y) (top left)
+    float ellipse1(float2 p, float r)
+    {
+        float f = length( p*float2(A,B) );
+        return abs(f-r);
+    }
+
+    // f(x,y) divided by analytical gradient (top right)
+    float ellipse2(float2 p, float r)
+    {
+        float f = length( p*float2(A,B) );
+        float g = length( p*float2(A*A,B*B) );
+        return abs(f-r)*f/g;
+    }
+
+    // f(x,y) divided by numerical GPU gradient (bottom left)
+    float ellipse3(float2 p, float r, float e)
+    {
+        float f = ellipse1(p, r);
+        float g = length( float2(ddx(f),ddy(f))/e );
+        return f/g;
+    }
+
+    // f(x,y) divided by numerical gradient (bottom right)
+    float ellipse4(float2 p, float r, float e)
+    {
+        float f = ellipse1(p,r);
+        float g = length( float2(ellipse1(p+float2(e,0.0),r)-ellipse1(p-float2(e,0.0),r),
+                            ellipse1(p+float2(0.0,e),r)-ellipse1(p-float2(0.0,e),r)) )/(2.0*e);
+        return f/g;
+    }
+]]
+
+vertex_shader : {
+    import_system_semantics : [ "vertex_id" ]
+        
+    code : [[                
+        static float4 vertices[] = {
+            { -1.0f, -1.0f, 0.f, 1.f },
+            {  1.0f, -1.0f, 0.f, 1.f },
+            { -1.0f,  1.0f, 0.f, 1.f },
+            {  1.0f, -1.0f, 0.f, 1.f },
+            {  1.0f,  1.0f, 0.f, 1.f },
+            { -1.0f,  1.0f, 0.f, 1.f },
+        };
+
+        output.position = vertices[vertex_id];
+        return output;
+    ]]
+}
+
+pixel_shader : {
+    exports : [
+        { name : "color" type: "float4" }
+    ]
+
+    code : [[
+        float r = 0.9 + 0.1*sin(3.1415927*load_time());
+        float e = 2.0/screen_resolution.y;
+        
+        float2 uv = (2.0*input.position.xy - screen_resolution.xy) / screen_resolution.y;
+
+        float f1 = ellipse1(uv, r);
+        float f2 = ellipse2(uv, r);
+        float f3 = ellipse3(uv, r, e);
+        float f4 = ellipse4(uv, r, e);
+
+        float3 col = float3(0.3, 0.3, 0.3);
+
+        // ellipse
+        float f = lerp( lerp(f1,f2,step(0.0,uv.x)), 
+                    lerp(f3,f4,step(0.0,uv.x)), 
+                    step(uv.y,0.0) );
+
+        col = lerp( col, float3(1.0,0.6,0.2), 1.0-smoothstep( 0.1, 0.11, f ) );
+        
+        // lines    
+        col *= smoothstep( e, 2.0*e, abs(uv.x) );
+        col *= smoothstep( e, 2.0*e, abs(uv.y) );
+
+        output.color = float4( col, 1.0 );
+
+        return output;
+    ]]
+}
+
+compile : {
+    variations : [
+        { systems : [ "frame_system" ] }
+    ]
+}
+```
+
+![](images/2020_12_12_play_with_machinery_shader/ellipse.png)
+
+
+
 [1]:https://www.shadertoy.com/view/MdfGWn
 [2]:https://www.shadertoy.com/new
 [3]:https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-semantics#direct3d-9-vpos-and-direct3d-10-sv_position
