@@ -3,13 +3,14 @@
 * [https://renderman.pixar.com/][3]
 
 
-## RenderMan Reyes
+## Architecture
+
+### Reyes
 
 * 老构架版本
 * [The Reyes Image Rendering Architecture][1]
 
-
-## RenderMan RIS
+### RIS
 
 * 基于光线追踪的新版本
 * [RenderMan: An Advanced Path-Tracing Architecture for Movie Rendering][2]
