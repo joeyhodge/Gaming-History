@@ -3,6 +3,32 @@
  * 记录感兴趣的渲染技术
 
 
+## GPU (hardware)
+
+### The Mali GPU
+
+An Abstract Machine
+
+* [Part 1 - Frame Pipelining][43]
+* [Part 2 - Tile-based Rendering][44]
+* [Part 3 - The Midgard Shader Core][45]
+* [Part 4 - The Bifrost Shader Core][46]
+
+Mali Performance
+
+* [1: Checking the Pipeline][53]
+* [2: How to Correctly Handle Framebuffers][54]
+* [3: Is EGL_BUFFER_PRESERVED a good thing?][52]
+* [4: Principles of High Performance Rendering][49]
+* [5: An Application's Performance Responsibilities][48]
+* [6: Efficiently Updating Dynamic Resources][50]
+* [7: Accelerating 2D rendering using OpenGL ES][51]
+
+Misc
+
+* [Mali Midgard Family Performance Counters][47]
+
+
 ## Rendering Pipeline
 
  * Forward Rendering
@@ -36,6 +62,13 @@ TODO
  * [2015 - SIGGRAPH - GPU-Driven Rendering Pipelines][6]
  * [2008 - SIGGRAPH - GPU-Based Scene Management Large Crowds][7]
 
+Cluster
+
+* [Unity - Cluster 实现概述][36]
+* [Unity - Cluster 实现详解1 - 预计算AABB][37]
+* [Unity - Cluster 实现详解2 - 光源求交][38]
+* [Unity - Cluster 实现详解3 - GPU-Driven][39]
+
 ### FrameGraph
 
  * [FrameGraph: Extensible Rendering Architecture in Frostbite][35]
@@ -59,6 +92,15 @@ TODO
  * [2011 - SIGGRAPH - Per-Face Texture Mapping for Realtime Rendering][24]
  * [2013 - NVIDIA - Eliminating Texture Waste: Borderless Ptex][25]
  * [Ptex and PRT Technology Preview][26]
+
+
+## TimeOfDay
+
+### 大气散射
+
+* [从零实现一套完整单次大气散射1][40]
+* [从零实现一套完整单次大气散射2][41]
+* [从零实现一套完整单次大气散射3][42]
 
 
 ## HDR - High Dynamic Range Rendering
@@ -147,3 +189,22 @@ TODO
 [33]:https://knarkowicz.wordpress.com/2016/03/21/gdc-2016-presentations/
 [34]:https://www.dropbox.com/s/guyvljewxhjssyr/ccoffin_GDC18_Version030_final.pptx?dl=0
 [35]:https://www.gdcvault.com/play/1024612/FrameGraph-Extensible-Rendering-Architecture-in
+[36]:https://zhuanlan.zhihu.com/p/71932575
+[37]:https://zhuanlan.zhihu.com/p/72252279
+[38]:https://zhuanlan.zhihu.com/p/72484631
+[39]:https://zhuanlan.zhihu.com/p/72747058
+[40]:https://zhuanlan.zhihu.com/p/237502022
+[41]:https://zhuanlan.zhihu.com/p/237727216
+[42]:https://zhuanlan.zhihu.com/p/237886632
+[43]:https://community.arm.com/developer/tools-software/graphics/b/blog/posts/the-mali-gpu-an-abstract-machine-part-1---frame-pipelining
+[44]:https://community.arm.com/developer/tools-software/graphics/b/blog/posts/the-mali-gpu-an-abstract-machine-part-2---tile-based-rendering
+[45]:https://community.arm.com/developer/tools-software/graphics/b/blog/posts/the-mali-gpu-an-abstract-machine-part-3---the-midgard-shader-core
+[46]:https://community.arm.com/developer/tools-software/graphics/b/blog/posts/the-mali-gpu-an-abstract-machine-part-4---the-bifrost-shader-core
+[47]:https://community.arm.com/developer/tools-software/graphics/b/blog/posts/mali-midgard-family-performance-counters
+[48]:https://community.arm.com/developer/tools-software/graphics/b/blog/posts/mali-performance-5-an-application-s-performance-responsibilities
+[49]:https://community.arm.com/developer/tools-software/graphics/b/blog/posts/mali-performance-4-principles-of-high-performance-rendering
+[50]:https://community.arm.com/developer/tools-software/graphics/b/blog/posts/mali-performance-6-efficiently-updating-dynamic-resources
+[51]:https://community.arm.com/developer/tools-software/graphics/b/blog/posts/mali-performance-7-accelerating-2d-rendering-using-opengl-es
+[52]:https://community.arm.com/developer/tools-software/graphics/b/blog/posts/mali-performance-3-is-egl_5f00_buffer_5f00_preserved-a-good-thing
+[53]:https://community.arm.com/developer/tools-software/graphics/b/blog/posts/mali-performance-1-checking-the-pipeline
+[54]:https://community.arm.com/developer/tools-software/graphics/b/blog/posts/mali-performance-2-how-to-correctly-handle-framebuffers
