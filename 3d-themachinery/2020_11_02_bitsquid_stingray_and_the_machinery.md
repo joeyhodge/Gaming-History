@@ -22,6 +22,16 @@
 
 ### Blog
 
+Release Notes
+
+* [2020.03.18 - The Machinery Beta (version 2020.3)][99]
+* [2020.04.10 - The Machinery Beta (version 2020.4)][100]
+* [2020.05.15 - The Machinery Beta (version 2020.5)][103]
+* [2020.06.17 - The Machinery Beta (version 2020.6)][106]
+* [2020.07.20 - The Machinery Beta (version 2020.7)][108]
+* [2020.08.28 - The Machinery Beta (version 2020.8)][109]
+* [2020.09.30 - The Machinery Beta (version 2020.9)][111]
+
 Development Philosophy
 
 * [2017.03.03 - Physical Design of The Machinery][26]
@@ -29,7 +39,6 @@ Development Philosophy
 * [2017.03.24 - One-button Source Code Builds][28]
 * [2017.06.26 - Defaulting to Zero][42]
 * [2017.09.05 - Moving away from GitFlow][63]
-* [2018.12.05 - The Anti-Feature Dream][74]
 
 Data Structure
 
@@ -45,7 +54,12 @@ Engine Architecture
 * [2017.05.16 - Little Machines Working Together (Part 1)][34]
 * [2017.06.05 - Little Machines Working Together (Part 2)][37]
 * [2017.08.14 - DLL Hot Reloading in Theory and Practice][59]
-* [2018.10.23 - Entity-Component-Systems and Rendering][73]
+* [2017.11.27 - Should entities support multiple instances of the same component?][81]
+* [2018.02.18 - The Document Model and The Machinery][85]
+* [2019.04.17 - Referencing Objects: Names vs GUIDs][91]
+* [2019.07.08 - Syncing a data-oriented ECS with a stateful external system][97]
+* [2020.03.27 - Recording Statistics - An Exercise in Minimalism][102]
+* [2020.07.29 - Prototypes in The Machinery][107]
 
 The Truth - Multi-Threading Data Model
 
@@ -59,10 +73,32 @@ Rendering Pipeline
 * [2017.05.30 - Efficient Binding of Shader Resources][36]
 * [2017.08.28 - High-Level Rendering Using Render Graphs][61]
 * [2017.08.18 - Simple Parallel Rendering][62]
-* [2017.10.08 - It’s All About The Data][65]
+* [2017.10.08 - It's All About The Data][65]
+* [2018.01.22 - Explicit Multi-GPU Programming][83]
+* [2018.10.23 - Entity-Component-Systems and Rendering][73]
+* [2018.12.05 - The Anti-Feature Dream][74]
+* [2019.04.04 - Creation Graphs][90]
+* [2019.05.29 - The Machinery Asset Pipeline][93]
+* [2019.09.17 - Vertex Assembly and Skinning][94]
+* [2019.12.02 - More on Creation Graphs][95]
+* [2020.03.06 - Borderland between Rendering and Editor - Part 1][98]
+* [2020.04.14 - GPU Simulation][101]
+* [2020.05.26 - Borderland between Rendering and Editor - Part 2][104]
+* [2020.07.15 - Subgraphs and Function Graphs][105]
+* [2020.09.22 - Borderland between Rendering and Editor — Part 3: Selection Highlighting][110]
+
+Renderer - Shader System
+
 * [2018.02.12 - The Machinery Shader System (part 1)][70]
 * [2018.04.17 - The Machinery Shader System (part 2)][71]
 * [2018.05.29 - The Machinery Shader System (part 3)][73]
+
+Renderer Backend - Vulkan
+
+* [2017.10.30 - Vulkan: Descriptor Sets Management][78]
+* [2017.11.20 - Vulkan: Command Buffer Management][79]
+* [2017.12.11 - Vulkan: Pipelines and Render States][77]
+* [2018.08.29 - Device Memory Management][80]
 
 GUI
 
@@ -70,6 +106,18 @@ GUI
 * [2017.07.17 - One Draw-call UI][40]
 * [2017.08.07 - DPI-aware IMGUI][41]
 * [2017.09.25 - Keyboard Focus and Event Trickling in Immediate Mode GUIs][64]
+* [2018.05.01 - Implementing drag-and-drop in an IMGUI][86]
+* [2018.07.11 - Making the move/rotate/scale gizmos work with any component][87]
+* [2019.01.14 - Localization in The Machinery's UI][89]
+
+Sound
+
+* [2020.03.17 - Writing a Low-Level Sound System — You Can Do It!][96]
+
+Misc
+
+* [2018.09.18 - A Tale of Two Bugs][88]
+* [2019.04.29 - Creating Cross-Language APIs][92]
 
 Marketing
 
@@ -82,6 +130,7 @@ Marketing
 * [2018.02.27 - Marketing Mini Series Part 7: Websites][54]
 * [2018.05.17 - Marketing Mini Series Part 8: Online Marketing 101: The Four Pillars][55]
 * [2018.06.28 - Marketing Mini Series Part 9: Internal Marketing][56]
+* [2018.10.02 - Marketing Mini Series Part 10: Community Management][76]
 
 Work & Life
 
@@ -209,3 +258,39 @@ Work & Life
 [73]:https://ourmachinery.com/post/ecs-and-rendering/
 [74]:https://ourmachinery.com/post/the-anti-feature-dream/
 [75]:https://ourmachinery.com/post/virtual-memory-tricks/
+[76]:https://ourmachinery.com/post/marketing-miniseries-part-10-community-management/
+[77]:https://ourmachinery.com/post/vulkan-pipelines-and-render-states/
+[78]:https://ourmachinery.com/post/vulkan-descriptor-sets-management/
+[79]:https://ourmachinery.com/post/vulkan-command-buffer-management/
+[80]:https://ourmachinery.com/post/device-memory-management/
+[81]:https://ourmachinery.com/post/should-entities-support-multiple-instances-of-the-same-component/
+[82]:https://ourmachinery.com/post/explicit-multi-gpu-programming/
+[83]:https://ourmachinery.com/post/explicit-multi-gpu-programming/
+[84]:https://ourmachinery.com/post/the-document-model-and-the-machinery/
+[85]:https://ourmachinery.com/post/the-document-model-and-the-machinery/
+[86]:https://ourmachinery.com/post/implementing-drag-and-drop-in-an-imgui/
+[87]:https://ourmachinery.com/post/making-the-move-rotate-scale-gizmos-work-with-any-component/
+[88]:https://ourmachinery.com/post/a-tale-of-two-bugs/
+[89]:https://ourmachinery.com/post/localization-in-the-machinerys-ui/
+[90]:https://ourmachinery.com/post/creation-graphs/
+[91]:https://ourmachinery.com/post/referencing-objects-names-vs-guids/
+[92]:https://ourmachinery.com/post/creating-cross-language-apis/
+[93]:https://ourmachinery.com/post/the-machinery-asset-pipeline/
+[94]:https://ourmachinery.com/post/vertex-assembly-and-skinning/
+[95]:https://ourmachinery.com/post/more-on-creation-graphs/
+[96]:https://ourmachinery.com/post/writing-a-low-level-sound-system/
+[97]:https://ourmachinery.com/post/syncing-a-data-oriented-ecs/
+[98]:https://ourmachinery.com/post/borderland-between-rendering-and-editor-part-1/
+[99]:https://ourmachinery.com/post/beta/
+[100]:https://ourmachinery.com/post/beta-2020-4/
+[101]:https://ourmachinery.com/post/gpu-simulation/
+[102]:https://ourmachinery.com/post/recording-statistics/
+[103]:https://ourmachinery.com/post/beta-2020-5/
+[104]:https://ourmachinery.com/post/borderland-part-2-picking/
+[105]:https://ourmachinery.com/post/subgraphs-and-function-graphs/
+[106]:https://ourmachinery.com/post/beta-2020-6/
+[107]:https://ourmachinery.com/post/prototypes-in-the-machinery/
+[108]:https://ourmachinery.com/post/beta-2020-7/
+[109]:https://ourmachinery.com/post/beta-2020-8/
+[110]:https://ourmachinery.com/post/borderland-part-3-selection-highlighting/
+[111]:https://ourmachinery.com/post/beta-2020-9/
