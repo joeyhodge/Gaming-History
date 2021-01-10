@@ -62,6 +62,13 @@ A3纸 PDCA(Plan, Do, Check, Act)
 * 某手机研发团队，全公司导入 LeSS
 * 产品：android 平台上的定制开发（system layer + apps）
 
+落地过程
+
+* 历时一年半，逐步有成效
+* 大领导推动（CEO之下的一位领导）
+* 原来的 team leader 进入 feature team，薪资保持不变化
+* 实在无法认同变革的人，只能离开组织
+
 KPI定制思路
 
 * PO/Team: 70%(结果) / 30%(Peopel Mgmt评分)
