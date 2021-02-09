@@ -26,7 +26,15 @@
 * [Texturing & Modeling: A Procedural Approach][13]
 * [Production Rendering: Design and Implementation][8]
   * to teaching how to write your own RenderMan-compliant (or similar) production renderer.
+* [Digital Lighting & Rendering 3rd][15]
+  * teaches you to apply Hollywood lighting techniques in any 3D program.
 * [Books & Web Links][11]
+
+
+## Resources
+
+* [Models - 3drender.com][14]
+* [Online Courses - CG Society Workshops][16]
 
 
 ## Other Implementations
@@ -49,3 +57,6 @@
 [11]:http://www.dotcsw.com/links.html
 [12]:https://www.amazon.com/exec/obidos/ASIN/1558606181/
 [13]:https://www.amazon.com/exec/obidos/ASIN/1558608486/
+[14]:http://3drender.com/challenges/index.htm
+[15]:http://3drender.com/light/index.html
+[16]:https://cgsociety.org/workshops
