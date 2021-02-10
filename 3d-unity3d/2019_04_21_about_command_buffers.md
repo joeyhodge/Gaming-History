@@ -6,7 +6,7 @@
 ## 原理
 
  * 将 3D Draw API 的内容，封装到 C# 层面
- * 在 rendering pipeline 的某个阶段，将 command buffer 插入进去，用于生成某些需要的贴图，也成为 RT(rendering target)
+ * 在 rendering pipeline 的某个阶段，将 command buffer 插入进去，用于生成某些需要的贴图，也称为 RT(rendering target)
  * 位于 [Unity.Rendering.CommandBuffer][2]
 
 
