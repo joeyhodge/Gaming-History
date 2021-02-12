@@ -135,6 +135,7 @@ class MyBlueprint
  * 一个 Game 有一个 Default GameMode (Edit => Project Settings ... => Maps & Modes => Default GameMode)
  * 每个 Level 可以有独立的 GameMode (Settings => World Settings => Game Mode => GameMode Override)
  * GameModeBase, 要实现自己的 GameMode，继承它
+ * 打开 GameMode 的 Blueprint Editor，可以看到此 GameMode 下的所设置的所有类（下图）
 
 ![](images/2020_10_06_blueprints_visual_scripting/game_mode.png)
 
