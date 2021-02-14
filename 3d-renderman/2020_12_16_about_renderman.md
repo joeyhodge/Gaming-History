@@ -43,6 +43,7 @@
 ## Other Implementations
 
 * [Aqsis][4], BSD
+* [Lucille][17] ([blog][18]), A Global Illumination Renderer like [BMRT][19]
 * [Pixie][6], [Wiki][7], BSD
 * [RenderDotC][5], Commercial
 
@@ -63,3 +64,6 @@
 [14]:http://3drender.com/challenges/index.htm
 [15]:http://3drender.com/light/index.html
 [16]:https://cgsociety.org/workshops
+[17]:https://github.com/syoyo/lucille
+[18]:http://lucille.sourceforge.net/blog/
+[19]:https://icg.gwu.edu/sites/g/files/zaxdzs1481/f/downloads/Gritz1997.pdf
