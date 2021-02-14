@@ -5,6 +5,9 @@
 
 ## Architecture
 
+* 历年 Papers
+* https://graphics.pixar.com/library/
+
 ### Reyes
 
 * 老构架版本
@@ -44,8 +47,8 @@
 * [RenderDotC][5], Commercial
 
 
-[1]:https://graphics.pixar.com/library/Reyes/paper.pdf
-[2]:https://dl.acm.org/doi/10.1145/3182162
+[1]:https://graphics.pixar.com/library/Reyes/
+[2]:https://graphics.pixar.com/library/RendermanTog2018/
 [3]:https://renderman.pixar.com/
 [4]:http://www.aqsis.org/
 [5]:http://www.dotcsw.com/rdc.html
