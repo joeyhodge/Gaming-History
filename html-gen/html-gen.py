@@ -12,7 +12,7 @@ import markdown
 
 FROM_PATH = path.abspath('../')
 TO_PATH   = path.abspath('../../kasicass.github.io')
-SKIP_DIRS = ('misc-poem', 'html-gen',)
+SKIP_DIRS = ('html-gen',)
 TIMELINE_COUNT = 10 # show recent 10 articles
 
 def getFiles(pattern):
