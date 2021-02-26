@@ -1,5 +1,7 @@
 # Decima
 
+![](images/2021_02_26_decima_engine/horizon-zero-dawn.png)
+
 * [Wikipedia][1]
 
 
