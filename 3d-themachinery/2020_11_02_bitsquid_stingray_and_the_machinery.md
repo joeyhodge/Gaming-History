@@ -24,13 +24,17 @@
 
 Release Notes
 
-* [2020.03.18 - The Machinery Beta (version 2020.3)][99]
-* [2020.04.10 - The Machinery Beta (version 2020.4)][100]
-* [2020.05.15 - The Machinery Beta (version 2020.5)][103]
-* [2020.06.17 - The Machinery Beta (version 2020.6)][106]
-* [2020.07.20 - The Machinery Beta (version 2020.7)][108]
-* [2020.08.28 - The Machinery Beta (version 2020.8)][109]
+* [2021.02.26 - The Machinery Beta (version 2021.2)][112]
+  * [Support for Custom Fonts and Icons][113]
+  * [Import Workflow Improvements][114]
+  * [API Type Safety][115]
 * [2020.09.30 - The Machinery Beta (version 2020.9)][111]
+* [2020.08.28 - The Machinery Beta (version 2020.8)][109]
+* [2020.07.20 - The Machinery Beta (version 2020.7)][108]
+* [2020.06.17 - The Machinery Beta (version 2020.6)][106]
+* [2020.05.15 - The Machinery Beta (version 2020.5)][103]
+* [2020.04.10 - The Machinery Beta (version 2020.4)][100]
+* [2020.03.18 - The Machinery Beta (version 2020.3)][99]
 
 Development Philosophy
 
@@ -294,3 +298,7 @@ Work & Life
 [109]:https://ourmachinery.com/post/beta-2020-8/
 [110]:https://ourmachinery.com/post/borderland-part-3-selection-highlighting/
 [111]:https://ourmachinery.com/post/beta-2020-9/
+[112]:https://ourmachinery.com/post/beta-2021-2/
+[113]:https://ourmachinery.com/post/beta-2021-2/#support-for-custom-fonts-and-icons
+[114]:https://ourmachinery.com/post/beta-2021-2/#import-workflow-improvements
+[115]:https://ourmachinery.com/post/beta-2021-2/#api-type-safety
