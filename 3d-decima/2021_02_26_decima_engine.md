@@ -9,9 +9,9 @@
 
 ## Games
 
-* [2013 - Killzone: Shadow Fall][2]
-* [2017 - Horizon Zero Dawn][3]
-* [2019 - Death Stranding][4]
+* [2013 - Killzone Shadow Fall (杀戮地带：暗影坠落)][2]
+* [2017 - Horizon Zero Dawn (地平线：零之曙光)][3]
+* [2019 - Death Stranding (死亡搁浅)][4]
 * [Horizon Zero Dawn 性能评测][24]
 
 
@@ -31,7 +31,7 @@
 * [2017 - GDC - Player Traversal Mechanics in the Vast World of 'Horizon: Zero Dawn'][17] ([ppt][26])
 * 2017 - SIGGRAPH - Decima Engine: Advances in Lighting and AA ([ppt][25])
 * 2017 - SIGGRAPH - Nubis: Authoring Real-Time Volumetric Cloudscapes with the Decima Engine ([ppt][23])
-
+* 2014 - GDC - [The Next-Gen Dynamic Sound System of Killzone Shadow Fall][28] ([ppt][29])
 
 ### Visual Arts
 
@@ -81,3 +81,5 @@
 [25]:https://d3ihk4j6ie4n1g.cloudfront.net/downloads/large/DecimaSiggraph2017-final.pptx
 [26]:http://d3ihk4j6ie4n1g.cloudfront.net/downloads/large/GDC2017_VanGrinsven_PlayerTraversalMechanics.pptx
 [27]:https://d3ihk4j6ie4n1g.cloudfront.net/downloads/large/GDC2017_Sumaili_VanDerSteen_CreatingAToolsPipelineForHorizonZeroDawn.pptx
+[28]:https://www.gdcvault.com/play/1020559/The-Next-Gen-Dynamic-Sound
+[29]:https://d3ihk4j6ie4n1g.cloudfront.net/downloads/large/GDC2014_Varga_Killzone_Sound.key
