@@ -28,7 +28,25 @@ Release Notes
   * [Support for Custom Fonts and Icons][113]
   * [Import Workflow Improvements][114]
   * [API Type Safety][115]
+* [2021.01.28 - The Machinery Beta (version 2021.1)][116]
+  * [Linux Support (Preview)][117]
+  * [Bindless GPU Resource Management][118]
+  * [Raytracing Support (Preview)][119]
+  * [Asset Labels][120]
+* [2020.12.16 - The Machinery Beta (version 2020.12)][121]
+  * [Online API Documentation][122]
+  * [Plugin Assets][123]
+  * [Merging of Link and Transform Components][124]
+  * [Gameplay APIs and Simulate Entry][125]
+* [2020.11.20 - The Machinery Beta (version 2020.11)][126]
+  * [Project Import and Import from URL][127]
+  * [Sculpt Tool][128]
+  * [Area Lights][129]
 * [2020.09.30 - The Machinery Beta (version 2020.9)][111]
+  * [Asset Database][130]
+  * [Download Tab][131]
+  * [Creation Graph Instancing][132]
+  * [New API Documentation Format][133]
 * [2020.08.28 - The Machinery Beta (version 2020.8)][109]
 * [2020.07.20 - The Machinery Beta (version 2020.7)][108]
 * [2020.06.17 - The Machinery Beta (version 2020.6)][106]
@@ -302,3 +320,21 @@ Work & Life
 [113]:https://ourmachinery.com/post/beta-2021-2/#support-for-custom-fonts-and-icons
 [114]:https://ourmachinery.com/post/beta-2021-2/#import-workflow-improvements
 [115]:https://ourmachinery.com/post/beta-2021-2/#api-type-safety
+[116]:https://ourmachinery.com/post/beta-2021-1/
+[117]:https://ourmachinery.com/post/beta-2021-1/#linux-support-preview
+[118]:https://ourmachinery.com/post/beta-2021-1/#bindless-gpu-resource-management
+[119]:https://ourmachinery.com/post/beta-2021-1/#raytracing-support-preview
+[120]:https://ourmachinery.com/post/beta-2021-1/#asset-labels
+[121]:https://ourmachinery.com/post/beta-2020-12/
+[122]:https://ourmachinery.com/post/beta-2020-12/#online-api-documentation
+[123]:https://ourmachinery.com/post/beta-2020-12/#plugin-assets
+[124]:https://ourmachinery.com/post/beta-2020-12/#merging-of-link-and-transform-components
+[125]:https://ourmachinery.com/post/beta-2020-12/#gameplay-apis-and-simulate-entry
+[126]:https://ourmachinery.com/post/beta-2020-11/
+[127]:https://ourmachinery.com/post/beta-2020-11/#project-import-and-import-from-url
+[128]:https://ourmachinery.com/post/beta-2020-11/#sculpt-tool
+[129]:https://ourmachinery.com/post/beta-2020-11/#area-lights
+[130]:https://ourmachinery.com/post/beta-2020-9/#asset-database
+[131]:https://ourmachinery.com/post/beta-2020-9/#download-tab
+[132]:https://ourmachinery.com/post/beta-2020-9/#creation-graph-instancing
+[133]:https://ourmachinery.com/post/beta-2020-9/#new-api-documentation-format
