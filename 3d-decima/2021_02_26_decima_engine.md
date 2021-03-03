@@ -15,6 +15,7 @@
 * [Horizon Zero Dawn 性能评测][24]
 
 
+
 ## Presentations
 
 ### Design
@@ -29,9 +30,11 @@
 * 2017 - GCAP - Decima Engine: Visibility in Horizon Zero Dawn ([ppt][22])
 * [2017 - GDC - Creating a Tools Pipeline for 'Horizon: Zero Dawn'][15] ([ppt][27])
 * [2017 - GDC - Player Traversal Mechanics in the Vast World of 'Horizon: Zero Dawn'][17] ([ppt][26])
+* [2017 - GDC - GPU-Based Run-Time Procedural Placement in 'Horizon: Zero Dawn'][16]
 * 2017 - SIGGRAPH - Decima Engine: Advances in Lighting and AA ([ppt][25])
 * 2017 - SIGGRAPH - Nubis: Authoring Real-Time Volumetric Cloudscapes with the Decima Engine ([ppt][23])
 * 2014 - GDC - [The Next-Gen Dynamic Sound System of Killzone Shadow Fall][28] ([ppt][29])
+
 
 ### Visual Arts
 
@@ -39,7 +42,6 @@
 * [2018 - GDC - Art Direction Bootcamp: A No Nonsense Approach to Designing Robot Dinosaurs][8]
 * [2018 - GDC - Between Tech and Art: The Vegetation of 'Horizon Zero Dawn'][9]
 * [2018 - GDC - Repopulating the Earth: Character Production on 'Horizon Zero Dawn'][12]
-* [2017 - GDC - GPU-Based Run-Time Procedural Placement in 'Horizon: Zero Dawn'][16]
 
 
 ### AI
