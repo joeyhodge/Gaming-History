@@ -53,5 +53,13 @@
 
 
 
+## The Head of Development Discusses Strategy
+
+* 布局 online-game，寻找 world-class quality 和 cost-consciousness 的平衡
+* RE ENGINE，自研引擎，更快的迭代流程
+* 大胆新人培养 (actively using younger employees on important projects)
+* 为配合 console game 越来越短的开发要求，大力培养新人，形成了目前 2500 规模的研发团队
+
+
 
 [1]:https://www.capcom.co.jp/ir/english/data/annual.html
