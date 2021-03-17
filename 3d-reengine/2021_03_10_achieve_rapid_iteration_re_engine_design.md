@@ -297,6 +297,101 @@
 ![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/new-resource-arch.png)
 
 
+### New resource architecture challenges
+
+* When playing a scene
+  * Resources used need to be preloaded
+* When creating a package
+  * You need to know the resources used and the loading order
+* Asynchronous load and reload support is required on the engine side
+  * Difficult to enforce with all resources
+
+
+### RE ENGINE solution
+
+* Build static inter-asset dependency information
+* Resource access constraints
+
+
+### Building static inter-asset dependency information
+
+* Introducing the concept of assets
+  * Add metadata to the file
+    * Include dependency information on other assets in metadata
+* Abolished resource loading by game code
+  * I don't know the resources used from the game code
+* Build your game with one huge scene asset
+  * Master scene assets
+
+
+### Introducing the concept of assets
+
+* Assets
+  * Consists of intermediate data and metadata files
+  * Save dependencies in metadata
+  * Converted assets become resources
+* Load metadata for all assets when the tool starts
+  * You can statically build dependencies between all assets
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/concept-of-assets.png)
+
+
+### Dependency information between assets
+
+* There are two types of dependencies, Reference and Include.
+  * A resource references another resource = Reference
+  * Resources depend on the contents of other assets = Include
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/dep-info-of-assets.png)
+
+
+### Utilization of Reference information
+
+* When loading resources / creating packages
+  * Extract only Reference resources
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/dep-info-of-assets.png)
+
+
+### Utilization of Include information
+
+* Conversion process when updating assets
+  * Convert all Include original assets
+* Sharing converted resources
+  * Calculate resource ID from hash of all Include assets
+  * Upload / download to server based on resource ID
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/include-info-of-assets.png)
+
+
+### Master scene assets
+
+* Includes all the scene assets that make up the game
+  * Become the root of dependencies between assets
+* Activate the scene as it progresses
+  * Easy seamless loading
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/master-scene-assets.png)
+
+
+### Dependencies between assets
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/dependencies-between-assets.png)
+
+
+### Resource access constraints
+
+* Do not implement synchronous loading
+  * A major factor in spikes
+    * Block code until resource loading is complete
+    * Intuitive and easy to use, so it tends to be used a lot
+  * Supports asynchronous loads only
+* Reload support is compulsory
+  * Old resource access warns
+* **No impact on game code**
+  * There is no way to access resources directly
+
+
 
 ## Script Architecture
 
