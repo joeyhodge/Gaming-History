@@ -392,6 +392,17 @@
   * There is no way to access resources directly
 
 
+###  Resource access during asynchronous loading
+
+* Cannot access immediately after resource creation
+  * ASSERT fails if accessed before loading is complete
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/resource-async-load-1.png)
+
+* Wait for the resource to finish loading before accessing
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/resource-async-load-2.png)
+
 
 ## Script Architecture
 
