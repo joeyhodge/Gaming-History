@@ -253,6 +253,7 @@
 
 ![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/remote-object-behavior.png)
 
+
 ### Summary
 
 * Tool process separation is very effective
@@ -266,6 +267,35 @@
 
 
 ## Resource Architecture
+
+### Old resource architecture
+
+* File-based resource management
+  * Resource loading is done with game code
+* Problem
+  * Synchronous load spikes
+  * Resource updates that require a reboot
+  * Long waiting time due to conversion
+  * Manual packaging
+    * Mixing of unnecessary resources, lack of required resources
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/old-resource-arch.png)
+
+
+### New resource architecture
+
+* Asset-based resource management
+  * Resource loading is done automatically on the engine side
+* Advantage
+  * Full control of resource loading
+    * Supports asynchronous loading of all resources
+    * Supports dynamic reloading of all resources
+    * Reduce conversion time with cache
+  * Automatic packaging
+    * Automatically pack only the resources you need in the optimal order
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/new-resource-arch.png)
+
 
 
 ## Script Architecture
