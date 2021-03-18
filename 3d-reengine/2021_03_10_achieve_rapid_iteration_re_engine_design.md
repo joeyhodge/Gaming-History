@@ -874,7 +874,7 @@ Resident Evil 7 Code Metrics
 * Local => Global conversion
   * The referenced local object is also globalized
 
-![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/incremental-overhead.png)
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/framegc-overhead.png)
 
 
 ### FrameGC algorithm pseudo code
