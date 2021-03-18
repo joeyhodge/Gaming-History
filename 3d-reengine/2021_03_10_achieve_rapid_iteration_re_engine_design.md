@@ -54,10 +54,10 @@
 ### Development results of Resident Evil 7
 
 * Final project scale
-  * Approximately 280,000 lines of C # game code, approximately 150,000 total assets
+  * Approximately 280,000 lines of C# game code, approximately 150,000 total assets
 * Maintain fast iterations
-  * Full build ~ 10 seconds, level adjustment was repeated many times until the end of development
-  * （不知道这里指的是C#编译时间，还是包括资源；包括资源就太强了 Orz）
+  * Full build ~10 seconds, level adjustment was repeated many times until the end of development
+  * 从后文可知，10s指C#脚本编译时间
 * Achieves stable performance on the actual machine
   * VR below 60fps = Cannot be released
 * Peaceful QA
@@ -434,8 +434,292 @@ if (m_handle.isValid()) // returns true if valid
 ![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/resource-reloading.png)
 
 
+### All resources are reloadable
+
+* Determine if there is an update before accessing the resource
+  * If there is an update, update the resource
+
+```C++
+// Determine if there is an update (always false at release)
+if (m_handle.isUpdate()) {
+  // Exchange old and new resources
+  m_handle.update();
+}
+```
+
+* When accessing an old resource without supporting updates
+  * Large amount of warning logs (does not crash)
+
+
+### Asynchronous load & convert behavior
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/async-load-behaviour.png)
+
+
+### Summary
+
+* Abolished resource loading by game code
+  * Dependencies between resources can be determined statically
+    * Various efficiencies and automations are possible based on dependencies
+  * Full control over resource load on the engine side
+    * Supports asynchronous loading and reloading of all resources. Seek time optimization
+* Restrict resource access on the engine side
+  * Do not prepare synchronous load from the beginning
+  * Reload first and force a response
+
+
+
 ## Script Architecture
 
+### Old script architecture
+
+* Coding all game logic in C++
+  * Programmers do not use scripting languages
+* Problem
+  * Long build time ~15 minutes
+    * Even with distributed builds!
+  * Frequent crashes
+  * Memory leak, memory corruption
+  * Vast and chaotic C++ language specification
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/old-script-arch.png)
+
+
+### New script architecture
+
+* Coding all game logic in C#
+  * There is no application-specific C++ code
+* Advantage
+  * Build is overwhelmingly fast ~10 seconds
+  * Does not crash
+  * Automatic memory management
+  * No memory leak or memory corruption
+  * Sophisticated C# language specifications
+
+Resident Evil 7 Code Metrics
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/re7-code-metrics.png)
+
+
+### New script architecture challenges
+
+* Execution speed is slower than C ++
+  * Marshall cost with native code
+  * Strict handling of exceptions, etc.
+* Garbage collection downtime
+  * All threads stop irregularly for a long time (Stop The World)
+  * Low compatibility with console game consoles
+  * JIT compilation prohibited, risk of dealing with launch hardware
+
+
+### RE ENGINE solution
+
+* Develop your own virtual machine (REVM)
+* Implement your own garbage collection
+
+
+### Develop your own virtual machine REVM
+
+* AOT compilation premise design
+  * JIT compilation is not supported
+* High affinity with C++ language
+  * Significant reduction in martial costs
+* Compact standard library
+  * Import the minimum required functionality from Core FX
+    * MIT license
+
+
+### AOT compilation premise design
+
+* Convert C# code to IL and AOT compilation
+  * Pre-expand generics etc. and statically link
+* During development
+  * Output type information and microcode
+* At release
+  * Output type information and C++ code
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/aot-compilation-design.png)
+
+
+### During development
+
+* Prioritize iteration speed
+  * Convert IL to your own microcode
+    * IL is not suitable for interpreter execution
+  * Run microcode in the interpreter
+* Supports hot patches
+  * Reflect code changes in real time without rebooting
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/aot-on-developement.png)
+
+
+### At the time of release
+
+* Prioritize execution performance
+  * Convert IL to C++ code (IL2CPP)
+  * C++ runtime code and static linking
+    * All Marshall code is inlined
+* Requires runtime build
+  * Distributed build ~15 minutes
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/aot-on-release.png)
+
+
+### High affinity with C++ language (1/4)
+
+* Managed objects
+  * Integrate instance model in C++/C#
+  * All C# objects are managed objects
+  * Classes defined in C++ can be inherited in C#
+  * Reference counter (RC) manages instance life
+* **Can interact in both directions at no martial cost**
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/csharp-affinity-with-cpp-1.png)
+
+
+### High affinity with C++ language (2/4)
+
+* Automatically publish C++ classes to C#
+  * Analyze C++ source code with Clang
+  * Publish managed object inheritance class to C#
+  * Publish singleton class to C# as Static class
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/csharp-affinity-with-cpp-2.png)
+
+
+### High affinity with C++ language (3/4)
+
+* Call C# methods from C++
+  * Statically resolved using C++ Template
+* Cost equivalent to calling a function pointer
+  * All conversion codes are inlined
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/csharp-affinity-with-cpp-3.png)
+
+
+### High affinity with C++ language (4/4)
+
+* Call C++ methods from C#
+  * Two-stage marshall code for IL2CPP and interpreter
+* Equivalent cost of calling C++ method directly
+  * Marshall code for IL2CPP is inlined
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/csharp-affinity-with-cpp-4.png)
+
+
+### REVM performance (1/2)
+
+* Speed comparison between C++ code and C# code
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/revm-performance-1.png)
+
+
+### REVM performance (2/2)
+
+* Comparison between development (interpreter) and release (IL2CPP)
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/revm-performance-2.png)
+
+
+### Implement your own garbage collection
+
+* Existing garbage collectors are not suitable for games
+  * Generational GC method
+    * Irregular and long outages due to major GC
+  * Concurrent GC method
+    * Slow down during GC execution, need enough free memory
+  * Automatic reference counting method
+    * Circular reference leaks, high overhead of counter operation
+* Implement real-time GC suitable for game applications
+  * FrameGC method
+
+
+### FrameGC method
+
+* Algorithms limited to gaming applications
+  * Requires regular sync points with main loop
+  * C# code is supposed to be used as a script
+* Features
+  * Predictable and controllable downtime
+  * Immediate release
+    * Memory available near limit
+  * High performance on multi-core
+  * High affinity with C++ language
+* Algorithm details
+  * See appendix description and pseudocode
+
+
+### Frame GC flow
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/revm-framegc-flow.png)
+
+
+### The main points of FrameGC
+
+* Take advantage of reference counters
+  * The load does not depend on the number of objects
+  * Unnecessary objects can be released immediately
+  * High affinity with C++ language
+* Eliminate the drawbacks of reference counters
+  * Reduce the number of objects managed by the reference counter
+    * Local that can refer to the object only from the thread to which it belongs, and refer to it from all threadsDivide into possible globals and refer only to global objects Counter management
+  * Reduce reference counter operations
+    * Operate the counter only when writing to a global object
+  * Efficient collection of circular reference waste
+    * Incrementally process only types and fields that may be circularly referenced
+
+
+### FrameGC optimization
+
+* Speeding up local frame GC is important
+  * Occurs most frequently with every C# method call from C++
+* Introducing a local heap
+  * Holds 4KB of heap area for each thread
+  * Allocate small local objects from the local heap
+    * Increment pointer when secured
+    * Reset pointer when released
+  * Speed ​​close to stack allocation
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/revm-framegc-optimization.png)
+
+
+### FrameGC operation
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/revm-framegc-operation.png)
+
+
+### FrameGC performance
+
+* 1-frame profile of exploration/battle scenes (PS4)
+
+|                          | Exploration scene | Battle scene |
+| ------------------------ | ----------------- | ------------ |
+| C++ => C# method call    | 2063              | 2093         |
+| Local object generation  | 2457              | 5085         |
+| Global object generation | 5                 | 14           |
+| Local => Global conversion | 55              | 330          |
+| Global table registration  | 49              | 300          |
+| Cycle table registration   | 4               | 18           |
+| Local frame GC             | 1018            | 1143         |
+| Local GC                   | 0               | 0            |
+| Global frame GC            | 4               | 8            |
+| Local field store          | 5039            | 6714         |
+| Global field store         | 1059            | 2385         |
+| Local frame GC time (ms)*  | 0.116           | 0.174        |
+| Global frame GC time (ms)  | 0.042           | 0.166        |
+| Cycle GC time (ms)         | 0.013           | 0.037        |
+
+* Local frame GC time is actually several times faster because it is executed in parallel with multiple cores.
+
+
+### Summary
+
+* C# is great!
+  * Greatly improve programmer productivity
+  * Application stop bugs do not occur
+* No performance issues
+  * REVM runs faster than bad C++ code
+  * Frame GC changes the common sense that GC is not suitable for games
 
 
 ## 后记
