@@ -676,7 +676,7 @@ Resident Evil 7 Code Metrics
   * Allocate small local objects from the local heap
     * Increment pointer when secured
     * Reset pointer when released
-  * Speed ​​close to stack allocation
+  * Speed close to stack allocation
 
 ![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/revm-framegc-optimization.png)
 
