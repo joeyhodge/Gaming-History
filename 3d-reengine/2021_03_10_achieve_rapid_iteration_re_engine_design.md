@@ -722,6 +722,397 @@ Resident Evil 7 Code Metrics
   * Frame GC changes the common sense that GC is not suitable for games
 
 
+## Appendix
+
+* FrameGC algorithm explanation
+* FrameGC algorithm pseudocode
+
+
+### FrameGC algorithm (1/7)
+
+* Local object
+  * Objects that can only be referenced by the spawned thread
+  * Registered in the local table for each thread
+  * Reference counter (RC) is **negative** and points to the index of the local table
+  * All objects created from C# will be local objects
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/framegc-algorithm-1.png)
+
+
+### FrameGC algorithm (2/7)
+
+* Global object
+  * Objects that can be referenced by all threads
+  * Reference counter (RC) is **positive** and represents the number of object references
+  * All objects generated from C ++ become global objects
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/framegc-algorithm-2.png)
+
+
+### FrameGC algorithm (3/7)
+
+* Local => Global conversion
+  * Convert when it becomes available to all threads
+    * When storing in a static field
+    * When storing in a field of a global object
+  * Cleared from local table and RC becomes 1
+    * Convert all references globally
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/framegc-algorithm-3.png)
+
+
+### FrameGC algorithm (4/7)
+
+* Local frame GC
+  * When the target thread's C# stack runs out
+  * Free all local table objects
+  * Very fast and most frequent GC
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/framegc-algorithm-4.png)
+
+
+### FrameGC algorithm (5/7)
+
+* Local GC
+  * When the local table is full
+  * Release unreferenced local objects from the stack
+    * Conservatively search for local objects from the target thread's stack
+      * Determine if the address exists in the local table
+    * Recursively swap all referenced local objects
+    * Release unreferenced local objects
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/framegc-algorithm-5.png)
+
+
+### FrameGC algorithm (6/7)
+
+* Global object release
+  * When the reference counter reaches 0
+    * A C# stack exists in one of the threads
+      * Increment the reference counter and register it in the global table
+    * C# stack does not exist in all threads
+      * Immediate release
+  * When all threads have run out of C# stack
+    * Global frame GC
+      * Free all global table objects
+
+
+### FrameGC algorithm (7/7)
+
+* Circular reference type global object
+  * If you can reach yourself from within your field
+  * During reference counter decrement
+    * When the reference counter is 1 or more
+      * Register for cycle route
+    * When the reference counter is 0
+      * Erase from cycle root
+      * Normal global object release processing
+* Every frame
+  * Incremental cycle GC
+    * Scan a certain number of cycle routes to detect circular references
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/framegc-algorithm-7.png)
+
+
+### Incremental Cycle GC (1/5)
+
+* Global objects are reference counters
+  * Unable to release circular references
+* Registered in the cycle route during reference counter decrement
+  * Only types that can circulate
+* Scan cycle routes every frame to detect circular references
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/incremental-cycle-gc-1.png)
+
+
+### Incremental Cycle GC (2/5)
+
+* Trace cycle
+  * Extract an object from the cycle root
+  * Recursively trace potentially circular references
+    * The RC of the traced object is negative and the trace tableIndicates the index of
+    * Enter the value of the previous RC in MC
+    * Increment TC for each trace
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/incremental-cycle-gc-2.png)
+
+
+### Incremental Cycle GC (3/5)
+
+* Scan survivor
+  * Find objects where MC and TC do not match
+  * Recursive RC with the found object as the rootUndo (overwrite with MC)
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/incremental-cycle-gc-3.png)
+
+
+### Incremental Cycle GC (4/5)
+
+* Collect cycle
+  * Release references to objects in the trace table
+  * Free the objects in the trace table
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/incremental-cycle-gc-4.png)
+
+
+### Incremental Cycle GC (5/5)
+
+* Incremental trace cycle
+  * If the number of traces exceeds the threshold, the trace is interrupted.
+  * Re-register the suspended object in the cycle root
+  * Adjust the maximum load of one frame with the threshold
+    * Note: Circular references with depths above the threshold cannot be released
+* Full cycle collection
+  * If the cycle route overflows, there is no threshold.
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/incremental-cycle-gc-5.png)
+
+
+### FrameGC overhead
+
+* Light barrier
+  * Determine if the store destination is local (RC is negative) when a reference type field store
+  * Global with atomic reference counter operation
+* Local => Global conversion
+  * The referenced local object is also globalized
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/incremental-overhead.png)
+
+
+### FrameGC algorithm pseudo code
+
+* Thread local variables
+  * LocalTable
+  * LocalCount
+  * LocalFrame
+* Global variables
+  * Global Table
+  * GlobalCount
+  * GlobalFrame
+  * CycleRootTable
+  * CycleRootCount
+  * Lock to global variables is omitted
+
+
+### Instance creation
+
+```
+Create(S)
+  LocalCount >= MaxLocalCount
+    LocalGC()
+
+  RC(S) = -LocalCount
+  LocalTable[LocalCount++] = S
+```
+
+
+### Reference counter operation
+
+```
+AddRef(S)
+  RC(S) < 0
+    ToGlobal(S)
+  else
+    InterlockedIncrement(RC(S))
+
+Release(S)
+  RC(S) >= 0
+    IsCycleType(S)
+      ToCycleRoot(S)
+    else
+      InterlockedDecrement(RC(S)) == 0
+        ToLocal(S)
+```
+
+
+### Local/global conversion
+
+```
+ToGlobal(S)
+  L = LocalTable[--LocalCount]
+  RC(L) = RC(S)
+  LocalTable[-RC(S)] = L
+  RC(S) = 1
+  for T in children(S)
+    AddRef(T)
+
+ToLocal(S)
+  GlobalFrame > 0
+    AddRef(S)
+    GlobalTable[GlobalCount++] = S
+  else
+    for T in children(S)
+      Release(T)
+    Free(S)
+```
+
+
+### Cycle route registration
+
+```
+ToCycleRoot(S)
+  InterlockedDecrement(RC(S)) == 0
+    CycleRootIndex(S) > 0
+      RemoveCycleRoot(S)
+    ToLocal(S)
+  else
+    CycleRootIndex(S) == 0
+      CycleRootIndex(S) = CycleRootCount
+      CycleRootTable[CycleRootCount++] = S
+
+RemoveCycleRoot(S)
+  L = CycleRootTable[--CycleRootCount]
+  CycleRootIndex(L) = CycleRootIndex(S)
+  CycleRootIndex(S) = 0
+  CycleRootTable[CycleRootIndex(L)] = L
+```
+
+
+### Reference type field store
+
+```
+StoreField(T,F,S)
+  RC(T) < 0
+    T.F = S
+  else
+    AddRef(S)
+    P = T.F
+    while InterlockedCAS(T.F,S,P) != P
+      P = T.F
+    Release(P)
+
+StoreStaticField(F,S)
+  AddRef(S)
+  P = F
+  while InterlockedCAS(F,S,P) != P
+    P = F
+  Release(P)
+```
+
+
+### C++ => C# method call
+
+```
+Invoke(M)
+  ++LocalFrame == 1
+    ++GlobalFrame
+  M()
+  --LocalFrame == 0
+    LocalFrameGC()
+    --GlobalFrame == 0
+      GlobalFrameGC()
+```
+
+### Local frame GC
+
+```
+LocalFrameGC()
+  while LocalCount > 1
+    Free(LocalTable[--LocalCount])
+```
+
+
+### Global frame GC
+
+```
+GlobalFrameGC()
+  while GlobalCount > 0
+    Release(GlobalTable[--GlobalCount])
+```
+
+
+### Local GC
+
+```
+LocalGC()
+  ScanPoint = 1
+  for Address in Stack
+    IsValidAddress(Address)
+      T = Address
+      RC(T) < 0 && -RC(T) < LocalCount && LocalTable[-RC(T)] == T
+        ScanLocal(T)
+  while LocalCount > ScanPoint
+    Free(LocalTable[--LocalCount])
+
+ScanLocal(S)
+  -RC(S) >= ScanPoint
+    L = LocalTable[ScanePoint]
+    L != S
+      RC(L) = RC(S)
+      RC(S) = -ScanPoint
+      LocalTable[-RC(S)] = S
+      LocalTable[-RC(L)] = L
+    ScanPoint++
+
+    for T in children(S)
+      ScanLocal(T)
+```
+
+
+### Cycle collection
+
+```
+CycleGC()
+  TraceCount = 1
+  while CycleRootCount > 1
+    L = CycleRootTable[--CycleRootCount]
+    CycleRootIndex(L) = 0
+    TraceCycle(L)
+
+  for TB in TraceTable
+    TB.MC != TB.TC
+      ScanSurvivor(TB.Ref)
+  
+  CollectCycle()
+```
+
+
+### Trace cycle
+
+```
+TraceCycle(S)
+  RC(S) >= 0
+    CycleRootIndex(S) > 0
+      RemoveCycleRoot(S)
+    TraceTable[TraceCount].Ref = S
+    TraceTable[TraceCount].MC = RC(S)
+    TraceTable[TraceCount].TC = 0
+    RC(S) = -TraceCount
+    TraceCount++
+    for T in children(S)
+      IsCycleType(T)
+        TraceCycle(T)
+        RC(T) < 0
+          TraceTable[-RC(T)].TC++
+```
+
+
+### Scan survivor
+
+```
+ScanSurvivor(S)
+  RC(S) < 0
+    RC(S) = TraceTable[-RC(S)].MC
+    for T in children(S)
+      ScanSurvivor(T)
+```
+
+
+### Collect cycle
+
+```
+CollectCycle()
+  for TB in TraceTable
+    RC(TB.Ref) < 0
+      for T in children(TB.Ref)
+        Release(T)
+  for TB in TraceTable
+    RC(TB.Ref) < 0
+      Free(TB.Ref)
+```
+
+
+
 ## 后记
 
 翻译技巧
