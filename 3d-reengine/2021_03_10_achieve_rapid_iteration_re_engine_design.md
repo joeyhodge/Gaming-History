@@ -80,7 +80,6 @@
 * Tools run on runtime
   * Unique UI system
   * Real-time editing and adjustment on the actual machine
-
 * Problem
   * There are restrictions on resolution and preformance on the actual machine
   * You need to create your own UI
@@ -95,7 +94,6 @@
 * Completely separate tool process
   * TCP/IP synchronization between runtime and tools
   * The tool runs on a PC and is implemented in WPF/C#
-
 * Advantage
   * Works on high-speed, high-resoltion PCs
   * Rich WPF UI features
@@ -550,7 +548,7 @@ Resident Evil 7 Code Metrics
 * Supports hot patches
   * Reflect code changes in real time without rebooting
 
-![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/aot-on-developement.png)
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/aot-on-development.png)
 
 
 ### At the time of release
@@ -1115,7 +1113,9 @@ CollectCycle()
 
 ## 后记
 
-翻译技巧
+* CAPCOM 做了一个 in-house unity
+
+读日文技巧
 
 * 用[Google翻译][2]将整个pdf翻译成英文
 * 然后对照原始pdf中的图片，综合理解
