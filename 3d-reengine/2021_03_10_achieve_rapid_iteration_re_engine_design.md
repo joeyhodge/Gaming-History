@@ -397,20 +397,44 @@
 * Cannot access immediately after resource creation
   * ASSERT fails if accessed before loading is complete
 
-![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/resource-async-load-1.png)
+```C++
+m_handle = Resource::load<Texture>("test");
+m_handle->getWidth(); // ASSERT, can't do it
+```
 
 * Wait for the resource to finish loading before accessing
 
-![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/resource-async-load-2.png)
+```C++
+if (m_handle.isValid()) // returns true if valid
+{
+  m_handle->getWidth(); // only accessible if valid
+}
+```
+
+
+### All resources support asynchronous loading
+
+* Road spikes do not occur in principle
+* The load order can be rearranged
+  * The conversion time is hidden
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/resource-async-load.png)
+
+
+### Resource access when reloading
+
+* Load update resources first
+  * Both old and new resources are in memory
+  * Add a reference to the new resource to the old resource
+* Query the resource handle for updates
+  * If there is an update, replace the old and new resources
+  * The old resource is released when the update of all resource handles is completed.
+* Reload only enabled during development
+
+![](images/2021_03_10_achieve_rapid_iteration_re_engine_design/resource-reloading.png)
 
 
 ## Script Architecture
-
-
-
-## 参考资料
-
-* [实现快速迭代的引擎设计 - Capcom RE Engine的架构与实现][3]，别人的翻译
 
 
 
@@ -425,4 +449,3 @@
 
 [1]:https://www.slideshare.net/capcom_rd/re-engine-72302524
 [2]:https://translate.google.cn/
-[3]:https://www.cnblogs.com/88999660/p/5842862.html
