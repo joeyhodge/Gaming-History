@@ -85,7 +85,7 @@ dxc is the path forward
 
 ### Compilation flow
 
-![](images/2021_01_10_shader_system/dxc-compilation-flow.png)
+![](images/2021_03_22_hlsl_compiler/dxc-compilation-flow.png)
 
 
 ### Recommended usage
