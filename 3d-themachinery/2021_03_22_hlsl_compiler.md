@@ -1,7 +1,12 @@
 # HLSL Compiler
 
 * [Youtube Video][1]
+* 2020-03-20 | HLSL Compiler | Michael Dougherty | DirectX Developer Day
 * https://github.com/microsoft/DirectXShaderCompiler
+
+My dxc-playground
+
+* https://github.com/FatGraphicsLab/dxc-playground
 
 
 
@@ -216,32 +221,131 @@ hr = compiler3->Compile(&source,
 // For use with IDxcResult::[Has|Get]Output dxcOutKind argument
 // Note: text outputs returned from version 2 APIs are UTF-8 or UTF-16 based on -encoding option
 typedef enum DXC_OUT_KIND {
-  DXC_OUT_NONE = 0,
-  DXC_OUT_OBJECT = 1,         // IDxcBlob - Shader or library object
-  DXC_OUT_ERRORS = 2,         // IDxcBlobUtf8 or IDxcBlobUtf16
-  DXC_OUT_PDB = 3,            // IDxcBlob
-  DXC_OUT_SHADER_HASH = 4,    // IDxcBlob - DxcShaderHash of shader or shader with source info (-Zsb/-Zss)
-  DXC_OUT_DISASSEMBLY = 5,    // IDxcBlobUtf8 or IDxcBlobUtf16 - from Disassemble
-  DXC_OUT_HLSL = 6,           // IDxcBlobUtf8 or IDxcBlobUtf16 - from Preprocessor or Rewriter
-  DXC_OUT_TEXT = 7,           // IDxcBlobUtf8 or IDxcBlobUtf16 - other text, such as -ast-dump or -Odump
-  DXC_OUT_REFLECTION = 8,     // IDxcBlob - RDAT part with reflection data
-  DXC_OUT_ROOT_SIGNATURE = 9, // IDxcBlob - Serialized root signature output
-  DXC_OUT_EXTRA_OUTPUTS  = 10,// IDxcExtraResults - Extra outputs
+    DXC_OUT_NONE = 0,
+    DXC_OUT_OBJECT = 1,         // IDxcBlob - Shader or library object
+    DXC_OUT_ERRORS = 2,         // IDxcBlobUtf8 or IDxcBlobUtf16
+    DXC_OUT_PDB = 3,            // IDxcBlob
+    DXC_OUT_SHADER_HASH = 4,    // IDxcBlob - DxcShaderHash of shader or shader with source info (-Zsb/-Zss)
+    DXC_OUT_DISASSEMBLY = 5,    // IDxcBlobUtf8 or IDxcBlobUtf16 - from Disassemble
+    DXC_OUT_HLSL = 6,           // IDxcBlobUtf8 or IDxcBlobUtf16 - from Preprocessor or Rewriter
+    DXC_OUT_TEXT = 7,           // IDxcBlobUtf8 or IDxcBlobUtf16 - other text, such as -ast-dump or -Odump
+    DXC_OUT_REFLECTION = 8,     // IDxcBlob - RDAT part with reflection data
+    DXC_OUT_ROOT_SIGNATURE = 9, // IDxcBlob - Serialized root signature output
+    DXC_OUT_EXTRA_OUTPUTS  = 10,// IDxcExtraResults - Extra outputs
 
-  DXC_OUT_FORCE_DWORD = 0xFFFFFFFF
+    DXC_OUT_FORCE_DWORD = 0xFFFFFFFF
 } DXC_OUT_KIND;
+
 
 result->GetStats(&hr);
 
 // Assumes default utf8 encoding, use IDxcUtf16 with -encoding utf16
 ComPtr<IDxcBlobUtf8> errorMsgs;
-result->Get
+result->GetOutput(DXC_OUT_ERRORS, IID_PPV_ARGS(&errorMsgs), nullpgtr);
+
+if (errorMsgs && errorMsgs->GetStringLength()) {
+    MyPrintMessage("Compile returned HRESULT (0x%x), errors/warnings:\n\n %s\n",
+        hr, errorMsgs->GetStringPointer());
+}
+
+if (FAILED(hr)) {
+    return hr;
+}
 ```
 
-TODO
+
+### Using Dxcompiler.dll - object
+
+```C++
+ComPtr<IDxcBlob> shaderobj;
+hr = result->GetOutput(DXC_OUT_OBJECT, IID_PPV_ARGS(&shaderobject), nullptr);
+hr = MyWriteBlobToFile(shaderobj.Get(), filename, TRUE);
+```
+
+
+### Using Dxcompiler.dll - symbols
+
+```C++
+ComPtr<IDxcBlob> pdbData;
+ComPtr<IDxcBlobUtf16> pdbPathFromCompiler;
+
+hr = result->GetOutput(DXC_OUT_PDB,
+    IID_PPV_ARGS(&pdbData),
+    &pdbPathFromCompiler);
+
+// Now write the contents of pdbData to a file at pdbPathFromCompiler
+hr = MyWriteBlobToFile(pdbData.Get(),
+    pdbPathFromCompiler->GetStringPointer(),
+    TRUE);
+```
+
+
+### Using Dxcompiler.dll - reflection
+
+```C++
+ComPtr<IDxcBlob> reflection;
+hr = result->GetOutput(DXC_OUT_REFLECTION,
+    IID_PPV_ARGS(&reflection),
+    nullptr);
+
+DxcBuffer reflectionData = {
+    reflection->GetBufferPointer(),
+    reflection->GetBufferSize(),
+    0U,
+};
+ComPtr<ID3D12ShaderReflection> D3D12Reflection;
+hr = utils->CreateReflection(&reflectionData,
+    IID_PPV_ARGS(&D3D12Reflection));
+```
+
+
+
+## Tips!
+
+### "Stripped" data
+
+* Stripping flags refere only to /Fo output (DXC_OUT_OBJECT)
+  * `-Qstrip_debug`, strip debug information from 4_0+ shader bytecode
+  * `-Qstrip_priv`, strip private data from shader bytecode
+  * `-Qstrip_reflect`, strip reflection data from shader bytecode
+  * `-Qstrip_rootsignature`, strip root signature data from shader bytecode
+* Stripped data is still available (as in preceding example)
+  * `arguments.push_back(L"-Qstrip_reflect");`
+  * `GetOutput(DXC_OUT_REFLECTION, ...);`
+* Strip everything; retrieve what you need
+
+
+### Multithreading
+
+* The call to DxcCreateInstance is thread-safe, **but objects created by DxcCreateInstance aren't thread-safe.**
+* Compiler objects should be create and then used on the same thread
+
+Do
+
+* Create a single compiler object for each thread
+* Use a separate include handler for each thread or make sure your include handler is thread-safe
+
+Don't
+
+* Create one compiler instance and use it for multiple threads
+
+See: https://github.com/microsoft/DirectXShaderCompiler/wiki/Using-dxc.exe-and-dxcompiler.dll
+
+
+
+## Language and features roadmap
+
+### Roadmap (short term)
+
+* There will be a Shader Model 6.6 but we are not ready to share what is in it yet.
+* The size of the reflection data will be reduced *dramatically*.
+* Interface: Advanced inputs such as root signatures will be made available
+  via the include handler
+* Language
+  * Bitfields
+  * offsetof and more complete support for sizeof
 
 
 
 [1]:https://www.youtube.com/watch?v=tyyKeTsdtmo
 [2]:https://github.com/microsoft/DirectXShaderCompiler/wiki/Porting-shaders-from-FXC-to-DXC
-
