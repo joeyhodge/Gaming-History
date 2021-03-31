@@ -358,7 +358,7 @@ BIOHAZARD 7 统计数据
 
 * All Commands to a single Python Module
   * Emphasis on clarity
-    * e.g.: `import engine.cmds as cmds`, and all Macro Commands are available
+    * e.g. `import engine.cmds as cmds`, and all Macro Commands are available
 * Prevent Python run-time errors
   * Changed the specifications of the Tool function in RE ENGINE
   * Build error in Macro Method
@@ -488,7 +488,7 @@ BIOHAZARD 7 统计数据
 * For more information on RE ENGINE's MVVM
   * see: [CEDEC 2015] Modern game production environment:Explanation of specific methods
     of communication between editors, their backends, and development staff
-  * http: / /cedec.cesa.or.jp/2015/session/ENG/3250.html
+  * http://cedec.cesa.or.jp/2015/session/ENG/3250.html
 
 #### Macro MVVM
 
