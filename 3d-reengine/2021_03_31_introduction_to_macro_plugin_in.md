@@ -72,12 +72,12 @@
 
 ### Macro Commands
 
-* The number of commands is 400+ (as of September 2017)
+* The number of commands is 400+ (September 2017)
 
 ![](images/2021_03_31_introduction_to_macro_plugin_in/macro-on-re-engine.png)
 
 
-### Macro execution environment Demo
+### Demo1 - Macro execution environment
 
 * Introducing Macro Editor, Macro Shelf
   * RE ENGINE is Python executable
@@ -85,11 +85,11 @@
   * Call RE ENGINE functions
   * Edit the value in RE ENGINE
 
-![](images/2021_03_31_introduction_to_macro_plugin_in/macro-editor-shelf.png)
+![](images/2021_03_31_introduction_to_macro_plugin_in/demo1-macro-env.png)
 
 
 
-### Demo1 - Features seen from (TODO: name it DEMO?)
+### Macro features
 
 • Run RE ENGINE functions from Python
   * An alternative to cumbersome manual work
