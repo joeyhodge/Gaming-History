@@ -488,7 +488,7 @@ BIOHAZARD 7 统计数据
 * For more information on RE ENGINE's MVVM
   * see: [CEDEC 2015] Modern game production environment:Explanation of specific methods
     of communication between editors, their backends, and development staff
-  * http://cedec.cesa.or.jp/2015/session/ENG/3250.html
+  * https://cedil.cesa.or.jp/cedil_sessions/view/1303
 
 #### Macro MVVM
 
