@@ -35,7 +35,7 @@
   * Resolve dependencies between Assets based on Meta information
 * Component design
   * Add component to GameObject and build a game
-* Tool(C#) and Runtime(C++ separated
+* Tool(C#) and Runtime(C++) separated
   * Run game code(C#) on asynchronous communication virtual machine (REVM) with TCP/IP
 * For details
   * See "[Achieve Rapid Iteration: RE ENGINE Design][3]"
@@ -58,7 +58,7 @@
 **Macro** is a Python environment running on RE ENGINE
 
 * Direct access to various values ​​in RE ENGINE
-  * GameObject, Component, Prefab Asset etc ...
+  * GameObject, Component, Prefab Asset, ...
 * Can call RE ENGINE internal functions
   * Call via Command
 * Working with RE ENGINE Editor
@@ -129,14 +129,14 @@
 
 ## Background of implementing Macro
 
-### RE ENGINE provision policy
+### RE ENGINE development policy
 
 * RE ENGINE distributes "execution environment"
-  * Do not allow game developers to change core functionality
+  * **Do not allow game developers to change core functionality**
     * Only browse the source code and solve it by communicating your request
     * Reduces the burden on game and game engine developers
   * The fate of game engine developers
-  * Guarantee execution performance and production flow
+    * Guarantee execution performance and production flow
 
 
 ### But there is no "perfect from the beginning"
