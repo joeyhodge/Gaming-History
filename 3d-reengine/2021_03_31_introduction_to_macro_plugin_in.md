@@ -195,7 +195,7 @@ BIOHAZARD 7 统计数据
 
 * It's a nice scream!
 * Communicate the detailed work flow!
-* Let's make materials that people will not make mistakes!
+* Let's make specifications that people will not make mistakes!
 * (Maybe I make a mistake, but I'll point it out at any time)
 
 
@@ -223,7 +223,7 @@ BIOHAZARD 7 统计数据
 
 ### Problems that occur in the above situations
 
-* It takes time to make materials
+* It takes time to make specifications
   * If you have a lot of trouble, it will be difficult
 * People make mistakes
   * Misunderstanding, tired eyes, mistaken operation, high difficulty
@@ -257,7 +257,7 @@ BIOHAZARD 7 统计数据
 
 * Setup work also occurs when changing specifications
   * Change the collision detection attribute
-    * Increased / decreased / changed etc ...
+    * Increased / decreased / changed / ...
   * Edit Component in Prefab
     * Value setting
   * Change Shader settings
@@ -423,7 +423,7 @@ BIOHAZARD 7 统计数据
     * "It's fun to make"
 
 
-### Technical summary
+### Technical Summary
 
 * IronPython and AvalonEdit are great
 * Browse C# functions from Python over Interface
@@ -486,7 +486,7 @@ BIOHAZARD 7 统计数据
   * The design pattern is MVVM (Model-ViewModel-View)
   * Macro edits the Model via a dedicated ViewModel
 * For more information on RE ENGINE's MVVM
-  * see: [CEDEC 2015] Modern game production environment:Explanation of specific methods
+  * see: [CEDEC 2015] Modern game production environment: Explanation of specific methods
     of communication between editors, their backends, and development staff
   * https://cedil.cesa.or.jp/cedil_sessions/view/1303
 
