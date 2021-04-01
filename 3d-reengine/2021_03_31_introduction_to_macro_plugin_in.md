@@ -1,4 +1,4 @@
-# Introduction to Macro (Plug-in) - RE ENGINE's Supporting Game Development
+# Supporting Game Development - Introduction to Macro
 
 * https://cedil.cesa.or.jp/cedil_sessions/view/1683
 
