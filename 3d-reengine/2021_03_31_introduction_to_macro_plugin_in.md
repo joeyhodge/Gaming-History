@@ -504,7 +504,7 @@ BIOHAZARD 7 统计数据
 
 #### Invoke TryGetMember
 
-![](images/2021_03_31_introduction_to_macro_plugin_in/interface-explanation-2.png)
+![](images/2021_03_31_introduction_to_macro_plugin_in/mvvm-invoke-trygetmember.png)
 
 #### Macro Properties
 
