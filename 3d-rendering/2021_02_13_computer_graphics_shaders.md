@@ -11,3 +11,4 @@
 | 3.0          | 9       | 2.x     | Vertex Shader, Pixel Shader         |
 | 4.0          | 10      | 3.x     | Geometry Shader                     |
 | 5.0          | 11      | 4.x     | Tessellation Shader, Compute Shader |
+| 6.0          | 12      | -       | Ray tracing                         |
