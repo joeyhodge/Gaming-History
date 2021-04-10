@@ -6,9 +6,10 @@
 
 ## DirectX and OpenGL
 
-| Shader Model | DirectX | OpenGL  | Supports                            |
-|--------------|---------|---------|-------------------------------------|
-| 3.0          | 9       | 2.x     | Vertex Shader, Pixel Shader         |
-| 4.0          | 10      | 3.x     | Geometry Shader                     |
-| 5.0          | 11      | 4.x     | Tessellation Shader, Compute Shader |
-| 6.0          | 12      | Vulkan! | Ray tracing                         |
+| Year | Shader Model | DirectX | OpenGL  | Supports                            |
+|------|--------------|---------|---------|-------------------------------------|
+| 2002 | 3.0          | 9       | 2.x     | Vertex Shader, Pixel Shader         |
+| 2006 | 4.0          | 10      | 3.x     | Geometry Shader                     |
+| 2010 | 5.0          | 11      | 4.x     | Tessellation Shader, Compute Shader |
+| 2014 | 6.0          | 12      |         |                                     |
+| 2016 |              |         | Vulkan! |                                     |
