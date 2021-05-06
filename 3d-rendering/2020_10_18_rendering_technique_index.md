@@ -94,6 +94,7 @@ Cluster
  * [Ptex and PRT Technology Preview][26]
 
 
+
 ## TimeOfDay
 
 ### 大气散射
@@ -103,6 +104,7 @@ Cluster
 * [从零实现一套完整单次大气散射3][42]
 
 
+
 ## HDR - High Dynamic Range Rendering
 
  * [GDC2010 - Uncharted 2: HDR Lighting][10]
@@ -110,7 +112,10 @@ Cluster
  * GDC2003 - Frame Buffer Postprocessing Effects in DOUBLE-S.T.E.A.L（ppt、[voice][12]）
 
 
+
 ## GI - Global Illumination
+
+### SSAO 系列
 
 #### SSAO - Screen Space Ambient Occlusion
 
@@ -130,21 +135,38 @@ Cluster
  * [2008 - NVidia - Screen Space Ambient Occlusion][17]
  * [NVIDIA ShadowWorks][15]，有 HBAO+ 的实现
 
-#### LPV & SVOGI & VXGI
 
- * [About LPV, SVOGI and VXGI][18]
- * 
- * LPV - 作者 Anton Kaplanyan
- * [2009 - SIGGRAPH - Light Propagation Volumes in CryENGINE 3][19]
- * 
- * SVOGI - 作者 Andrew Scheidecker，[https://www.scheidecker.net/][20]
- * 在 UE4 Elemental Tech Demo 中实现了 SVOGI
- * 但因为 XBOXONE & PS4 的性能不足，最终从引擎中删除了这部分的实现
- * 目前 CRYENGINE 5 中实现了 SVOGI
- * 
- * VXGI - Nvidia 设计的，和 SVOGI 同类的技术
- * [Voxel Cone Tracing and Sparse Voxel Octree for Real-time Global Illumination][21]
- * [https://developer.nvidia.com/vxgi][22]
+### Indirect Lighting
+
+* [About LPV, SVOGI and VXGI][18]
+
+#### LPV
+
+LPV
+
+* 作者 Anton Kaplanyan
+* [2009 - SIGGRAPH - Light Propagation Volumes in CryENGINE 3][19]
+
+LPV 改良
+
+* 作者 Hawar Doghramachi（Defer+作者，目前在顽皮狗）
+* 2013 - GPU Pro 4 - Rasterized Voxel-Based Dynamic Global Illumination
+
+#### SVOGI & VXGI
+
+SVOGI
+
+* 作者 Andrew Scheidecker，[https://www.scheidecker.net/][20]
+* 在 UE4 Elemental Tech Demo 中实现了 SVOGI
+* 但因为 XBOXONE & PS4 的性能不足，最终从引擎中删除了这部分的实现
+* 目前 CRYENGINE 5 中实现了 SVOGI
+
+VXGI
+
+* VXGI - Nvidia 设计的，和 SVOGI 同类的技术
+* [Voxel Cone Tracing and Sparse Voxel Octree for Real-time Global Illumination][21]
+* [https://developer.nvidia.com/vxgi][22]
+
 
 
 ## Reference
@@ -152,6 +174,7 @@ Cluster
  * [2018 - GDC Presentations][31]
  * [2017 - GDC Presentations][32]
  * [2016 - GDC Presentations][33]
+
 
 
 [1]:https://takahiroharada.files.wordpress.com/2015/04/forward_plus.pdf
