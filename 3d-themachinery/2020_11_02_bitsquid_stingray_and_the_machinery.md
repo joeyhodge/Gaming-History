@@ -3,6 +3,7 @@
 ![](images/2020_11_02_bitsquid_stingray_and_the_machinery/editor.png)
 
 
+
 ## History
 
 * 两位主创：Niklas Frykholm, Tobias Persson
@@ -13,6 +14,7 @@
 * 2010年，Bitsquid 的 Direct3D 11 技术演示 [Stone Giant Demo][2]
 
 
+
 ## The Machinery
 
 * [Webpage][3]
@@ -20,39 +22,8 @@
 * [Podcast][5]
 * Blog & Podcast 中有很多优秀的设计思想
 
+
 ### Blog
-
-Release Notes
-
-* [2021.02.26 - The Machinery Beta (version 2021.2)][112]
-  * [Support for Custom Fonts and Icons][113]
-  * [Import Workflow Improvements][114]
-  * [API Type Safety][115]
-* [2021.01.28 - The Machinery Beta (version 2021.1)][116]
-  * [Linux Support (Preview)][117]
-  * [Bindless GPU Resource Management][118]
-  * [Raytracing Support (Preview)][119]
-  * [Asset Labels][120]
-* [2020.12.16 - The Machinery Beta (version 2020.12)][121]
-  * [Online API Documentation][122]
-  * [Plugin Assets][123]
-  * [Merging of Link and Transform Components][124]
-  * [Gameplay APIs and Simulate Entry][125]
-* [2020.11.20 - The Machinery Beta (version 2020.11)][126]
-  * [Project Import and Import from URL][127]
-  * [Sculpt Tool][128]
-  * [Area Lights][129]
-* [2020.09.30 - The Machinery Beta (version 2020.9)][111]
-  * [Asset Database][130]
-  * [Download Tab][131]
-  * [Creation Graph Instancing][132]
-  * [New API Documentation Format][133]
-* [2020.08.28 - The Machinery Beta (version 2020.8)][109]
-* [2020.07.20 - The Machinery Beta (version 2020.7)][108]
-* [2020.06.17 - The Machinery Beta (version 2020.6)][106]
-* [2020.05.15 - The Machinery Beta (version 2020.5)][103]
-* [2020.04.10 - The Machinery Beta (version 2020.4)][100]
-* [2020.03.18 - The Machinery Beta (version 2020.3)][99]
 
 Development Philosophy
 
@@ -165,10 +136,53 @@ Work & Life
 * [2017.07.24 - Interviewing Part 2: The Interviewer][58]
 * [2017.08.21 - Let's All Go to the Conference][60]
 
+Release Notes
+
+* [2021.04.29 - The Machinery Beta (version 2021.4)][134]
+  * [Animation Triggers][135]
+  * [UI Components][136]
+* [2021.03.31 - The Machinery Beta (version 2021.4)][137]
+  * [Math Expressions][138]
+  * [Tab Overlays][139]
+  * [Animation Compression][140]
+  * [Atmospheric Sky][141]
+  * [Box Select in the Scene Tab][142]
+* [2021.02.26 - The Machinery Beta (version 2021.2)][112]
+  * [Support for Custom Fonts and Icons][113]
+  * [Import Workflow Improvements][114]
+  * [API Type Safety][115]
+* [2021.01.28 - The Machinery Beta (version 2021.1)][116]
+  * [Linux Support (Preview)][117]
+  * [Bindless GPU Resource Management][118]
+  * [Raytracing Support (Preview)][119]
+  * [Asset Labels][120]
+* [2020.12.16 - The Machinery Beta (version 2020.12)][121]
+  * [Online API Documentation][122]
+  * [Plugin Assets][123]
+  * [Merging of Link and Transform Components][124]
+  * [Gameplay APIs and Simulate Entry][125]
+* [2020.11.20 - The Machinery Beta (version 2020.11)][126]
+  * [Project Import and Import from URL][127]
+  * [Sculpt Tool][128]
+  * [Area Lights][129]
+* [2020.09.30 - The Machinery Beta (version 2020.9)][111]
+  * [Asset Database][130]
+  * [Download Tab][131]
+  * [Creation Graph Instancing][132]
+  * [New API Documentation Format][133]
+* [2020.08.28 - The Machinery Beta (version 2020.8)][109]
+* [2020.07.20 - The Machinery Beta (version 2020.7)][108]
+* [2020.06.17 - The Machinery Beta (version 2020.6)][106]
+* [2020.05.15 - The Machinery Beta (version 2020.5)][103]
+* [2020.04.10 - The Machinery Beta (version 2020.4)][100]
+* [2020.03.18 - The Machinery Beta (version 2020.3)][99]
+
+
 ### Presentations
 
 * [2020 - GDC - Writing Tools Faster - Design Decisions to Accelerate Tool Development][8]
 * [The Machinery - An Incredibly Unique New Game Engine][25]
+
 
 
 ## Bitsquid & Stingray
@@ -177,10 +191,12 @@ Work & Life
 * [stingray-plugin sdk][68]
 * [crown - a stingray-like engine][69]
 
+
 ### Stingray Engine Code Walkthrough
 
 * Youtube Video by Niklas
 * [Stingray Engine Code Walkthrough][9]
+
 
 ### Stingray Renderer Walkthrough
 
@@ -194,6 +210,7 @@ Work & Life
 * [Data-driven rendering][16]
 * [stingray-renderer & mini-renderer][17]
 
+
 ### Presentations
 
 * [2014 - GDC - Scripting Particles: Getting Native Speed from a Virtual Machine][22]
@@ -203,6 +220,7 @@ Work & Life
 * [2012 - GDC - Advanced Visual Effects with DirectX 11 (Practice Particle Rendering)][23]
 * [Flow - Data-Oriented Implementation of a Visual Scripting Language][20]
 * [Bitsquid: Behind the Scene][24]
+
 
 
 [1]:https://en.wikipedia.org/wiki/Bitsquid
@@ -338,3 +356,12 @@ Work & Life
 [131]:https://ourmachinery.com/post/beta-2020-9/#download-tab
 [132]:https://ourmachinery.com/post/beta-2020-9/#creation-graph-instancing
 [133]:https://ourmachinery.com/post/beta-2020-9/#new-api-documentation-format
+[134]:https://ourmachinery.com/post/beta-2021-4/
+[135]:https://ourmachinery.com/post/beta-2021-4/#animation-triggers
+[136]:https://ourmachinery.com/post/beta-2021-4/#ui-components
+[137]:https://ourmachinery.com/post/beta-2021-3/
+[138]:https://ourmachinery.com/post/beta-2021-3/#math-expressions
+[139]:https://ourmachinery.com/post/beta-2021-3/#tab-overlays
+[140]:https://ourmachinery.com/post/beta-2021-3/#animation-compression
+[141]:https://ourmachinery.com/post/beta-2021-3/#atmospheric-sky
+[142]:https://ourmachinery.com/post/beta-2021-3/#box-select-in-the-scene-tab
