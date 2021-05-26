@@ -29,10 +29,11 @@ Games
 
 
 
-## 2016 - id Tech 6
+## 2016 - id Tech 666
 
 * Tiago Sousa 接手后的 id Tech
-* [https://en.wikipedia.org/wiki/Id_Tech_5][1]
+* [https://en.wikipedia.org/wiki/Id_Tech_6][7]
+* [DOOM (2016) - Graphics Study][13]
 
 Features
 
@@ -118,3 +119,4 @@ Games
 [10]:https://www.youtube.com/watch?v=UsmqWSZpgJY
 [11]:https://www.youtube.com/watch?v=qdz4b5psrhE&t=2322
 [12]:https://simoncoenen.com/blog/programming/graphics/DoomEternalStudy
+[13]:http://www.adriancourreges.com/blog/2016/09/09/doom-2016-graphics-study/
