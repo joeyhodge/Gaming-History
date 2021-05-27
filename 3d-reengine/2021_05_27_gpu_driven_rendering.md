@@ -536,6 +536,81 @@ struct DrawIndexedInstancedArgs {
 ![](images/2021_05_27_gpu_driven_rendering/frustum-culling.png)
 
 
+### Can GPU culling be used?
+
+* CPU and GPU culling processing overhead
+  * It doesn't make sense when it gets bigger
+* Increased GPU load due to CS culling
+  * Can asynchronous compute hide the load?
+
+
+### GPU culling outlook
+
+* CPU occlusion query with no frame delay
+  * Asynchronous compute rasterizer
+  * Possibility of reducing both CPU and GPU load
+
+
+### Summary of mesh renderer
+
+* What is installed in the engine
+  * Multi-Draw, Instancing
+  * GPU occlusion culling
+* Those whose engine installation is being verified
+  * Merge mesh (shadow map drawing)
+  * GPU frustum culling (shadow map drawing)
+
+
+
+## Light culling
+
+![](images/2021_05_27_gpu_driven_rendering/light-culling-1.png)
+
+
+### Two-step approach
+
+* Occlusion culling on GPU
+  * Utilize the depth created by PreZ
+  * Frame delay
+* Light culling when drawing
+  * Create HiZ from the depth created by GBuffer
+  * Run in CS
+
+
+### Better spotlight culling
+
+![](images/2021_05_27_gpu_driven_rendering/spot-light-culling.png)
+
+
+### Implementation
+
+* From Frustum to AABB in View space
+* Cone from AABB to Frustum in View space
+  * Appropriate culling is possible by reversing the objec
+  
+![](images/2021_05_27_gpu_driven_rendering/light-culling-2.png)
+
+
+### Summary and challenges
+
+* Pros
+  * The illumination range of the light can be expressed by any convex hull.
+* Cons
+  * Wrong judgment occurs when the viewing platform is set to AABB
+
+![](images/2021_05_27_gpu_driven_rendering/light-culling-3.png)
+
+
+
+## References
+
+* [Approaching Zero Driver Overhead in OpenGL][1]
+* [GPU-Driven Rendering Pipelines][2]
+* [Practical, Dynamic Visibility for Games][3]
+* [AMD GPU Services (AGS) Library][4]
+* [Practical Clustered Shading][5]
+
+
 
 [1]:http://gdcvault.com/play/1020791/
 [2]:http://advances.realtimerendering.com/s2015/aaltonenhaar_siggraph2015_combined_final_footer_220dpi.pdf
