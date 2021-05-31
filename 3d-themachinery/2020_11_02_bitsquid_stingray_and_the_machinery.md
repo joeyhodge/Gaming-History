@@ -138,6 +138,10 @@ Work & Life
 
 Release Notes
 
+* [2021.05.31 - The Machinery Beta (version 2021.5)][143]
+  * [Animation Constraints][144]
+  * [Screen Space Ambient Occlusion][145]
+  * [Entity Context Update Ordering][146]
 * [2021.04.29 - The Machinery Beta (version 2021.4)][134]
   * [Animation Triggers][135]
   * [UI Components][136]
@@ -365,3 +369,7 @@ Release Notes
 [140]:https://ourmachinery.com/post/beta-2021-3/#animation-compression
 [141]:https://ourmachinery.com/post/beta-2021-3/#atmospheric-sky
 [142]:https://ourmachinery.com/post/beta-2021-3/#box-select-in-the-scene-tab
+[143]:https://ourmachinery.com/post/beta-2021-5/
+[144]:https://ourmachinery.com/post/beta-2021-5/#animation-constraints
+[145]:https://ourmachinery.com/post/beta-2021-5/#screen-space-ambient-occlusion
+[146]:https://ourmachinery.com/post/beta-2021-5/#entity-context-update-ordering
