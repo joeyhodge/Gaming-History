@@ -80,6 +80,28 @@
 
 [![RE ENGINE - Check commit history and differences](https://res.cloudinary.com/marcomontalbano/image/upload/v1624014691/video_to_markdown/images/youtube--vbOfPkKumMA-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/vbOfPkKumMA "RE ENGINE - Check commit history and differences")
 
+#### Scene editor
+
+* Create a hierarchy with GameObject and Component
+* Variations with prefabs
+  * Inheritance, use of prefabs in prefabs
+* Multi-scene
+  * Compose one scene with multiple scenes
+  * Loading and unloading by scene
+
+#### Asset browser
+
+* Asset manipulation front end
+  * Asset management
+    * File update detection (monitoring with FileSystemWatcher)
+* Version control
+  * Updates, commits, history, etc.
+  * Use of Perforce function
+* Understanding dependencies
+  * Asset reference, non-reference
+    * Relationships stored in metadata
+
+
 
 ## Part II - Masaaki Korematsu
 
