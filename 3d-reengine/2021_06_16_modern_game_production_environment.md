@@ -259,6 +259,118 @@ You need this method.
 ![](images/2021_06_16_modern_game_production_environment/cooperate-assets-4.png)
 
 
+### Undo
+
+* Undo on the data side
+
+#### Undo is required
+
+* User perspective
+  * It should be a function that can be used everywhere
+* Programmer's point of view
+  * Implementation is troublesome
+    * I want to reduce the mounting load
+    * I want to have a unified implementation method
+  * I want to prioritize function implementation
+    * Schedule makes it so
+    * But later Undo implementation is a remake level
+
+#### Undo 's basic policy
+
+* Implement Undo on the asset side
+  * Record the methods and values ​​that manipulated the data
+* Display and update with change notification from assets
+  * Undo modifies data with old values
+    * Same event driven as normal flow
+
+#### Undo (basic operation) on the asset side
+
+* Allows you to redo 5 types of basic operations
+  * Assets provide methods for manipulating data
+  * Make sure to implement forward and reverse operations at the time of basic operation
+  * Use in combination
+
+Forward operation              | Reverse operation 
+------------------------------ | -------------------------------
+Create object                  | Delete object
+Delete object                  | Create object
+Change value                   | Change value
+Add element to the collection  | Remove element from collection
+Remove element from collection | Add element to the collection
+
+#### Undo (basic operation) on the asset side
+
+* Notation for programmers
+
+Forward operation                                         | Reverse operation 
+--------------------------------------------------------- | ---------------------------------------------------------
+CreateObject(#id)                                         | DeleteObject(#id)
+DeleteObject(#id)                                         | CreateObject(#id)
+SetValue(#obj, newValue)                                  | SetValue(#obj, oldValue)
+Add(#collectoin, item) / Insert(#collection, index, item) | Remove(#collection, item) / RemoveAt(#collection, index)
+Remove(#collection, item) / RemoveAt(#collection, index)  | Add(#collectoin, item) / Insert(#collection, index, item)
+
+#### Record the method
+
+* The important thing is that all the parameters required for Undo and Redo are determined in the first Do operation part.
+* Do not get Parent or Index during Undo. 
+
+```C#
+public static void RemoveGameObjectCommand(this SceneAsset thisObject, GameObject obj)
+{
+    if (!obj.CanDelete())
+        return;
+    
+    var parent = obj._parent;
+    int index  = obj.Index;
+    EditHistory.Record(thisObject,
+        () =>
+        {
+            thisObject.RemoveGameObject(obj);                // redo
+        },
+        () =>
+        {
+            thisObject.InsertGameObject(index, obj, parent); // undo
+        },
+        string.Format("RemoveGameObjectCommand {0}, Remove {1} from {2}",
+        thisObject.Name, parent == null ? "Root" : parent.Name, obj.Name));
+}
+```
+
+#### Undo (advanced operation) on the asset side
+
+* Create a transaction for basic operations
+  * Group consecutive basic operations and return with one undo
+* Tree operation
+  * Select multiple, move, delete, etc.
+* Color picker
+  * Requires edit start value and end value
+    * Record everything and shrink later
+
+![](images/2021_06_16_modern_game_production_environment/undo-1.png)
+
+#### Undo(优点) on the asset side
+
+* Undo easy to make a possible editor
+  * Clarify the layer that manipulates assets
+  * Undo implementation does not differ for each editor
+    * Degree of consideration regarding transaction start and end
+* Easy to make operations from Python
+  * Same conditions as other C# editors
+  * Can be easily undone
+
+![](images/2021_06_16_modern_game_production_environment/undo-2.png)
+
+#### Undo support summary
+
+* Support on the asset side
+  * Undo enable methods for manipulating data
+  * The editor only uses undo-enabled methods
+  * When the data returns, the display will also return
+* All the information required for Undo is decided at the first time
+  * You never see the state during Undo
+* It's still troublesome, but once implemented, it can be applied.
+
 
 
 ## Part II - Masaaki Korematsu
