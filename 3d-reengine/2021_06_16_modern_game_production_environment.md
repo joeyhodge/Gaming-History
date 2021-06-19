@@ -177,6 +177,87 @@ You need this method.
   * The editor display changes as the asset changes
   * Event driven with a focus on assets
 
+![](images/2021_06_16_modern_game_production_environment/cooperate-assets-1.png)
+
+#### Functions required for assets
+
+* As a file
+  * data file
+    * Data such as **JSON, FBX, DDS,** etc.
+  * Metadata file
+    * Dependencies (reference, referenced)
+    * Public information for search
+    * Data version information
+  * Version control target
+
+* As an instance
+  * Publishing data manipulation methods
+  * Issuance of change notification
+  * Reference counting type Open, Close
+  * Conversion to native data
+
+#### Two types of editor cooperation
+
+* Cooperation on memory
+  * Display update when asset changes are made
+    * Normal editing operation
+    * The file has not been saved yet
+* Cooperation via files
+  * Reload when the file is overwritten
+    * File overwrite from external tool
+
+#### Demo - Cooperation on memory
+
+* N:1
+  * Edit assets from multiple editors
+* Scene editor
+  * Take the renaming of a game object as an example.
+    * Simple cooperation without anything
+    * Cooperation between **Inspector** and **Hierarchy** display
+      * Rename on **Inspector**
+      * Renamed on **Hierarchy**
+      * Rename in **Python script**
+  * Undo works in all cases
+
+[![RE ENGINE - Cooperation on memory](https://res.cloudinary.com/marcomontalbano/image/upload/v1624092274/video_to_markdown/images/youtube--GqOR39L9DuA-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=GqOR39L9DuA "RE ENGINE - Cooperation on memory")
+
+#### Demo - Cooperation via files
+
+* Scene and material editor
+  * Example of changing texture
+  * Link when the asset is saved
+  * Shader asset updates are also linked with files
+* At the stage of saving the asset
+  * FileSystemWatcher detects the change of the asset file as a trigger and cooperates.
+* The material editor itself can also be linked in memory
+  * However, there is an opinion of the artist that it is easier to use if it is not linked to the scene in real time.
+  * When it was saved in a file, it was reflected in the scene.
+
+[![RE ENGINE - Cooperation via files](https://res.cloudinary.com/marcomontalbano/image/upload/v1624092667/video_to_markdown/images/youtube--o75WT5t48j8-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=o75WT5t48j8 "RE ENGINE - Cooperation via files")
+
+#### Editor responsible for display
+
+* Editor detects asset changes
+  * Don't expect detailed notifications
+
+![](images/2021_06_16_modern_game_production_environment/cooperate-assets-2.png)
+
+#### The editor doesn't do anything
+
+* Tweak the data inside the asset
+
+![](images/2021_06_16_modern_game_production_environment/cooperate-assets-3.png)
+
+#### Don't interfere inside the asset
+
+* Editor
+  * Use data manipulation methods exposed by assets
+* Asset
+  * Providing data manipulation methods to the outside
+    * Undo support on the data side
+
+![](images/2021_06_16_modern_game_production_environment/cooperate-assets-4.png)
+
 
 
 
