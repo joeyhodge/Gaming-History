@@ -139,5 +139,26 @@ Panta Rhei uses [3D-Coat][1] and MAYA shaders to make adjustments using these va
 ![](images/2021_06_22_technical_explanation_of_deep_down/rendering-pipeline-1.png)
 
 
+### GBuffer
+
+* Albedo and Reflectance compressed with YCbCr
+  * Cb and Cr are stored alternately in pixel units in RT3
+* Options: Save decal information, BRDF type
+
+![](images/2021_06_22_technical_explanation_of_deep_down/gbuffer.png)
+
+
+### Problems with YCbC
+
+* Albedo and reflectance with YCbCr
+  * Due to the nature of encoding, color difference information
+  * Colors close to black cannot be reproduced accurately
+    * Purple etc. occur when exposed to high brightness
+    * 8-bit accuracy
+* It is better to put RGB normally
+  * Consider introducing Metallic's idea for the same capacity
+
+
+
 
 [1]:https://3dcoat.com/
