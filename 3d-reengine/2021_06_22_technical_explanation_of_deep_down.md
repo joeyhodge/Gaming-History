@@ -353,7 +353,7 @@ Processed at once with pixel shader
 
 ### Indirect lighting
 
-![](images/2021_06_22_technical_explanation_of_deep_down/indirect-lighting.png)
+![](images/2021_06_22_technical_explanation_of_deep_down/indirect-lighting-2.png)
 
 
 
