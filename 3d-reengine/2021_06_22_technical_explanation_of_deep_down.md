@@ -159,6 +159,105 @@ Panta Rhei uses [3D-Coat][1] and MAYA shaders to make adjustments using these va
   * Consider introducing Metallic's idea for the same capacity
 
 
+### Rendering Pipeline
+
+![](images/2021_06_22_technical_explanation_of_deep_down/rendering-pipeline-2.png)
+
+
+### Tile Based Deferred Shading
+
+* Two-stage configuration
+  * Create light list
+    * Creating light information that is also used for translucency, etc.
+* Direct lighting processing
+
+
+### Light list
+
+* Create a light list by dividing the image into 16x16 units
+  * Create a frustum from tile depth information
+    * Divide the frastam into 32 pieces in the line-of-sight direction
+      * The 32nd is a frustum in the range of maximum and minimum depth values
+      * The rest is a frustum divided evenly from the minimum value
+      * Judgment of intersection with the light source for each frustum
+
+![](images/2021_06_22_technical_explanation_of_deep_down/light-list.png)
+
+
+### Creating a light list
+
+* Calculate and save the number of lights after culling
+  * Get memory blocks from the writelist pool
+    * Keep head offset and number of tiles
+* The pool is uint2's Structured Buffer
+  * 32-bit write index
+  * 32-bit culling mask
+
+
+### Light culling
+
+![](images/2021_06_22_technical_explanation_of_deep_down/light-culling.png)
+
+
+### Direct lighting
+
+* Processed as a light source with size
+  * Spherical light source only
+    * Light intensity, magnitude, distance squared attenuation
+  * Points, spots, directional
+  * Supports shadow and projected textures
+
+
+### Example of direct lighting
+
+![](images/2021_06_22_technical_explanation_of_deep_down/direct-lighting-example.png)
+
+
+### Direct lighting shader
+
+* Process images in 16x16 units with CS
+  * Get from light list
+    * Get only lights with the 32nd bit enabled
+    * Stored in Shared Memory for each light type
+  * Expand loops by light type
+    * Use the best calculation within each loop
+    * VGPR bloated when shadow filter is involved
+
+
+### Rendering Pipeline
+
+![](images/2021_06_22_technical_explanation_of_deep_down/rendering-pipeline-3.png)
+
+
+### Forward
+
+* Used for skin and translucent
+  * Lighting using the results of the light list
+* Search for the mask of the light list from the Z value at the time of drawing
+  * Supports shadow and texture projection
+
+
+### Rendering Pipeline
+
+![](images/2021_06_22_technical_explanation_of_deep_down/rendering-pipeline-4.png)
+
+
+### Indirect lighting
+
+![](images/2021_06_22_technical_explanation_of_deep_down/indirect-lighting.png)
+
+
+### Indirect lighting
+
+Processed at once with pixel shader
+
+* Irradiance Volume
+* Screen space reflection
+* Parallax Corrected Cubemap
+
+![](images/2021_06_22_technical_explanation_of_deep_down/indirect-lighting-methods.png)
+
+
 
 
 [1]:https://3dcoat.com/
