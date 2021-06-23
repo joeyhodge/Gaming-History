@@ -246,9 +246,6 @@ Panta Rhei uses [3D-Coat][1] and MAYA shaders to make adjustments using these va
 
 ![](images/2021_06_22_technical_explanation_of_deep_down/indirect-lighting.png)
 
-
-### Indirect lighting
-
 Processed at once with pixel shader
 
 * Irradiance Volume
@@ -257,6 +254,106 @@ Processed at once with pixel shader
 
 ![](images/2021_06_22_technical_explanation_of_deep_down/indirect-lighting-methods.png)
 
+
+
+## Irradiance volume
+
+
+### Direct lighting
+
+![](images/2021_06_22_technical_explanation_of_deep_down/irradiance-volume-1.png)
+
+
+### Direct lighting + irradiance volume
+
+![](images/2021_06_22_technical_explanation_of_deep_down/irradiance-volume-2.png)
+
+
+### Irradiance volume
+
+* Diffuse reflection of indirect lighting
+* The light that hits the surface is reflected
+  * You can also place fake and invisible luminescent polygons
+
+![](images/2021_06_22_technical_explanation_of_deep_down/irradiance-volume-3.png)
+
+* Created while the game is loading
+  * Use voxel cone tracing
+* Create voxels for your scene
+  * Output voxel information from PS to list for each model
+    * Illuminated color information and occlusion information
+  * Enter the list in voxels (256x256x256)
+  * Create voxel mipmaps
+* Creating the final irradiance volume
+  * 128x128x128 structure that covers the entire scene
+  * Cone tracing by dividing the entire spherical surface into 12 directions
+    * Each cone trace result is added as 4 base colors
+      * Implemented based on Farcry 3
+    * Stored in 3 128x128x128 3D textures
+
+
+
+## Screen space reflection
+
+* Image-based ray tracing
+
+![](images/2021_06_22_technical_explanation_of_deep_down/screen-space-effect-2.png)
+
+* Linear exploration and dichotomy
+  * Glossy reflection is not supported
+
+
+
+## Parallax correction environment map
+
+* also called "Parallax Corrected Cubemaps"
+
+
+### Direct lighting
+
+![](images/2021_06_22_technical_explanation_of_deep_down/irradiance-volume-1.png)
+
+
+### Direct lighting + Parallax correction environment map
+
+![](images/2021_06_22_technical_explanation_of_deep_down/parallax-correction-environment-map-1.png)
+
+
+### Parallax correction environment map
+
+* Used for diffuse and specular reflections
+* Essential for metal texture
+
+![](images/2021_06_22_technical_explanation_of_deep_down/parallax-correction-environment-map-2.png)
+
+* Up to 96 in one scene with "deep down"
+  * Surface roughness changes the mip level of the environment map
+    * Resolution up to 128x128, mipmap up to 2x2
+    * Color information is retained in RGBE format on R8G8B8A8
+
+![](images/2021_06_22_technical_explanation_of_deep_down/parallax-correction-environment-map-3.png)
+
+* Environmental map capture and filtering on load
+  * Taken with a tetrahedron(四面体)
+  * Create all mip levels at once with CS
+* Parallax correction environment map exploration with stackless tree
+  * AABB only BVH
+  * Works well as it has almost the same branching direction
+
+
+## Indirect lighting
+
+* 效果对比
+
+
+### Direct lighting
+
+![](images/2021_06_22_technical_explanation_of_deep_down/irradiance-volume-1.png)
+
+
+### Indirect lighting
+
+![](images/2021_06_22_technical_explanation_of_deep_down/indirect-lighting.png)
 
 
 
