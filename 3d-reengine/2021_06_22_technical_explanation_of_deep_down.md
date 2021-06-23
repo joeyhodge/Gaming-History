@@ -18,7 +18,7 @@
 ![](images/2021_06_22_technical_explanation_of_deep_down/material-editor.png)
 
 
-### Panta Rhei's Objective
+### Panta Rhei's objective
 
 * High quality texture
   * Make it look richer than ever
@@ -64,6 +64,79 @@ Panta Rhei uses [3D-Coat][1] and MAYA shaders to make adjustments using these va
 
 
 ### Shader editor
+
+* Create shaders with graphical editing
+  * Graph method for editing by linking nodes
+
+![](images/2021_06_22_technical_explanation_of_deep_down/shader-editor-1.png)
+
+* Instant preview available
+
+![](images/2021_06_22_technical_explanation_of_deep_down/shader-editor-2.png)
+
+
+### Detail layer
+
+![](images/2021_06_22_technical_explanation_of_deep_down/detail-layer-1.png)
+
+![](images/2021_06_22_technical_explanation_of_deep_down/detail-layer-2.png)
+
+
+### Water monster
+
+![](images/2021_06_22_technical_explanation_of_deep_down/water-monster.png)
+
+
+### Screen space effect 
+
+![](images/2021_06_22_technical_explanation_of_deep_down/screen-space-effect.png)
+
+
+### Shader editor pros/cons
+
+* Pros
+  * Artists can create while checking the appearance for themselves
+* Cons
+  * The number of nodes increases and tends to be complicated
+  * Performance is not considered
+
+
+### Comparison with the conventional
+
+* Conventional (MT FRAMEWORK)
+  * Material (setting based on empirical rules)
+  * A combination of shader nodes
+* Currently (Panta Rhei)
+  * Material (Physically based. Created with a small number of parameters)
+  * Artist-based shaders
+
+
+
+## Light
+
+### Panta Rhei's objective
+
+* Dynamic light source processing as much as possible
+  * Automatically generated dungeons
+    * No lightmap in the dungeon
+  * handle indirect lighting dynamically
+* Improved rendering quality
+
+
+### Lighting
+
+* HDR lighting & linear space
+  * Rendered in FP16
+* In-game lighting
+  * Direct lighting
+    * Tile-based deferred + forward
+  * Indirect lighting
+    * Irradiance volume + parallax correction environment map
+
+
+### Rendering Pipeline
+
+![](images/2021_06_22_technical_explanation_of_deep_down/rendering-pipeline-1.png)
 
 
 
