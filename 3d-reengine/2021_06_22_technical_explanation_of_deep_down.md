@@ -255,21 +255,17 @@ Processed at once with pixel shader
 ![](images/2021_06_22_technical_explanation_of_deep_down/indirect-lighting-methods.png)
 
 
+### Irradiance volume
 
-## Irradiance volume
-
-
-### Direct lighting
+#### Direct lighting
 
 ![](images/2021_06_22_technical_explanation_of_deep_down/irradiance-volume-1.png)
 
-
-### Direct lighting + irradiance volume
+#### Direct lighting + irradiance volume
 
 ![](images/2021_06_22_technical_explanation_of_deep_down/irradiance-volume-2.png)
 
-
-### Irradiance volume
+#### Irradiance volume
 
 * Diffuse reflection of indirect lighting
 * The light that hits the surface is reflected
@@ -292,8 +288,7 @@ Processed at once with pixel shader
     * Stored in 3 128x128x128 3D textures
 
 
-
-## Screen space reflection
+### Screen space reflection
 
 * Image-based ray tracing
 
@@ -303,23 +298,19 @@ Processed at once with pixel shader
   * Glossy reflection is not supported
 
 
-
-## Parallax correction environment map
+### Parallax correction environment map
 
 * also called "Parallax Corrected Cubemaps"
 
-
-### Direct lighting
+#### Direct lighting
 
 ![](images/2021_06_22_technical_explanation_of_deep_down/irradiance-volume-1.png)
 
-
-### Direct lighting + Parallax correction environment map
+#### Direct lighting + Parallax correction environment map
 
 ![](images/2021_06_22_technical_explanation_of_deep_down/parallax-correction-environment-map-1.png)
 
-
-### Parallax correction environment map
+#### Parallax correction environment map
 
 * Used for diffuse and specular reflections
 * Essential for metal texture
@@ -341,19 +332,185 @@ Processed at once with pixel shader
   * Works well as it has almost the same branching direction
 
 
-## Indirect lighting
+### Indirect lighting
 
 * 效果对比
 
-
-### Direct lighting
+#### Direct lighting
 
 ![](images/2021_06_22_technical_explanation_of_deep_down/irradiance-volume-1.png)
 
-
-### Indirect lighting
+#### Indirect lighting
 
 ![](images/2021_06_22_technical_explanation_of_deep_down/indirect-lighting-2.png)
+
+
+### Shadow
+
+* Supports points, spots, and cascades
+  * Shadows are output on a single texture
+
+![](images/2021_06_22_technical_explanation_of_deep_down/shadow-1.png)
+
+#### Accelerate shadow map creation
+
+* Most light sources do not move or rotate
+  * Variable light intensity and range
+* Cache depth in a dedicated temporary buffer
+  * Static light source caches static objects
+    * Export only moving characters and objects
+    * Omit most depth map updates
+    * Memory consumption, processing time reduced
+
+### Others
+
+#### SSAO
+
+* Use ScreenAmbientObscuarance
+  * Change loop unrolling to processing in 4 units
+    * Good parallelism and execution speed
+
+```C++
+// before
+for (int i = 0; i < NUM_SAMPLES; i++)
+    sum += sampleAO(ssC, C, n_C, ssDiskRadius, i, randomPatternRotationAngle);
+
+// after
+[loop]
+for (int i = 0; i < NUM_SAMPLES/4; i+=4) {
+    sum += sampleAO(ssC, C, n_C, ssDiskRadius, i, randomPatternRotationAngle);
+    sum += sampleAO(ssC, C, n_C, ssDiskRadius, i+1, randomPatternRotationAngle);
+    sum += sampleAO(ssC, C, n_C, ssDiskRadius, i+2, randomPatternRotationAngle);
+    sum += sampleAO(ssC, C, n_C, ssDiskRadius, i+3, randomPatternRotationAngle);
+}
+```
+
+#### Texture
+
+* New texture compression BC7 and BC6H
+  * HDR image BC6H
+    * Used in environment maps, etc.
+  * Color and normal BC7
+    * High quality where the alpha channel is not used
+* BC1 where there is not enough memory
+* Roughness uses BC4
+
+
+
+## Hair
+
+![](images/2021_06_22_technical_explanation_of_deep_down/hair-example.png)
+
+
+### Deep down's objective
+
+* Express flowing hair
+  * Shake it according to the motion
+* Add variations
+* Light processing
+
+
+### Shell method
+
+* Stacking layers in the normal direction
+* Good appearance if normal and line of sight are parallel
+* Stacking is visible near the contour
+  * A significant number of layers are needed to make the stacking inconspicuous at high resolution
+* It is difficult to express flowing hair
+
+![](images/2021_06_22_technical_explanation_of_deep_down/hair-shell-method.png)
+
+
+### Implanting polygons
+
+* Implanting polygons with hair texture
+  * Common methods for expressing hair
+* Can express hair flow and sway
+* The wider the area where hair grows, the more polygon planting work will be done.
+  * It's even harder with variations
+
+
+### Deep down hair expression
+
+* Use a tessellator to grow polylines
+  * No need to pre-embed in model mesh
+  * The artist just adjusts the parameters
+    * Easy to grow without hassle
+    * Easy to add variations
+  * Consider hair sway with tessellator
+
+
+### Process flow - at the time of loading
+
+* Generate a point Pn(n=1,...N) that is the source of the polyline from the vertex Pm of the standard pose of the mesh model.
+  * Use Compute Shader
+  * Uniform variability
+* RWBuffer
+  * Triangle index I(i, j, k)
+  * Local coordinates p(u, v) in the triangle
+
+![](images/2021_06_22_technical_explanation_of_deep_down/hair-process-flow-1.png)
+
+
+### Process flow - every frame
+
+* Mesh model skinning Pm -> P`m
+* Coordinates of polyline elements after skinning Pn -> P`n
+
+![](images/2021_06_22_technical_explanation_of_deep_down/hair-process-flow-2.png)
+
+* Back-to-front sorting for translucency priority
+
+![](images/2021_06_22_technical_explanation_of_deep_down/hair-process-flow-3.png)
+
+* Polyline generation with tessellator
+  * Consider orientation and length
+
+![](images/2021_06_22_technical_explanation_of_deep_down/hair-process-flow-4.png)
+
+
+### Complete
+
+![](images/2021_06_22_technical_explanation_of_deep_down/hair-complete.png)
+
+
+### Speed up writing
+
+* Lighting calculations in pixel shaders are heavy
+  * A large number of pixel shaders run for one pixel
+* Perform lighting calculations in domain shaders
+  * Pros: Writing calculation can be done in the number of times of TessFactor
+  * Cons: Highlights are less likely to appear
+
+![](images/2021_06_22_technical_explanation_of_deep_down/hair-process-flow-5.png)
+
+
+### Hair sway
+
+* Simulation is heavy
+  * No need for accurate simulation in the first place => Use speed
+* Read/Write Buffer
+  * The result of the previous frame remains in the buffer
+  * Velocity = Result of current frame-Result of previous frame
+
+![](images/2021_06_22_technical_explanation_of_deep_down/hair-sway-1.png)
+
+![](images/2021_06_22_technical_explanation_of_deep_down/hair-sway-2.png)
+
+
+
+## Summary
+
+* Change to physically based rendering
+  * New texture expression
+    * Skin expression
+    * Use artist-made shaders
+  * New lighting
+    * Direct lighting - a light source with an area
+    * Indirect lighting - irradiance volume, parallax correction environment map
+* Use compute shaders
+  * Writing
+  * Hair
 
 
 
