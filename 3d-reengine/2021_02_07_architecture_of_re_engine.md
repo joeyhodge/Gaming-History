@@ -19,7 +19,6 @@ RE ENGINE 代表作
 
 * Resident Evil 7: Biohazard，《生化危机7》
 * Devil May Cry 5，《鬼泣5》
-* Monster Hunter: World，《怪物猎人：世界》
 * Monster Hunter: Rise，《怪物猎人：崛起》
 
 
