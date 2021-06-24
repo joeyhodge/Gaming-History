@@ -38,9 +38,9 @@ RE ENGINE 代表作
 * 特性4：异步 I/O
 * 特性5：C# Scripting
 
-特性3-5可以参见 GDC 2017 的分享。本篇重点讲前两者。
+特性3-5可以参见 GCC 2017 的分享。本篇重点讲前两者。
 
-* [ラピッドイテレーションを実現するRE ENGINEの設計][3]
+* [Achieve Rapid Iteration: RE ENGINE Design][4] ([ppt][3])
 
 
 ## 特性1 - 模块化设计
@@ -177,3 +177,4 @@ RE ENGINE 代表作
 [2]:https://residentevil.fandom.com/wiki/RE_Engine
 [3]:https://www.slideshare.net/capcom_rd/re-engine-72302524
 [4]:https://www.youtube.com/watch?v=GPKmzZOkAD8
+[5]:2021_03_10_achieve_rapid_iteration_re_engine_design.md
