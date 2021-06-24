@@ -1,7 +1,8 @@
 # Technical Explanation of "Deep Down" Graphics
 
-* "Deep Down"
-  * https://www.youtube.com/watch?v=jIRUImPWaOo
+* [Deep Down - TGS 2013 Trailer (PS4)][2]
+* [Deep Down - TGS 2014 Trailer (PS4)][3]
+* [Deep Down - 25 Minutes of Gameplay][4]
 
 
 
@@ -22,7 +23,7 @@
 
 * High quality texture
   * Make it look richer than ever
-* Unification of quality
+* Unified quality
   * Have similar quality no matter who makes it
   * Use it anywhere = separate lighting
 * "Physically Based Rendering" to achieve
@@ -515,3 +516,6 @@ for (int i = 0; i < NUM_SAMPLES/4; i+=4) {
 
 
 [1]:https://3dcoat.com/
+[2]:https://www.youtube.com/watch?v=0N5oItJiIds
+[3]:https://www.youtube.com/watch?v=PHEvyNiO0Tw
+[4]:https://www.youtube.com/watch?v=jIRUImPWaOo
