@@ -72,3 +72,20 @@
   * When using SMT, cache efficiency deteriorates
     * Because completely different code works
 
+
+### What to parallelize
+
+* Parallelization in loop units
+  * Distribute and process high-load, non-dependent loops in parallel
+* Pros
+  * Very good compatibility with SMT (Because the same code works)
+* Cons
+  * Not many non-dependent loops make up a few percent of game programs
+  * Synchronous overhead outweighs low-volume loops
+
+
+### What to parallelize
+
+* Task-based parallelization
+  * Tasks in game programming
+  * Execute tasks with no dependencies in parallel
