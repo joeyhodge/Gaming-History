@@ -147,3 +147,100 @@ Traditional task model      Parallelized task model
   * Multiple CPUs and GPUs run in parallel
 
 ![](images/2021_06_25_game_engine_design_for_next_generation_consoles/game-program-flow-2.png)
+
+
+### Parallel update
+
+* Manage task dependencies on the line
+  * Tasks with no dependencies are registered on the same line
+  * Register dependent tasks on another line
+* Multi-threaded parallel update on a line-by-line basis
+  * Tasks on the same line cannot be changed or referenced
+  * Tasks on different lines can only be referenced
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/parallel-update.png)
+
+
+### Synchronous update
+
+* Sequential update of tasks with a single thread
+  * You can freely refer to and change other tasks
+* Update in the shortest time
+  * Make one thread occupy cache and memory bandwidth
+  * Disable unnecessary sync objects during sync update
+* Minimize processing
+  * If possible, only get the value and do the calculation at the next parallel update
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/synchronous-update.png)
+
+
+### Parallel drawing command creation
+
+* Execute all tasks in parallel with multiple threads
+  * Your own state is for reference only and **cannot be changed**
+  * Other tasks can only be referenced
+  * Only registration to an independent command buffer for each thread is possible
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/parallel-drawing-command-creation.png)
+
+
+### Problems of parallel drawing command creation
+
+* The registration order of drawing commands is not stable
+  * The registration order within the task is stable
+  * The order of registration between tasks is indefinite
+* Stable execution order regardless of registration order
+  * Give priority to drawing commands
+  * Finally sort by priority
+    * Use a sort algorithm that preserves order
+      * Merge sort
+    * For the same priority, it depends on the registration order in the task
+      * Stable
+
+
+### Intermediate drawing command
+
+* Describe drawing commands as an array of 64-bit tags
+  * Consists of 32-bit priority and address to 32-bit command
+* Breakdown of priorities
+  * Scene
+    * Define a completely independent scene (split screen, etc.)
+  * Sub Scene
+    * Define another scene (shadow map, reflection map, etc.) required when drawing the scene
+  * Pass
+    * Define rendering paths (Z pre-pass, opaque path, translucent path, filter path), etc.
+  * Sub Priority
+    * Priority in the path.
+    * For example, in an opaque path, the material is prioritized and controlled so that material switching is minimized.
+    * In the semi-transparent path, the distance from the viewpoint is prioritized and controlled so that it is drawn from the back to the front.
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/intermediate-drawing-command.png)
+
+
+### Flow of drawing command creation
+
+1. Create intermediate drawing commands in parallel with multiple threads in a command buffer that is independent for each thread
+2. Parallel merge sort by command priority for each command buffer
+3. Combine multiple command buffers into one command buffer with priority Merge sort
+4. Converts a unified intermediate drawing command to a native drawing command and executes it
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/flow-of-drawing-command-creation.png)
+
+
+### Parallel merge sort
+
+* Merge sort by command buffer
+  * Merge sort in parallel in order of priority in units of command buffers that are independent for each thread
+  * Order with the same priority is guaranteed
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/parallel-merge-sort.png)
+
+
+### Integrated merge sort
+
+* Unify command buffer
+  * Combines sorted command buffers that are independent for each thread into one command buffer in order of priority.
+  * Usually merge sort is a merge of two elements, but the algorithm is extended so that arbitrary elements can be merged.
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/integrated-merge-sort.png)
+
