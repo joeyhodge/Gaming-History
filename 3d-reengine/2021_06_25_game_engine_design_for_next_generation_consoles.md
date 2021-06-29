@@ -88,4 +88,62 @@
 
 * Task-based parallelization
   * Tasks in game programming
+    * Unit for updating and drawing every frame
+    * Players, enemies, bullets, cameras, effect generators, etc.
   * Execute tasks with no dependencies in parallel
+* Pros
+  * Dependencies can be limited
+    * Limited if information on other tasks is needed
+  * SMT is more efficient when performing tasks with the same content
+* Cons
+  * Cannot be executed in parallel if there are no tasks with no dependencies
+
+```
++-----------------------------------------------------+
+| Character Task                                      |
+| +---------------------+  +------------------------+ |
+| | Update              |  | Rendering              | |
+| +---------------------+  +------------------------+ |
+| | Path finding        |  | Culling                | |
+| | Motion              |  | Bone calculation       | |
+| | Collision           |  | Lighting               | |
+| | Posture calculation |  | Create drawing command | |
+| | ...                 |  | ...                    | |
+| +---------------------+  +------------------------+ |
++-----------------------------------------------------+
+```
+
+
+### Parallelization approach
+
+* Module-based parallelization
+  * Rendering, sound, resource loading
+* Parallelization in loop units
+  * Some sort processing etc.
+* Task-based parallelization
+  * All game objects (Players, enemies, effects, lights, cameras, etc.)
+  * Divide task updates for each frame into **parallel updates** and **synchronous updates** to reduce the dependency between tasks during parallel updates.
+
+```
+Traditional task model      Parallelized task model
+   +-------------+           +--------------------+
+   | Update      |           | Parallel update    |
+   +-------------+           +--------------------+
+   | Rendering   |   ====>   | Synchronous update |
+   +-------------+           +--------------------+
+                             | Rendering          |
+                             +--------------------+
+```
+
+
+### Game program flow
+
+* Traditional game program flow
+  * CPU and GPU run in parallel
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/game-program-flow-1.png)
+
+* Parallelized game program flow
+  * Multiple CPUs and GPUs run in parallel
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/game-program-flow-2.png)
