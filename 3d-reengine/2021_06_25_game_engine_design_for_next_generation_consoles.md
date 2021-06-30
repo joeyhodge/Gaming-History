@@ -244,3 +244,157 @@ Traditional task model      Parallelized task model
 
 ![](images/2021_06_25_game_engine_design_for_next_generation_consoles/integrated-merge-sort.png)
 
+
+### Parallel processing in a symmetric core
+
+* Job queue
+  * Queue pointers to functions you want to execute in parallel
+  * Execute functions in parallel on multiple job threads
+  * Wait for all functions to finish executing.
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/parallel-processing-1.png)
+
+
+### Parallel processing in asymmetric core
+
+* Job queue
+  * Job thread implemented as software thread
+* In the job function
+  * Throw some processing to the coprocessor
+  * Switch to another software thread until processing is complete
+* In the coprocessor
+  * Get data with DMA
+  * Process data
+  * Store data with DMA
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/parallel-processing-2.png)
+
+
+### Example: Dead Rising
+
+* Test case
+  * 2,840,000 Vertex
+  * 5148 Batch
+  * 3200 Particle
+  * 300 Zombies
+  * 303 Item
+  * 98 Generator
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/dead-rising.png)
+
+* Thread utilization
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/dead-rising-thread-utilization-1.png)
+
+* Number of threads and processing speed
+  * When using 6 threads, the speed is improved by about 2.6 times compared to when using only 1 thread.
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/dead-rising-thread-utilization-2.png)
+
+
+### Example: Lost Planet
+
+* Test case
+  * 810,000 Vertex
+  * 892 Batch
+  * 12000 Particle
+  * 26 Character
+  * 130 Object
+  * 119 Generator
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/lost-planet.png)
+
+* Thread utilization
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/lost-planet-thread-utilization-1.png)
+
+* Number of threads and processing speed
+  * When using 6 threads, the speed is improved by about 2.15 times compared to when using only 1 thread.
+
+![](images/2021_06_25_game_engine_design_for_next_generation_consoles/lost-planet-thread-utilization-2.png)
+
+
+### Problems with parallelization
+
+* Bugs due to parallelization
+  * Simultaneous writing to variables
+  * Deadlock
+    * Low reproducibility and difficult to identify
+* Performance degradation due to parallelization
+  * Unnecessarily heavy use of sync objects
+* **System design is important**
+
+
+### Simplify the design
+
+* Classify the classes in the game program into 3 types
+  * System
+    * Singleton object with only one instance
+    * graphic device, manager class, etc.
+  * Resource
+    * An object whose state has not changed at all since the instance was created
+    * model, animation, etc.
+  * Task
+    * An object that updates the state of each frame and creates drawing commands
+    * players, enemies, lights, cameras, effect classes, etc.
+* **All in-game classes inherit from 3 types of classes, or are designed as classes included in 3 types**
+
+
+### Clarify the rules
+
+* System
+  * Global variables are not used, but system member variables are used, and acquisition and setting are performed via system functions.
+  * Protect access from multiple threads with a sync object
+* Resource
+  * Do not change any state since it was created
+* Task
+  * At the time of parallel update
+    * Prohibit both change references of tasks on the same line
+    * Tasks on different lines can only be referenced
+  * At the time of synchronous update
+    * All tasks can be changed and referenced
+  * When creating a parallel drawing command
+    * Do not change any state, including yourself
+    * Only reference of all tasks is possible
+
+
+### Minimize synchronization
+
+* System
+  * Disable the synchronization object if it is not running in parallel
+  * For example, during synchronous update
+* Resource
+  * No synchronization required
+  * Because it is guaranteed that the state will not change
+* Task
+  * Processing that requires synchronization is performed during synchronous update
+  * Do not use any sync objects
+
+
+### Bugs due to parallelization
+
+* Dead rising case
+  * **Only a few bugs** due to parallelization after entering the bug check period
+* Case 1: Model rotation is not stable
+  * Rewriting task parameters on the same line during parallel update
+    * During parallel update, both change references of tasks on the same line are prohibited.
+* Case 2: Memory leak
+  * The state of the resource was dynamically rewritten
+    * The resource must not change state at all since it was created
+* **Parallelizing the entire application does not lead to serious bug hell**
+
+
+### Summary
+
+* Game programs are easy to parallelize
+  * From a task perspective, dependencies can be minimized
+* Significant performance improvement can be obtained by parallelizing
+  * About 2 to 3 times improvement in the actual title
+* Bugs due to parallelization are not serious
+  * Simple design and clear rules are important
+
+
+
+## Rendering technique
+
+TODO
