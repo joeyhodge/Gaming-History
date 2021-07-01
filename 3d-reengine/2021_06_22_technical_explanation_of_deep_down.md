@@ -1,6 +1,6 @@
 # Technical Explanation of "Deep Down" Graphics
 
-* [2014 - CEDEC - Technical explanation of "deep down" graphics expression][4]
+* [2014 - CEDEC - Technical explanation of "deep down" graphics expression][5]
 * [Deep Down - TGS 2013 Trailer (PS4)][2]
 * [Deep Down - TGS 2014 Trailer (PS4)][3]
 * [Deep Down - 25 Minutes of Gameplay][4]
