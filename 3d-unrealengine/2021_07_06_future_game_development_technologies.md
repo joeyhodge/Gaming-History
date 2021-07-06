@@ -176,8 +176,100 @@
   * Scaling to "vectors instruction sets"
   * Understanding Performance Implications
 
-### 
+### Multithreading in Unreal Engine 3: "Task Parallelism"
 
+* Gameplay thread
+  * AI, scripting
+  * Thousands of interacting objects
+* Rendering thread
+  * Scene traversal, occlusion
+  * Direct3D command submission
+* Pool of helper threads for other work
+  * Physics Solver
+  * Animation Updates
+* Good for 4 cores
+  * No good for 40 cores!
+
+### The standard C++/Java threading model: "Shared State Concurrency"
+
+* Many threads are running
+* There is 512MB of data
+* Any thread can modify any data at any time
+* All synchronization is explicit, manual
+  * See: LOCK, MUTEX, SEMAPHORE
+* No compile-time verification of correctness properties
+  * Deadlock-free
+  * Race-free
+  * Invariants
+
+### Mutithreaded Gameplay Simulation
+
+* 1000+ of game objects
+* Each object is
+  * Modifyable
+  * Updated once per frame
+    * Each update touches 5-10 other objects
+    * Updates are object-oriented, so contorl-flow isn't statically known
+* Code written by 10's of programmers
+  * They aren't computer scientists!
+
+![](images/2021_07_06_future_game_development_technologies/multithreaded-gameplay-simulation.png)
+
+### Mutithreaded Gameplay Simulation: How?
+
+* Problems
+  * Games must scale to "many cores" (20-100)
+  * Must avoid **all** single-threaded bottlenecks
+* Solutions
+  * "Shared State Concurrency"
+  * "Message Passing Concurrency"
+  * "Software Transactional Memory"
+  * "Pure Functional Programming"
+
+### Mutithreaded Gameplay Simulation: Manual Synchronization
+
+* Idea
+  * Update objects in multiple threads
+  * Each object contains a lock
+  * "Just lock an object before using it"
+* Problems
+  * "Deadlocks"
+  * "Data Races"
+  * Debugging is difficult/expensive
+
+### Mutithreaded Gameplay Simulation: Message Passing
+
+* Idea
+  * Update objects in multiple threads
+  * Each object can only modify itself
+  * Communicate with other objects by sending messages
+* Problems
+  * Requires writting 1000's of message protocols
+  * Still need synchronization
+
+### Mutithreaded Gameplay Simulation: Software Transactional Memory
+
+* Idea
+  * Update objects in multiple threads
+  * Each thread runs inside a **transaction block** and has an **atomic** view of its "local" changes to memory
+  * C++ runtime detects conflicts between transactions
+    * Non-conflicting transactions are applied to "global" memory
+    * Conflicting transactions are "rolled back" and re-run
+  * Implemented 100% in software; no custom hardware required
+* Problems
+  * "Object update" code must be free of side-effects
+  * Requires C++ runtime support
+ * Cost around 30% performance
+* See: ["Composable Memory Transactions"][3]
+
+### Mutithreaded Gameplay Simulation: Conclusion
+
+* Manual synchronization
+  * Very difficult, error-prone
+* Message passing
+  * Difficult, error-prone
+* Transaction Memory
+  * 
 
 
 
@@ -185,3 +277,4 @@
 
 [1]:http://www.iiswc.org/iiswc2008/sildes/keynote_1.pdf
 [2]:https://cedil.cesa.or.jp/cedil_sessions/view/168
+[3]:https://www.microsoft.com/en-us/research/wp-content/uploads/2005/01/2005-ppopp-composable.pdf
