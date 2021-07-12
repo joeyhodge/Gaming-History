@@ -140,6 +140,11 @@ Work & Life
 
 Release Notes
 
+* [2021.05.31 - The Machinery Beta (version 2021.6)][148]
+  * [Save Game System][149]
+  * [Breakpoints in Entity Graphs][150]
+  * [UI Components][151]
+  * [Facelift for Sample Projects][152]
 * [2021.05.31 - The Machinery Beta (version 2021.5)][143]
   * [Animation Constraints][144]
   * [Screen Space Ambient Occlusion][145]
@@ -147,7 +152,7 @@ Release Notes
 * [2021.04.29 - The Machinery Beta (version 2021.4)][134]
   * [Animation Triggers][135]
   * [UI Components][136]
-* [2021.03.31 - The Machinery Beta (version 2021.4)][137]
+* [2021.03.31 - The Machinery Beta (version 2021.3)][137]
   * [Math Expressions][138]
   * [Tab Overlays][139]
   * [Animation Compression][140]
@@ -376,3 +381,8 @@ Release Notes
 [145]:https://ourmachinery.com/post/beta-2021-5/#screen-space-ambient-occlusion
 [146]:https://ourmachinery.com/post/beta-2021-5/#entity-context-update-ordering
 [147]:https://github.com/OurMachinery/themachinery-books/
+[148]:https://ourmachinery.com/post/beta-2021-6/
+[149]:https://ourmachinery.com/post/beta-2021-6/#save-game-system
+[150]:https://ourmachinery.com/post/beta-2021-6/#breakpoints-in-entity-graphs
+[151]:https://ourmachinery.com/post/beta-2021-6/#ui-components
+[152]:https://ourmachinery.com/post/beta-2021-6/#facelift-for-sample-projects
