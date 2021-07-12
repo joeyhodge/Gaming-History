@@ -25,6 +25,8 @@
 
 ### Blog
 
+* [The Machinery Book][147]
+
 Development Philosophy
 
 * [2017.03.03 - Physical Design of The Machinery][26]
@@ -373,3 +375,4 @@ Release Notes
 [144]:https://ourmachinery.com/post/beta-2021-5/#animation-constraints
 [145]:https://ourmachinery.com/post/beta-2021-5/#screen-space-ambient-occlusion
 [146]:https://ourmachinery.com/post/beta-2021-5/#entity-context-update-ordering
+[147]:https://github.com/OurMachinery/themachinery-books/
