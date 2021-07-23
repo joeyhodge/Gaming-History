@@ -125,3 +125,7 @@ Win32DiskImager
  * 在 Windows 上给 USB Disk 写入 raw file 的利器
  * https://sourceforge.net/projects/win32diskimager/
  
+Rufus
+
+* 在 Windows 上将 ISO 写成 bootable usbdisk
+* https://rufus.ie/
