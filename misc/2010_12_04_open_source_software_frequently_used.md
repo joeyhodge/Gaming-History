@@ -128,4 +128,4 @@ Win32DiskImager
 Rufus
 
 * 在 Windows 上将 ISO 写成 bootable usbdisk
-* https://rufus.ie/
+* https://github.com/pbatard/rufus
