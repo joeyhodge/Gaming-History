@@ -159,3 +159,4 @@ Year | Conf       | Title                                                       
 [36]:https://www.slideshare.net/DICEStudio/henrikgdc09-compat
 [37]:https://www.ea.com/frostbite/news/shadows-decals-d3d10-techniques-from-frostbite
 [38]:https://www.ea.com/frostbite/news/a-real-time-radiosity-architecture
+[39]:https://www.ea.com/frostbite/news/physically-based-sky-atmosphere-and-cloud-rendering
