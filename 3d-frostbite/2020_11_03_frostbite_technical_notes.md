@@ -6,6 +6,7 @@
 ![](images/2020_11_03_frostbite_technical_notes/dragon-age.png)
 
 
+
 ## "Move to One Engine"
 
 EA is moving its games, including Mass Effect and FIFA, [onto a single graphics engine][5]. Frostbite has evolved to become the cornerstone of these titles:
@@ -19,7 +20,9 @@ EA is moving its games, including Mass Effect and FIFA, [onto a single graphics 
  * `Dragon Age` (Dragon Age: Origins)
 
 
+
 ## Resources
+
 
 ### Engine & Pipeline 
 
@@ -35,6 +38,7 @@ Year | Conf       | Title                                                       
 2009 | siggraph09 | [Parallel Graphics in Frostbite – Current & Future][8]                                          |
 2008 | gh2008     | [The Intersection of Game Engines and GPUs: Current & Future][7]                                |
 2007 | gdc2007    | [frostbite - Rendering Architecture and Real-time Procedural Shading & Texturing Techniques][6] |
+
 
 ### GDC 2011 & 2012 - Frostbite 2 & Battlefield 3/4
 
@@ -52,13 +56,14 @@ Year | Title                                                                    
 2011 | [Lighting you up in Battlefield 3][26]                                                       | Lighting
 2011 | [DirectX 11 Rendering in Battlefield 3][27]                                                  |
 
+
 ### Rendering & Visual Effects
 
-Year | Conf       | Title                                                                                           | Note
+Year | Conf       | Title                                                                                           | Comment
 ---- | ---------- | ----------------------------------------------------------------------------------------------- | ----
 2017 | GDC        | [HDR Color Grading and Display in Frostbite][30]                                                |
 2017 | GDC        | [4K Checkerboard in Battlefield 1 and Mass Effect Andromeda][31]                                |
-
+2016 | SIGGRAPH   | [Physically Based Sky, Atmosphere & Cloud Rendering][39]                                        | Environment
 2010 | SIGGRAPH   | [A Real-time Radiosity Architecture][38]                                                        | Lighting
 2009 | GDC        | [Shadows & Decals: D3D10 Techniques in Frostbite][37]                                           | ShadowMap & Decal
 2009 | GDC        | [The Unique Lighting in Mirror’s Edge][36]                                                      | Lighting
@@ -83,7 +88,6 @@ Year | Conf       | Title                                                       
 - [(2015) #siggraph2015 Physically Based and Unified Volumetric Rendering in Frostbite](https://www.ea.com/frostbite/news/physically-based-unified-volumetric-rendering-in-frostbite)
 - [(2016) #gdc2016 Lighting the city of glass - Rendering ‘Mirror’s Edge Catalyst’](https://www.ea.com/frostbite/news/lighting-the-city-of-glass)
 - [(2016) #gdc2016 Photogrammetry and Star Wars Battlefront - Frostbite](https://www.ea.com/frostbite/news/photogrammetry-and-star-wars-battlefront)
-- [(2016) #siggraph2016 Physically Based Sky, Atmosphere & Cloud Rendering](https://www.ea.com/frostbite/news/physically-based-sky-atmosphere-and-cloud-rendering)
 
 
 ### General Programming
