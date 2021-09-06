@@ -63,6 +63,8 @@ Year | Conf       | Title                                                       
 ---- | ---------- | ----------------------------------------------------------------------------------------------- | ----
 2017 | GDC        | [HDR Color Grading and Display in Frostbite][30]                                                |
 2017 | GDC        | [4K Checkerboard in Battlefield 1 and Mass Effect Andromeda][31]                                |
+2016 | GDC        | [Photogrammetry and Star Wars Battlefront][40]                                                  | Photogrammetry
+2016 | GDC        | [Lighting the city of glass - Rendering "Mirror's Edge Catalyst"][41]                           | Rendering
 2016 | SIGGRAPH   | [Physically Based Sky, Atmosphere & Cloud Rendering][39]                                        | Environment
 2010 | SIGGRAPH   | [A Real-time Radiosity Architecture][38]                                                        | Lighting
 2009 | GDC        | [Shadows & Decals: D3D10 Techniques in Frostbite][37]                                           | ShadowMap & Decal
@@ -86,9 +88,6 @@ Year | Conf       | Title                                                       
 - [(2015) #siggraph2015 Frostbite on mobile](https://www.ea.com/frostbite/news/frostbite-on-mobile)
 - [(2015) #siggraph2015 Stochastic Screen-Space Reflections](https://www.ea.com/frostbite/news/stochastic-screen-space-reflections)
 - [(2015) #siggraph2015 Physically Based and Unified Volumetric Rendering in Frostbite](https://www.ea.com/frostbite/news/physically-based-unified-volumetric-rendering-in-frostbite)
-- [(2016) #gdc2016 Lighting the city of glass - Rendering ‘Mirror’s Edge Catalyst’](https://www.ea.com/frostbite/news/lighting-the-city-of-glass)
-- [(2016) #gdc2016 Photogrammetry and Star Wars Battlefront - Frostbite](https://www.ea.com/frostbite/news/photogrammetry-and-star-wars-battlefront)
-
 
 ### General Programming
 
@@ -160,3 +159,5 @@ Year | Conf       | Title                                                       
 [37]:https://www.ea.com/frostbite/news/shadows-decals-d3d10-techniques-from-frostbite
 [38]:https://www.ea.com/frostbite/news/a-real-time-radiosity-architecture
 [39]:https://www.ea.com/frostbite/news/physically-based-sky-atmosphere-and-cloud-rendering
+[40]:https://www.ea.com/frostbite/news/photogrammetry-and-star-wars-battlefront
+[41]:https://www.ea.com/frostbite/news/lighting-the-city-of-glass
