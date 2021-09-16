@@ -13,11 +13,11 @@ EA is moving its games, including Mass Effect and FIFA, [onto a single graphics 
 
  * `FIFA` (FIFA 17/18)
  * `Mass Effect` (Mass Effect: Andromeda)
- * `Battlefield` (Battlefield 1 - 2016)  
+ * [Battlefield][42] (Battlefield 3, Battlefield 4)
  * `Need for Speed` (NEED FOR SPEED 2017: PAYING IT BACK)
  * `Mirror's Edge` (Mirror's Edge Catalyst - 2016)
  * `Star Wars` (Star Wars Battlefront) 
- * `Dragon Age` (Dragon Age: Origins)
+ * [Dragon Age][43] (Dragon Age: Inquisition)
 
 
 
@@ -37,7 +37,7 @@ Year | Conf       | Title                                                       
 2009 | intel2009  | [Parallel Futures of a Game Engine][9]                                                          |
 2009 | siggraph09 | [Parallel Graphics in Frostbite – Current & Future][8]                                          |
 2008 | gh2008     | [The Intersection of Game Engines and GPUs: Current & Future][7]                                |
-2007 | gdc2007    | [frostbite - Rendering Architecture and Real-time Procedural Shading & Texturing Techniques][6] |
+2007 | GDC        | [Rendering Architecture and Real-time Procedural Shading & Texturing Techniques][6]             |
 
 
 ### GDC 2011 & 2012 - Frostbite 2 & Battlefield 3/4
@@ -161,3 +161,5 @@ Year | Conf       | Title                                                       
 [39]:https://www.ea.com/frostbite/news/physically-based-sky-atmosphere-and-cloud-rendering
 [40]:https://www.ea.com/frostbite/news/photogrammetry-and-star-wars-battlefront
 [41]:https://www.ea.com/frostbite/news/lighting-the-city-of-glass
+[42]:https://en.wikipedia.org/wiki/Battlefield_(video_game_series)
+[43]:https://en.wikipedia.org/wiki/Dragon_Age:_Inquisition
