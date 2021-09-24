@@ -140,6 +140,15 @@ Work & Life
 
 Release Notes
 
+* [2021.08.26 - The Machinery (version 2021.8)][157]
+  * [Workspaces][158]
+  * [Customizable Shortcuts][159]
+  * [High level Simulation API][160]
+  * [Improved Accessibility][161]
+* [2021.07.29 - The Machinery (version 2021.7)][153]
+  * [The Machinery Books][154]
+  * [Icon Touchup and UI Improvements][155]
+  * [Thumbnails in the Asset Browser][156]
 * [2021.05.31 - The Machinery Beta (version 2021.6)][148]
   * [Save Game System][149]
   * [Breakpoints in Entity Graphs][150]
@@ -386,3 +395,12 @@ Release Notes
 [150]:https://ourmachinery.com/post/beta-2021-6/#breakpoints-in-entity-graphs
 [151]:https://ourmachinery.com/post/beta-2021-6/#ui-components
 [152]:https://ourmachinery.com/post/beta-2021-6/#facelift-for-sample-projects
+[153]:https://ourmachinery.com/post/release-2021-7/
+[154]:https://ourmachinery.com/post/release-2021-7/#the-machinery-books
+[155]:https://ourmachinery.com/post/release-2021-7/#icon-touchup-and-ui-improvements
+[156]:https://ourmachinery.com/post/release-2021-7/#thumbnails-in-the-asset-browser
+[157]:https://ourmachinery.com/post/release-2021-8/
+[158]:https://ourmachinery.com/post/release-2021-8/#workspaces
+[159]:https://ourmachinery.com/post/release-2021-8/#customizable-shortcuts
+[160]:https://ourmachinery.com/post/release-2021-8/#high-level-simulation-api
+[161]:https://ourmachinery.com/post/release-2021-8/#improved-accessibility
