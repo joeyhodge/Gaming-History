@@ -10,6 +10,7 @@
 
 * Youtube Video by Niklas
 * [Stingray Engine Code Walkthrough][4]
+  * [07 - Data compiling][20]
 
 
 
@@ -58,3 +59,4 @@
 [17]:https://www.gdcvault.com/play/1015508/Advanced-Visual-Effects-with-DirectX
 [18]:http://bitsquid.blogspot.com/2011/05/flow-data-oriented-implementation-of.html
 [19]:https://www.kth.se/social/upload/5289cb3ff276542440dd668c/bitsquid-behind-the-scenes.pdf
+[20]:https://www.youtube.com/watch?v=HsKzIBj-i_g
