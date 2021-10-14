@@ -15,6 +15,8 @@
   * [03 - Collection classes][24]
   * [07 - Data compiling][20]
   * [08 - Loading data][21]
+* [Autodesk Stingray – Technical Introduction and Design Overview][26]
+* [Lua in the Stingray 3D Game Engine][25]
 
 
 
@@ -68,3 +70,5 @@
 [22]:https://www.youtube.com/watch?v=LgbSYxf9vT4
 [23]:https://www.youtube.com/watch?v=pGXEsVasv_o
 [24]:https://www.youtube.com/watch?v=bp4JO8lopC8
+[25]:https://www.youtube.com/watch?v=wTjyM7d7_YA
+[26]:https://www.youtube.com/watch?v=SOoYjFCfhJU
