@@ -11,6 +11,7 @@
 * Youtube Video by Niklas
 * [Stingray Engine Code Walkthrough][4]
   * [07 - Data compiling][20]
+  * [08 - Loading data][21]
 
 
 
@@ -60,3 +61,4 @@
 [18]:http://bitsquid.blogspot.com/2011/05/flow-data-oriented-implementation-of.html
 [19]:https://www.kth.se/social/upload/5289cb3ff276542440dd668c/bitsquid-behind-the-scenes.pdf
 [20]:https://www.youtube.com/watch?v=HsKzIBj-i_g
+[21]:https://www.youtube.com/watch?v=nIxuGy6Jh-0
